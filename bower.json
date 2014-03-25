@@ -1,0 +1,18 @@
+{
+  "name": "bootcards",
+  "version": "0.0.1",
+  "main": [
+    "./dist/css/bootcards.css",
+    "./dist/js/bootcards.js",
+    "./dist/fonts/icomoon.eot",
+    "./dist/fonts/icomoon.svg",
+    "./dist/fonts/icomoon.ttf",
+    "./dist/fonts/icomoon.woff"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "dependencies": {
+    "bootstrap": "3.1.1"
+  }
+}
