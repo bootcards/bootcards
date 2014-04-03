@@ -1,14 +1,24 @@
 {
   "name": "bootcards",
+  "description": "A cards-based UI for mobile and desktop apps, built on top of Bootstrap"
   "version": "0.0.1",
   "license": "MIT",
+  "keywords": [
+    "css",
+    "js",
+    "mobile",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
   "main": [
-    "./dist/css/bootcards.css",
-    "./dist/js/bootcards.js",
-    "./dist/fonts/icomoon.eot",
-    "./dist/fonts/icomoon.svg",
-    "./dist/fonts/icomoon.ttf",
-    "./dist/fonts/icomoon.woff"
+    "dist/css/bootcards.css",
+    "dist/js/bootcards.js",
+    "dist/fonts/icomoon.eot",
+    "dist/fonts/icomoon.svg",
+    "dist/fonts/icomoon.ttf",
+    "dist/fonts/icomoon.woff"
   ],
   "ignore": [
     "**/.*"
