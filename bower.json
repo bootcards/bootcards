@@ -1,6 +1,6 @@
 {
   "name": "bootcards",
-  "description": "A cards-based UI for mobile and desktop apps, built on top of Bootstrap"
+  "description": "A cards-based UI for mobile and desktop apps, built on top of Bootstrap",
   "version": "0.0.1",
   "license": "MIT",
   "keywords": [
