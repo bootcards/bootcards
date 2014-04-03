@@ -1,6 +1,7 @@
 {
   "name": "bootcards",
   "version": "0.0.1",
+  "license": "MIT",
   "main": [
     "./dist/css/bootcards.css",
     "./dist/js/bootcards.js",
