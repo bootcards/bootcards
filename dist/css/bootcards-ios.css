@@ -18,9 +18,16 @@ a {
 }
 
 
+html, body {
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
 
-
-
+/*needed on iOS for the disabled rubberband*/
+.col-sm-6 {
+	height: 100%;
+}
 
 /* BUTTONS */
 
@@ -102,9 +109,8 @@ a {
 
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover {
-	position: absolute;
+	position: relative !important;
 	display: block;
-	width: 100%;
 	padding: 0;
 	font-size: 17px;
 	font-weight: 500;
@@ -112,6 +118,10 @@ a {
 	color: #000;
 	text-align: center;
 	white-space: nowrap;
+	height: 44px;
+	width: 140px !important;
+	margin: 0 auto !important;
+	float: none !important;
 }
 
 .navbar > .container .navbar-brand {
