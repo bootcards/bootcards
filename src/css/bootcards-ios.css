@@ -24,10 +24,10 @@ html, body {
     -webkit-overflow-scrolling: touch;
 }
 
-/*needed to disable the rubberband*/
-/*.col-sm-6 {
-	height: 100%;
-}*/
+/*needed on iOS for the disabled rubberband*/
+.col-sm-6 {
+	min-height:100%; /* replaced height with min-height as it was causing problems on shorter screens */
+}
 
 /* BUTTONS */
 
