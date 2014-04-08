@@ -49,6 +49,20 @@ module.exports = function(grunt) {
         }
      },
 
+    replace : {
+
+      imports : {
+          src: [
+            'dist/css/bootcards-android.css', 'dist/css/bootcards-ios.css'
+          ],
+          overwrite: true,
+          replacements : [{
+            from : /\@import\s\".*\"\;/, 
+            to : ""
+          }]
+      }
+     },
+
      cssmin: {
       minify : {
         options: { banner: '<%= banner %>' },
@@ -69,6 +83,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-text-replace');
 
   // Default task(s).
   grunt.registerTask('default', [
@@ -76,6 +91,7 @@ module.exports = function(grunt) {
     'copy',
     'uglify',
     'concat:cssdesktop','concat:cssios','concat:cssandroid', 
+    'replace:imports',
     'cssmin:minify']);
 
 };
