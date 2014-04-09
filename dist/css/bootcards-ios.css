@@ -1,4 +1,4 @@
-/* bootcards 0.0.2 2014-04-04 */
+/* bootcards 0.0.3 2014-04-09 */
 /* NAVBAR */
 
 /* LISTS */
@@ -497,7 +497,7 @@ a.list-group-item:before {
 	padding-top: 7px;
 	color: #929292;
 }
-@import "bootcards-mobile-shared.css";
+
 
 body {
 	background-color: white;
@@ -525,7 +525,7 @@ html, body {
 
 /*needed on iOS for the disabled rubberband*/
 .col-sm-6 {
-	height: 100%;
+	min-height:100%; /* replaced height with min-height as it was causing problems on shorter screens */
 }
 
 /* BUTTONS */
