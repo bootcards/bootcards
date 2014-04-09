@@ -52,7 +52,8 @@ a.list-group-item.active:before {
 
 /* List Search */
 
-.bootcards-list .panel-body > form > .row > div:first-child {
+.bootcards-list .panel-body > form > .row > div:first-child,
+.bootcards-list .panel-body > .search-form > .row > div:first-child {
 	padding-right: 0;
 }
 

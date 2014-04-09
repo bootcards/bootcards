@@ -330,26 +330,26 @@ a.list-group-item.active:focus .list-group-item-text {
 
 /* List - Search Form */
 
-.bootcards-list form {
+.bootcards-list form, .bootcards-list .search-form {
 	margin-left: 0;
 }
 
-.bootcards-list form input {
+.bootcards-list form input, .bootcards-list .search-form input {
 	border: 0;
 }
 
-.bootcards-list form i.fa-search {
+.bootcards-list form i.fa-search, .bootcards-list .search-form i.fa-search {
 	top: 10px;
 }
 
 @media (min-width:768px) {
-	.bootcards-list form input {
+	.bootcards-list form input, .bootcards-list .search-form input {
 		height: 42px;
 	}
-	.bootcards-list form i.fa-search {
+	.bootcards-list form i.fa-search, .bootcards-list .search-form i.fa-search {
 		top: 14px;
 	}
-	.bootcards-list form .btn {	
+	.bootcards-list form .btn, .bootcards-list .search-form .btn {	
 		line-height: 28px;
 	}
 }

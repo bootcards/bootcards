@@ -78,11 +78,11 @@ a.list-group-item.active:focus {
 	}	
 }
 
-.bootcards-list form input {
+.bootcards-list form input, .bootcards-list .search-form input {
 	padding-left: 32px;
 }
 
-.bootcards-list form i.fa-search {
+.bootcards-list form i.fa-search, .bootcards-list .search-form i.fa-search {
 	position: absolute;
 	left: 12px;
 	top: 10px;
@@ -90,7 +90,7 @@ a.list-group-item.active:focus {
 	font-size: 14px;
 }
 
-.bootcards-list form .btn {
+.bootcards-list form .btn, .bootcards-list .search-form .btn {
 	color: white;
 }
 

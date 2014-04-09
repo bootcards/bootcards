@@ -300,15 +300,15 @@ a.list-group-item:hover {
 
 /* List - Search Form */
 
-.bootcards-list form input {
+.bootcards-list form input, .bootcards-list .search-form input {
 	border: 0;
 }
 
-.bootcards-list form i.fa-search {
+.bootcards-list form i.fa-search, .bootcards-list .search-form i.fa-search {
 	top: 12px;
 }
 
-.bootcards-list form .btn {
+.bootcards-list form .btn, .bootcards-list .search-form .btn {
 	color: #fff;
 	border-color: transparent;
 	background-color: #33b5e5;	
@@ -316,20 +316,22 @@ a.list-group-item:hover {
 }
 
 .bootcards-list form .btn:hover,
-.bootcards-list form .btn:active {
+.bootcards-list form .btn:active,
+.bootcards-list .search-form .btn:hover,
+.bootcards-list .search-form .btn:active {
 	color: #fff;
 	border: 1px solid #428bca;
 	background-color: #428bca;
 }
 
 @media (min-width:768px) {
-	.bootcards-list form input {
+	.bootcards-list form input, .bootcards-list .search-form input {
 		height: 41px;
 	}
-	.bootcards-list form i.fa-search {
+	.bootcards-list form i.fa-search, .bootcards-list .search-form i.fa-search {
 		top: 14px;
 	}	
-	.bootcards-list form .btn {	
+	.bootcards-list form .btn, .bootcards-list .search-form .btn {	
 		line-height: 27px;
 	}
 }
