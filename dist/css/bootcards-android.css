@@ -1,4 +1,4 @@
-/* bootcards 0.0.3 2014-04-09 */
+/* bootcards 0.1.0 2014-04-13 */
 /* NAVBAR */
 
 /* LISTS */
@@ -79,11 +79,11 @@ a.list-group-item.active:focus {
 	}	
 }
 
-.bootcards-list form input {
+.bootcards-list form input, .bootcards-list .search-form input {
 	padding-left: 32px;
 }
 
-.bootcards-list form i.fa-search {
+.bootcards-list form i.fa-search, .bootcards-list .search-form i.fa-search {
 	position: absolute;
 	left: 12px;
 	top: 10px;
@@ -91,7 +91,7 @@ a.list-group-item.active:focus {
 	font-size: 14px;
 }
 
-.bootcards-list form .btn {
+.bootcards-list form .btn, .bootcards-list .search-form .btn {
 	color: white;
 }
 
@@ -436,21 +436,21 @@ a.list-group-item:before {
 	padding: 0;
 }
 
-.bootcards-list form {
+.bootcards-list form, .bootcards-list .search-form {
 	background: #BBB;
 	padding: 8px;
 }
 
-.bootcards-list form .row {
+.bootcards-list form .row, .bootcards-list .search-form .row {
 	margin: 0;
 }
 
-.bootcards-list form .row > div:first-child {
+.bootcards-list form .row > div:first-child, .bootcards-list .search-form .row > div:first-child {
 	padding-right: 4px;
 	padding-left: 0;
 }
 
-.bootcards-list form .row > div:last-child {
+.bootcards-list form .row > div:last-child, .bootcards-list .search-form .row > div:last-child {
 	padding-left: 4px;
 	padding-right: 0;
 }
@@ -799,15 +799,15 @@ a.list-group-item:hover {
 
 /* List - Search Form */
 
-.bootcards-list form input {
+.bootcards-list form input, .bootcards-list .search-form input {
 	border: 0;
 }
 
-.bootcards-list form i.fa-search {
+.bootcards-list form i.fa-search, .bootcards-list .search-form i.fa-search {
 	top: 12px;
 }
 
-.bootcards-list form .btn {
+.bootcards-list form .btn, .bootcards-list .search-form .btn {
 	color: #fff;
 	border-color: transparent;
 	background-color: #33b5e5;	
@@ -815,20 +815,22 @@ a.list-group-item:hover {
 }
 
 .bootcards-list form .btn:hover,
-.bootcards-list form .btn:active {
+.bootcards-list form .btn:active,
+.bootcards-list .search-form .btn:hover,
+.bootcards-list .search-form .btn:active {
 	color: #fff;
 	border: 1px solid #428bca;
 	background-color: #428bca;
 }
 
 @media (min-width:768px) {
-	.bootcards-list form input {
+	.bootcards-list form input, .bootcards-list .search-form input {
 		height: 41px;
 	}
-	.bootcards-list form i.fa-search {
+	.bootcards-list form i.fa-search, .bootcards-list .search-form i.fa-search {
 		top: 14px;
 	}	
-	.bootcards-list form .btn {	
+	.bootcards-list form .btn, .bootcards-list .search-form .btn {	
 		line-height: 27px;
 	}
 }
