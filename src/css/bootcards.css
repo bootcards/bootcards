@@ -245,6 +245,8 @@ a.list-group-item.active:focus {
 	border-radius: 4px;
 	padding: 25px 10px;
 	text-align: center;
+	position: relative;
+	height: 130px;
 }
 
 @media (max-width:400px) {
@@ -258,30 +260,24 @@ a.list-group-item.active:focus {
 	background: #eee;
 }
 
-.bootcards-summary .panel-body .bootcards-summary-item i {
+.bootcards-summary .panel-body .bootcards-summary-item > i {
 	color: #bbb;
 	display: block;
 	text-align: center;
 	margin-bottom: 5px;
 }
 
-.bootcards-summary .panel-body .bootcards-summary-item h1 {
-	margin: 0;
-	font-weight: bold;
-	white-space: nowrap;
-	font-size: 26px;
-	line-height: 1;
-	text-align: center;
-}
-
-.bootcards-summary .panel-body .bootcards-summary-item h1 span {
-	font-weight: normal;
-	font-size: 12px;
-	display: block;
-	color: #333;
+.bootcards-summary .panel-body .bootcards-summary-item h4 {
+	margin: 0 10px;
 }
 
 
+.bootcards-summary .panel-body .bootcards-summary-item .badge,
+.bootcards-summary .panel-body .bootcards-summary-item .label {
+	position: absolute;
+	top:10px;
+	right: 10px;
+}
 
 
 /* RICH TEXT CARD */
