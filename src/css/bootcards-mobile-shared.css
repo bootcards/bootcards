@@ -134,6 +134,10 @@ a.list-group-item:before {
 	color: #ccc;
 }
 
+.list-group.bootcards-no-indicators a.list-group-item:before {
+	display: none;
+}
+
 /* List - Search Form */
 
 .bootcards-list .panel-body {

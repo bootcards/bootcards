@@ -2,6 +2,10 @@
 
 /* LISTS */
 
+.bootcards-list {
+	//-webkit-transform: translateZ(0);
+}
+
 .list-group-item {
 	margin-left: 15px;
 	padding-left: 0;
@@ -20,7 +24,6 @@ a.list-group-item.active:focus {
 	line-height: 18px;
 	margin-bottom: 5px;
 }
-
 
 .list-group-item-heading:last-child,
 .list-group-item-text:last-child {
@@ -63,6 +66,33 @@ a.list-group-item.active:focus {
 .panel > .list-group .list-group-item:last-child {
 	border-bottom: 0;
 }
+
+
+/* List - AZ Picker */
+
+.bootcards-az-picker {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: fixed;
+	z-index: 999;
+	margin-left: 367px;
+	margin-top: 65px;
+	height: 70%;
+}
+
+.bootcards-az-picker li {
+	height: 3.7037%; /* 100% / 27 */
+	font-size: 11px;
+	font-weight: 500;
+	text-align: center;
+	background: white;
+	padding: 0 4px;
+}
+
+.bootcards-az-picker li a:hover {
+	text-decoration: none;
+} 
 
 
 /* List - Search Form */
