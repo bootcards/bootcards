@@ -20,7 +20,8 @@ a {
 
 html, body {
     height: 100%;
-    overflow-y: scroll;
+    //overflow-y: scroll;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -136,10 +137,15 @@ html, body {
 	padding: 0;
 	line-height: 44px;
 	border: 0;
+	font-weight: 400;
 }
 
 .navbar-fixed-top .btn.navbar-left {
 	left: 15px;
+}
+
+.navbar-fixed-top .btn.pull-right i {
+	display: none;	
 }
 
 .navbar-fixed-top .btn.navbar-right {
@@ -439,7 +445,7 @@ form .btn label {
 	height: 50px;
 	text-align: center;
 	border: 0;
-	background-color: rgba(247,247,247,.98);
+	background-color: #f9f9f9;
 	-webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
 	box-shadow: 0 0 1px rgba(0,0,0,.85);	
 	padding: 0;
@@ -448,21 +454,7 @@ form .btn label {
 .navbar-fixed-bottom .btn-group {
 	max-width: 320px;
 	width: 320px;
-	text-align: center;
 	font-size: 0;
-}
-
-.navbar-fixed-bottom .btn-group .btn {
-	display: inline-block;
-	float: none;
-	width: 25%;
-	height: 50px;
-	color: #929292;
-	text-align: center;	
-	color: #929292;
-	line-height: 1;
-	font-size: 11px;
-	font-weight: 300;
 }
 
 @media (min-width:768px) {
@@ -470,19 +462,36 @@ form .btn label {
 		max-width: 640px;
 		width: 640px;
 	}
-	.navbar-fixed-bottom .btn-group .btn {
-		width: 12.5%;
-	}
 }
 
-.navbar-fixed-bottom .btn-group .btn i {
+.navbar-fixed-bottom .btn,
+.navbar-fixed-bottom .btn:hover,
+.navbar-fixed-bottom .btn:active,
+.navbar-fixed-bottom .btn:focus {
+	float: none;
+	height: 50px;
+	text-align: center;	
+	line-height: 1;
+	font-size: 10px;
+	font-weight: 400;
+	padding-top: 7px;
+}
+
+.navbar-fixed-bottom .btn i {
 	display: block;
 	margin-bottom: 2px;
 	font-size: 24px;
 }
 
-.navbar-fixed-bottom .btn-group .btn.active,
-.navbar-fixed-bottom .btn-group .btn:hover {
+.navbar-fixed-bottom .btn-default {
+	color: #929292;
+}
+
+.navbar-fixed-bottom .btn-default:active,
+.navbar-fixed-bottom .btn-default:hover {
 	color: #007aff;
-	opacity: 1;
+}
+
+.navbar-fixed-bottom .btn-success {
+	color: #00b400;
 }

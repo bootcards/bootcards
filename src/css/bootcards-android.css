@@ -428,7 +428,6 @@ form .btn label {
 	display: inline-block;
 	float: none;
 	font-size: 13px;
-	padding-top: 7px;
 	font-weight: bold;
 	text-transform: uppercase;
 	border-top: 4px solid transparent;
@@ -437,9 +436,9 @@ form .btn label {
 	line-height: 43px;
 	padding: 0;
 	text-shadow: none;
-	font-family: 'Roboto';
 	color: #777;
 	position: relative;
+	text-align: center;
 }
 
 .navbar-fixed-bottom .btn-group .btn:before {
@@ -455,17 +454,6 @@ form .btn label {
 
 .navbar-fixed-bottom .btn-group .btn:first-child:before {
 	display: none;
-}
-
-
-@media (min-width:768px) {
-	.navbar-fixed-bottom .btn-group {
-		max-width: 768px;
-		width: 768px;
-	}
-	.navbar-fixed-bottom .btn-group .btn {
-		width: 12.5%;
-	}
 }
 
 .navbar-fixed-bottom .btn-group .btn i {

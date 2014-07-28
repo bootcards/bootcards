@@ -53,7 +53,10 @@ small {
 body > .container > .row {
 	height: 100%;
 	padding-bottom: 50px;
-	
+}
+
+body.bootcards-nofooter > .container > .row {
+	padding-bottom: 0;
 }
 
 .container .bootcards-cards,
@@ -219,7 +222,7 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 
 /* FOOTER */
 
-.no-footer .navbar-fixed-bottom {
+.bootcards-nofooter .navbar-fixed-bottom {
 	display: none;
 }
 
@@ -230,20 +233,31 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 
 .navbar-fixed-bottom .btn-group {
 	list-style: none;
-	max-width: 400px;
 	width: 100%;
 	margin: 0 auto;
 }
 
-.navbar-fixed-bottom .btn-group .btn {
-	width: 25%;
+.navbar-fixed-bottom .btn,
+.navbar-fixed-bottom .btn:hover,
+.navbar-fixed-bottom .btn:active,
+.navbar-fixed-bottom .btn:focus {
 	padding: 0;
+	padding-left: 10px;
+	padding-right: 10px;
 	border: 0;
 	background: transparent;
 	box-shadow: none;
 	display: inline-block;
-	text-align: center;
-	font-size: 11px;
-	padding-top: 7px;
-	color: #929292;
+	opacity: 1;
 }
+
+.navbar-fixed-bottom .btn-group .btn {
+	width: 25%;
+}
+
+@media (min-width:768px) {
+	.navbar-fixed-bottom .btn-group .btn {
+		width: 15%;
+	}
+}
+
