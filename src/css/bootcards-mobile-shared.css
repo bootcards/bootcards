@@ -87,8 +87,6 @@ body.bootcards-nofooter > .container > .row {
 }
 
 
-
-
 /* MENU */
 
 .navmenu {
@@ -106,8 +104,6 @@ body.bootcards-nofooter > .container > .row {
 	margin-right: 5px;
 	text-align: center;
 }
-
-
 
 
 /* LISTS */
@@ -216,6 +212,81 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 .panel-footer {
 	background: 0;
 }
+
+
+/* FORMS */
+
+.bootcards-clearinput {
+	position: absolute;
+	right: 0;
+	top: 6px;
+	color: #ccc;
+	display: block;
+}
+
+/* Toggle – based on Ratchet.css */
+
+.bootcards-toggle {
+  position: relative;
+  display: block;
+  width: 74px;
+  height: 30px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  -webkit-transition-duration: .2s;
+     -moz-transition-duration: .2s;
+          transition-duration: .2s;
+  -webkit-transition-property: background-color, border;
+     -moz-transition-property: background-color, border;
+          transition-property: background-color, border;
+}
+.bootcards-toggle .bootcards-toggle-handle {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 100px;
+  -webkit-transition-duration: .2s;
+     -moz-transition-duration: .2s;
+          transition-duration: .2s;
+  -webkit-transition-property: -webkit-transform, border, width;
+     -moz-transition-property:    -moz-transform, border, width;
+          transition-property:         transform, border, width;
+}
+.bootcards-toggle:before {
+  position: absolute;
+  top: 3px;
+  right: 11px;
+  font-size: 13px;
+  color: #999;
+  text-transform: uppercase;
+  content: "Off";
+}
+.bootcards-toggle.active {
+  background-color: #5cb85c;
+  border: 2px solid #5cb85c;
+}
+.bootcards-toggle.active .toggle-handle {
+  border-color: #5cb85c;
+  -webkit-transform: translate3d(44px, 0, 0);
+      -ms-transform: translate3d(44px, 0, 0);
+          transform: translate3d(44px, 0, 0);
+}
+.bootcards-toggle.active:before {
+  right: auto;
+  left: 15px;
+  color: #fff;
+  content: "On";
+}
+.bootcards-toggle input[type="checkbox"] {
+  display: none;
+}
+
 
 
 

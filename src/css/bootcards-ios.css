@@ -120,8 +120,8 @@ html, body {
 	text-align: center;
 	white-space: nowrap;
 	height: 44px;
-	width: 140px !important;
-	margin: 0 auto !important;
+	//width: 140px !important;
+	//margin: 0 auto !important;
 	float: none !important;
 }
 
@@ -350,13 +350,13 @@ a.list-group-item.active:focus .list-group-item-text {
 
 @media (min-width:768px) {
 	.bootcards-list form input, .bootcards-list .search-form input {
-		height: 42px;
+		height: 34px;
 	}
 	.bootcards-list form i.fa-search, .bootcards-list .search-form i.fa-search {
-		top: 14px;
+		top: 9px;
 	}
 	.bootcards-list form .btn, .bootcards-list .search-form .btn {	
-		line-height: 28px;
+		//line-height: 28px;
 	}
 }
 
@@ -388,6 +388,7 @@ a.list-group-item.active:focus .list-group-item-text {
 	margin-top: 2px;
 	white-space: nowrap;
 	padding-right: 0;
+	padding-top: 7px;
 }
 
 .form-horizontal .form-group div {
@@ -435,6 +436,107 @@ form .btn label {
 	text-align: left;
 	display: block;
 }
+
+
+/* Toggle – based on Ratchet.css */
+
+.bootcards-toggle {
+  margin-top: 1px;
+  float: right;
+  width: 47px;
+  border: 2px solid #e6e6e6;
+  -webkit-box-shadow: inset 0 0 0 0 #e1e1e1;
+          box-shadow: inset 0 0 0 0 #e1e1e1;
+  -webkit-transition-duration: .2s;
+     -moz-transition-duration: .2s;
+          transition-duration: .2s;
+  -webkit-transition-property: box-shadow, border;
+     -moz-transition-property: box-shadow, border;
+          transition-property: box-shadow, border;
+}
+.bootcards-toggle .bootcards-toggle-handle {
+  border: 1px solid rgba(0, 0, 0, .2);
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, .08);
+          box-shadow: 0 3px 3px rgba(0, 0, 0, .08);
+  -webkit-transition-property: -webkit-transform, border, width;
+     -moz-transition-property:    -moz-transform, border, width;
+          transition-property:         transform, border, width;
+}
+.bootcards-toggle:before {
+  display: none;
+}
+.bootcards-toggle.active {
+  background-color: transparent;
+  border: 2px solid #4cd964;
+  -webkit-box-shadow: inset 0 0 0 13px #4cd964;
+          box-shadow: inset 0 0 0 13px #4cd964;
+}
+.bootcards-toggle.active .bootcards-toggle-handle {
+  -webkit-transform: translate3d(17px, 0, 0);
+      -ms-transform: translate3d(17px, 0, 0);
+          transform: translate3d(17px, 0, 0);
+}
+.bootcards-toggle.active .bootcards-toggle-handle {
+  border-color: #4cd964;
+}
+
+/*.bootcards-switch {
+	
+}
+
+.bootcards-switch label {
+  float: none;
+  background: transparent;
+  width: auto;
+  border: 0;
+}
+
+.bootcards-switch input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fafafa;
+  border: 1px solid #d3d3d3;
+  border-radius: 26px;
+  cursor: pointer;
+  height: 28px;
+  position: relative;
+  transition: border 0.25s 0.15s, box-shadow 0.25s 0.3s, padding 0.25s;
+  width: 44px;
+  vertical-align: top;
+  margin-top: 7px;
+}
+
+.bootcards-switch input[type="checkbox"]:after {
+  background-color: #ffffff;
+  border: 1px solid #d3d3d3;
+  border-radius: 24px;
+  box-shadow: inset 0 -3px 3px hsla(0,0%,0%,.025),
+		      0 1px 4px hsla(0,0%,0%,.15),
+		      0 4px 4px hsla(0,0%,0%,.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.1);
+  content: '';
+  display: block;
+  height: 24px;
+  left: 0;
+  position: absolute;
+  right: 16px;
+  top: 0;
+  transition: border .25s .15s, left .25s .1s, right .15s .175s;
+}
+
+.bootcards-switch input[type="checkbox"]:checked {
+  border-color: #53d76a;
+  box-shadow: inset 0 0 0 13px #53d76a;
+  padding-left: 18px;
+  transition: border 0.25s, box-shadow 0.25s, padding 0.25s 0.15s;
+}
+
+.bootcards-switch input[type="checkbox"]:checked:after {
+  border-color: #53d76a;
+  left: 16px;
+  right: 0;
+  transition: border .25s, left .15s .25s, right .25s .175s;
+}*/
 
 
 
