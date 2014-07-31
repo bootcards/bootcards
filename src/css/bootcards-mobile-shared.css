@@ -288,7 +288,38 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 }
 
 
+/* CALENDAR */
 
+.bootcards-calendar .panel-body {
+	padding: 0;
+}
+
+.bootcards-calendar .fc-header-left,
+.bootcards-calendar .fc-header-right {
+	padding: 15px;
+}
+
+.bootcards-calendar .fc-header-title h2 {
+	margin: 0;
+}
+
+.bootcards-calendar .fc-header .fc-button {
+	background: transparent;
+	box-shadow: none;
+	border-color: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+.bootcards-calendar .fc-content th:first-child,
+.bootcards-calendar .fc-content td:first-child {
+	border-left-width: 0;
+}
+
+.bootcards-calendar .fc-content th:last-child,
+.bootcards-calendar .fc-content td:last-child {
+	border-right-width: 0;
+}
 
 
 /* FOOTER */

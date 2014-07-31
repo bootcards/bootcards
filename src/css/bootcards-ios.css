@@ -20,7 +20,7 @@ a {
 
 html, body {
     height: 100%;
-    //overflow-y: scroll;
+    /*overflow-y: scroll;*/
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
 }
@@ -120,8 +120,8 @@ html, body {
 	text-align: center;
 	white-space: nowrap;
 	height: 44px;
-	//width: 140px !important;
-	//margin: 0 auto !important;
+	/*width: 140px !important;*/
+	/*margin: 0 auto !important;*/
 	float: none !important;
 }
 
@@ -198,6 +198,51 @@ html, body {
 	text-shadow: none;
 }
 
+
+
+
+/* CALENDAR */
+
+.bootcards-calendar .fc-header-title h2 {
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #8f8f94;
+	font-weight: 400;
+	margin: 0;
+	padding: 8px 0;
+	line-height: 20px;
+}
+
+.bootcards-calendar .fc-header-left,
+.bootcards-calendar .fc-header-right {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.bootcards-calendar .fc-button {
+	height: 29px;
+	font-size: 15px;
+	text-shadow: none;
+	color: #007aff;
+}
+
+.bootcards-calendar .fc-day-header {
+	font-weight: 400;
+	font-size: 12px;
+	border-left-color: transparent;
+	padding: 5px 0;
+	text-align: right;
+	padding-right: 3px;
+}
+
+.bootcards-calendar .fc-event {
+	background: #007aff;
+	border-color: #007aff;
+}
+
+.bootcards-calendar .fc-today {
+	background: #FFF2F2;
+}
 
 
 
@@ -356,7 +401,7 @@ a.list-group-item.active:focus .list-group-item-text {
 		top: 9px;
 	}
 	.bootcards-list form .btn, .bootcards-list .search-form .btn {	
-		//line-height: 28px;
+		/*line-height: 28px;*/
 	}
 }
 
@@ -480,63 +525,7 @@ form .btn label {
   border-color: #4cd964;
 }
 
-/*.bootcards-switch {
-	
-}
 
-.bootcards-switch label {
-  float: none;
-  background: transparent;
-  width: auto;
-  border: 0;
-}
-
-.bootcards-switch input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: #fafafa;
-  border: 1px solid #d3d3d3;
-  border-radius: 26px;
-  cursor: pointer;
-  height: 28px;
-  position: relative;
-  transition: border 0.25s 0.15s, box-shadow 0.25s 0.3s, padding 0.25s;
-  width: 44px;
-  vertical-align: top;
-  margin-top: 7px;
-}
-
-.bootcards-switch input[type="checkbox"]:after {
-  background-color: #ffffff;
-  border: 1px solid #d3d3d3;
-  border-radius: 24px;
-  box-shadow: inset 0 -3px 3px hsla(0,0%,0%,.025),
-		      0 1px 4px hsla(0,0%,0%,.15),
-		      0 4px 4px hsla(0,0%,0%,.1);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.1);
-  content: '';
-  display: block;
-  height: 24px;
-  left: 0;
-  position: absolute;
-  right: 16px;
-  top: 0;
-  transition: border .25s .15s, left .25s .1s, right .15s .175s;
-}
-
-.bootcards-switch input[type="checkbox"]:checked {
-  border-color: #53d76a;
-  box-shadow: inset 0 0 0 13px #53d76a;
-  padding-left: 18px;
-  transition: border 0.25s, box-shadow 0.25s, padding 0.25s 0.15s;
-}
-
-.bootcards-switch input[type="checkbox"]:checked:after {
-  border-color: #53d76a;
-  left: 16px;
-  right: 0;
-  transition: border .25s, left .15s .25s, right .25s .175s;
-}*/
 
 
 
