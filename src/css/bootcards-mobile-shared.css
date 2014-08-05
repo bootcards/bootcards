@@ -92,6 +92,10 @@ body.bootcards-nofooter > .container > .row {
 .navmenu {
 	display: none;
 	padding: 0;
+}	
+
+.navmenu .navmenu-nav {
+	margin-bottom: 0;
 }
 
 .navmenu li {
@@ -103,6 +107,24 @@ body.bootcards-nofooter > .container > .row {
 	width: 24px;
 	margin-right: 5px;
 	text-align: center;
+}
+
+.navmenu .bootcards-parent:not(.collapsed) {
+	color: #333;
+}
+
+.navmenu .bootcards-parent:not(.collapsed) .fa-chevron-circle-right {
+	-webkit-transform:rotate(90deg);
+}
+
+/* Menu Children */
+
+.navmenu li li {
+	padding-left: 32px;
+}
+
+.navmenu li li li {
+	padding-left: 32px;
 }
 
 
@@ -140,42 +162,8 @@ a.list-group-item:before {
 
 /* List - Subheadings */
 
-.list-group-item.bootcards-list-subheading {
-	background: #eee;
-	margin-left: 0;
-	padding-left: 15px;
-	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 14px;
-	z-index: 6;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-
-a.list-group-item.bootcards-list-subheading {
-	padding-left: 40px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
 a.list-group-item.bootcards-list-subheading:hover {
 	background: #f5f5f5;
-}
-
-a.list-group-item.bootcards-list-subheading:before {
-	font-family: 'FontAwesome';
-	content: '';
-	position: absolute;
-	left: 15px;
-	top: 50%;
-	font-size: 14px;
-	line-height: 14px;
-	margin-top: -7px;
-	color: #ccc;
-}
-
-a.list-group-item.bootcards-list-subheading.collapsed:before {
-	content: '';
 }
 
 

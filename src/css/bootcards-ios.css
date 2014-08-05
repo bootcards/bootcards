@@ -548,10 +548,11 @@ form .btn label {
 	font-size: 0;
 }
 
-@media (min-width:768px) {
+@media (min-width:401px) {
 	.navbar-fixed-bottom .btn-group {
-		max-width: 640px;
-		width: 640px;
+		display: block;
+		width: auto;
+		max-width: none;
 	}
 }
 
