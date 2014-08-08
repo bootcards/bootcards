@@ -83,6 +83,12 @@ a.list-group-item.active:before {
 }
 
 
+/* FORMS */
+
+.bootcards-clearinput {
+	right: 23px;
+}
+
 
 
 /* FOOTER */
