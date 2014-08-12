@@ -50,11 +50,13 @@ small {
 	margin: 0;
 }
 
+.bootcards-wrapper,
 body > .container > .row {
 	height: 100%;
 	padding-bottom: 50px;
 }
 
+body.bootcards-nofooter .bootcards-wrapper,
 body.bootcards-nofooter > .container > .row {
 	padding-bottom: 0;
 }
