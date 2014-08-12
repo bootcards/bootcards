@@ -173,7 +173,7 @@ a,
 
 @media (max-width:767px) {
 	.modal-dialog {
-		height: 100%;
+		min-height: 100%;
 	}
 	.modal-dialog {
 		margin: 0;
