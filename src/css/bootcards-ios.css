@@ -397,8 +397,7 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 select, 
-textarea, 
-input,
+textarea,
 input[type="text"], 
 input[type="search"], 
 input[type="password"], 
