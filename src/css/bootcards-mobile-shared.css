@@ -50,7 +50,8 @@ small {
 	margin: 0;
 }
 
-body > .container > .row {
+body > .container > .row,
+.bootcards-wrapper {
 	height: 100%;
 	padding-bottom: 50px;
 	
