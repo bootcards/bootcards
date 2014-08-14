@@ -140,6 +140,10 @@ html, body {
 	font-weight: 400;
 }
 
+.navbar-fixed-top .btn i {
+	margin-right: 5px;
+}
+
 .navbar-fixed-top .btn.navbar-left {
 	left: 15px;
 }
@@ -449,7 +453,7 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 select, 
-textarea, 
+textarea,
 input[type="text"], 
 input[type="search"], 
 input[type="password"], 
