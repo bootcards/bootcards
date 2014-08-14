@@ -138,6 +138,10 @@ html, body {
 	border: 0;
 }
 
+.navbar-fixed-top .btn i {
+	margin-right: 5px;
+}
+
 .navbar-fixed-top .btn.navbar-left {
 	left: 15px;
 }
