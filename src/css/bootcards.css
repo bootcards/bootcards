@@ -21,7 +21,6 @@ a.list-group-item.active:focus {
 	margin-bottom: 5px;
 }
 
-
 .list-group-item-heading:last-child,
 .list-group-item-text:last-child {
 	margin-bottom: 0;
@@ -63,6 +62,72 @@ a.list-group-item.active:focus {
 .panel > .list-group .list-group-item:last-child {
 	border-bottom: 0;
 }
+
+
+/* List - Subheadings */
+
+.list-group-item.bootcards-list-subheading {
+	margin-left: 0;
+	padding-left: 15px;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 14px;
+	z-index: 6;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+a.list-group-item.bootcards-list-subheading {
+	padding-left: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+a.list-group-item.bootcards-list-subheading:before {
+	font-family: 'FontAwesome';
+	content: '';
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	font-size: 14px;
+	line-height: 14px;
+	margin-top: -7px;
+	color: #ccc;
+}
+
+a.list-group-item.bootcards-list-subheading.collapsed:before {
+	content: '';
+}
+
+
+
+
+/* List - AZ Picker */
+
+.bootcards-az-picker {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	padding-top: 70px;
+}
+
+.bootcards-az-picker li {
+	height: 3.7037%; /* 100% / 27 */
+	font-size: 11px;
+	font-weight: 500;
+	text-align: center;
+	background: white;
+	padding: 0 4px;
+}
+
+.bootcards-az-picker li a:hover {
+	text-decoration: none;
+} 
 
 
 /* List - Search Form */
@@ -133,6 +198,113 @@ a.list-group-item.active:focus {
 	margin: 0;
 	font-weight: inherit;
 	cursor: pointer;
+}
+
+.bootcards-clearinput {
+	position: absolute;
+	right: 0;
+	top: 6px;
+	color: #ccc;
+	display: block;
+}
+
+
+
+/* Toggle – based on Ratchet.css */
+
+.bootcards-toggle {
+  position: relative;
+  display: block;
+  width: 74px;
+  height: 30px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  -webkit-transition-duration: .2s;
+     -moz-transition-duration: .2s;
+          transition-duration: .2s;
+  -webkit-transition-property: background-color, border;
+     -moz-transition-property: background-color, border;
+          transition-property: background-color, border;
+}
+.bootcards-toggle .bootcards-toggle-handle {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 100px;
+  -webkit-transition-duration: .2s;
+     -moz-transition-duration: .2s;
+          transition-duration: .2s;
+  -webkit-transition-property: -webkit-transform, border, width;
+     -moz-transition-property:    -moz-transform, border, width;
+          transition-property:         transform, border, width;
+}
+.bootcards-toggle:before {
+  position: absolute;
+  top: 3px;
+  right: 11px;
+  font-size: 13px;
+  color: #999;
+  text-transform: uppercase;
+  content: "Off";
+}
+.bootcards-toggle.active {
+  background-color: #5cb85c;
+  border: 2px solid #5cb85c;
+}
+.bootcards-toggle.active .bootcards-toggle-handle {
+  border-color: #5cb85c;
+  -webkit-transform: translate3d(44px, 0, 0);
+      -ms-transform: translate3d(44px, 0, 0);
+          transform: translate3d(44px, 0, 0);
+}
+.bootcards-toggle.active:before {
+  right: auto;
+  left: 15px;
+  color: #fff;
+  content: "On";
+}
+.bootcards-toggle input[type="checkbox"] {
+  display: none;
+}
+
+
+/* CALENDAR */
+
+.bootcards-calendar .panel-body {
+	padding: 0;
+}
+
+.bootcards-calendar .fc-header-left,
+.bootcards-calendar .fc-header-right {
+	padding: 15px;
+}
+
+.bootcards-calendar .fc-header-title h2 {
+	margin: 0;
+}
+
+.bootcards-calendar .fc-header .fc-button {
+	background: transparent;
+	box-shadow: none;
+	border-color: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+.bootcards-calendar .fc-content th:first-child,
+.bootcards-calendar .fc-content td:first-child {
+	border-left-width: 0;
+}
+
+.bootcards-calendar .fc-content th:last-child,
+.bootcards-calendar .fc-content td:last-child {
+	border-right-width: 0;
 }
 
 

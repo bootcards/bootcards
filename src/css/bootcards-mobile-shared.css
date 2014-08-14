@@ -50,11 +50,15 @@ small {
 	margin: 0;
 }
 
-body > .container > .row,
-.bootcards-wrapper {
+.bootcards-wrapper,
+body > .container > .row {
 	height: 100%;
 	padding-bottom: 50px;
-	
+}
+
+body.bootcards-nofooter .bootcards-wrapper,
+body.bootcards-nofooter > .container > .row {
+	padding-bottom: 0;
 }
 
 .container .bootcards-cards,
@@ -85,13 +89,15 @@ body > .container > .row,
 }
 
 
-
-
 /* MENU */
 
 .navmenu {
 	display: none;
 	padding: 0;
+}	
+
+.navmenu .navmenu-nav {
+	margin-bottom: 0;
 }
 
 .navmenu li {
@@ -105,7 +111,23 @@ body > .container > .row,
 	text-align: center;
 }
 
+.navmenu .bootcards-parent:not(.collapsed) {
+	color: #333;
+}
 
+.navmenu .bootcards-parent:not(.collapsed) .fa-chevron-circle-right {
+	-webkit-transform:rotate(90deg);
+}
+
+/* Menu Children */
+
+.navmenu li li {
+	padding-left: 32px;
+}
+
+.navmenu li li li {
+	padding-left: 32px;
+}
 
 
 /* LISTS */
@@ -134,6 +156,18 @@ a.list-group-item:before {
 	margin-top: -7px;
 	color: #ccc;
 }
+
+.list-group.bootcards-no-indicators a.list-group-item:before {
+	display: none;
+}
+
+
+/* List - Subheadings */
+
+a.list-group-item.bootcards-list-subheading:hover {
+	background: #f5f5f5;
+}
+
 
 /* List - Search Form */
 
@@ -170,11 +204,16 @@ a.list-group-item:before {
 }
 
 
+/* FORMS */
+
+
+
+
 
 
 /* FOOTER */
 
-.no-footer .navbar-fixed-bottom {
+.bootcards-nofooter .navbar-fixed-bottom {
 	display: none;
 }
 
@@ -185,20 +224,31 @@ a.list-group-item:before {
 
 .navbar-fixed-bottom .btn-group {
 	list-style: none;
-	max-width: 400px;
 	width: 100%;
 	margin: 0 auto;
 }
 
-.navbar-fixed-bottom .btn-group .btn {
-	width: 25%;
+.navbar-fixed-bottom .btn,
+.navbar-fixed-bottom .btn:hover,
+.navbar-fixed-bottom .btn:active,
+.navbar-fixed-bottom .btn:focus {
 	padding: 0;
+	padding-left: 10px;
+	padding-right: 10px;
 	border: 0;
 	background: transparent;
 	box-shadow: none;
 	display: inline-block;
-	text-align: center;
-	font-size: 11px;
-	padding-top: 7px;
-	color: #929292;
+	opacity: 1;
 }
+
+.navbar-fixed-bottom .btn-group .btn {
+	width: 25%;
+}
+
+@media (min-width:768px) {
+	.navbar-fixed-bottom .btn-group .btn {
+		width: 15%;
+	}
+}
+
