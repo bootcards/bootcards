@@ -542,8 +542,8 @@ form .btn label {
 	background-color: #f9f9f9;
 	-webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
 	box-shadow: 0 0 1px rgba(0,0,0,.85);	
-	padding: 0;
 }
+
 
 .navbar-fixed-bottom .btn-group {
 	max-width: 320px;
@@ -559,10 +559,10 @@ form .btn label {
 	}
 }
 
-.navbar-fixed-bottom .btn,
-.navbar-fixed-bottom .btn:hover,
-.navbar-fixed-bottom .btn:active,
-.navbar-fixed-bottom .btn:focus {
+.navbar-fixed-bottom .btn-group .btn,
+.navbar-fixed-bottom .btn-group .btn:hover,
+.navbar-fixed-bottom .btn-group .btn:active,
+.navbar-fixed-bottom .btn-group .btn:focus {
 	float: none;
 	height: 50px;
 	text-align: center;	
@@ -572,21 +572,37 @@ form .btn label {
 	padding-top: 7px;
 }
 
-.navbar-fixed-bottom .btn i {
+.navbar-fixed-bottom .btn-group .btn i {
 	display: block;
 	margin-bottom: 2px;
 	font-size: 24px;
 }
 
-.navbar-fixed-bottom .btn-default {
+.navbar-fixed-bottom .btn-group .btn-default {
 	color: #929292;
 }
 
-.navbar-fixed-bottom .btn-default:active,
-.navbar-fixed-bottom .btn-default:hover {
+.navbar-fixed-bottom .btn-group .btn-default:active,
+.navbar-fixed-bottom .btn-group .btn-default:hover {
 	color: #007aff;
 }
 
-.navbar-fixed-bottom .btn-success {
-	color: #00b400;
+/* Fixed buttons */
+
+.navbar-fixed-bottom .btn.pull-left,
+.navbar-fixed-bottom .btn.pull-left:hover,
+.navbar-fixed-bottom .btn.pull-right,
+.navbar-fixed-bottom .btn.pull-right:hover {
+	font-size: 16px;
+	position: relative;
+	z-index: 20;
+	padding: 0;
+	line-height: 49px;
+	border: 0;
+	font-weight: 400;
+}
+
+.navbar-fixed-bottom .btn.pull-left i,
+.navbar-fixed-bottom .btn.pull-right i {
+	margin-right: 5px;
 }

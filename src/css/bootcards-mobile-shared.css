@@ -232,7 +232,7 @@ a.list-group-item.bootcards-list-subheading:hover {
 
 @media (min-width:768px) {
 	.navbar-fixed-bottom .btn-group .btn {
-		width: 15%;
+		width: 16.66666%;
 	}
 }
 

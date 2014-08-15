@@ -482,6 +482,16 @@ form .btn label {
 }
 
 .navbar-fixed-bottom .btn-group .btn {
+	width: 33.333%;
+}
+
+@media (min-width:768px) {
+	.navbar-fixed-bottom .btn-group .btn {
+		width: 20%;
+	}
+}
+
+.navbar-fixed-bottom .btn-group .btn {
 	display: inline-block;
 	float: none;
 	font-size: 13px;
@@ -519,4 +529,30 @@ form .btn label {
 
 .navbar-fixed-bottom .btn-group .btn.active {
 	border-top-color: #35b3e4;
+}
+
+/* Button */
+
+.navbar-fixed-bottom .btn,
+.navbar-fixed-bottom .btn:hover {
+	position: relative;
+	z-index: 20;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: inline-block;
+	background: transparent;
+	border: 0;
+}
+
+.navbar-fixed-bottom .btn i {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+
+
+
+.navbar-fixed-bottom .btn span {
+	display: none;
+	
 }
