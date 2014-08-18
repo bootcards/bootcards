@@ -469,6 +469,8 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 
 .bootcards-richtext > .panel-body {
 	padding: 25px;
+	max-width: 640px;
+	margin: 0 auto;
 }
 
 .bootcards-richtext > .panel-body > *:first-child {
