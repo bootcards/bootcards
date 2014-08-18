@@ -89,20 +89,29 @@ body.bootcards-nofooter > .container > .row {
 }
 
 
-/* MENU */
+/* OFFCANVAS MENU */
 
 .navmenu {
-	display: none;
 	padding: 0;
-}	
-
-.navmenu .navmenu-nav {
-	margin-bottom: 0;
+	background-color: #f8f8f8;
+	border-right: 1px solid #e7e7e7;
 }
 
 .navmenu li {
 	font-size: 15px;
 	line-height: 30px;
+}
+
+.navmenu li a {
+	color: #777;	
+}
+.navmenu li.active>a, .navmenu li.active>a:hover {
+	color: #555;
+	background-color: #e7e7e7;
+}
+.navmenu li>a:hover {
+	color: #333;
+	background:transparent;
 }
 
 .navmenu i {
