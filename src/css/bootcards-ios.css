@@ -110,7 +110,9 @@ html, body {
 
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover {
-	position: relative !important;
+	position: absolute;
+	left: 0;
+	right: 0;
 	display: block;
 	padding: 0;
 	font-size: 17px;
