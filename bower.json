@@ -26,6 +26,8 @@
     "**/.*"
   ],
   "dependencies": {
-    "bootstrap": "^3"
+    "bootstrap": "^3",
+    "jquery": ">1.8",
+    "font-awesome": ">4"
   }
 }
