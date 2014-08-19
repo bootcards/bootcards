@@ -22,15 +22,15 @@ bootcards.findBootstrapEnvironment = function() {
             $el.remove();
             return envs[i];
         }
-    };
-}
+    }
+};
 
 bootcards.isXS = function() {
     if (this._isXS === null ) {
         this._isXS = (this.findBootstrapEnvironment() == "ExtraSmall");
     }
     return this._isXS;
-}
+};
 
 /*
  * Disable rubberbanding effect in iOS.
@@ -58,4 +58,48 @@ bootcards.disableRubberBanding = function() {
         });
     });
 
-}
+};
+
+/*
+ * Initialize an off-canvas menu. This takes 4 arguments:
+ * - the element used to toggle the off canvas menu
+ * - the off canvas element to slide in
+ * - the main content area to push away when the off canvas element slides in
+ * - a boolean indicating if the off canvas menu should be hidden when the main content area is clicked
+ * 
+ * An off canvas menu is required for the portrait-single-pane mode
+ *
+ */
+bootcards.initOffCanvasMenu = function(offCanvasToggleEl, offCanvasMenuEl, mainContentEl, hideOnMainClick) {
+
+    this.offCanvasToggleEl = offCanvasToggleEl;
+    this.offCanvasMenuEl = offCanvasMenuEl;
+    this.mainContentEl = mainContentEl;
+
+    offCanvasToggleEl.on("click", function() {
+      bootcards.offCanvasMenuEl.toggleClass("active");
+      if (bootcards.mainContentEl) { bootcards.mainContentEl.toggleClass("active"); }
+    });
+
+    //hide the offcanvas if you click on the body
+    if (hideOnMainClick && this.mainContentEl) {
+        this.mainContentEl.on("click", function() {
+            var $this = $(this);
+            if ($this.hasClass('active') ) {
+                $this.removeClass('active');
+                bootcards.offCanvasMenuEl.removeClass('active');
+            }
+
+        });
+    }
+
+};
+
+//hide the offcanvas menu
+bootcards.hideOffCanvasMenu = function() {
+
+    this.offCanvasMenuEl.removeClass('active');
+    this.mainContentEl.removeClass('active');
+
+};
+
