@@ -142,10 +142,6 @@ html, body {
 	font-weight: 400;
 }
 
-.navbar-fixed-top .btn i {
-	margin-right: 5px;
-}
-
 .navbar-fixed-top .btn.navbar-left {
 	left: 15px;
 }
@@ -602,9 +598,4 @@ form .btn label {
 	line-height: 49px;
 	border: 0;
 	font-weight: 400;
-}
-
-.navbar-fixed-bottom .btn.pull-left i,
-.navbar-fixed-bottom .btn.pull-right i {
-	margin-right: 5px;
 }
