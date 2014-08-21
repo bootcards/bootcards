@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/bootcards/bootcards/issues"
   },
-  "homepage": "http://bootcards.org"
+  "homepage": "http://bootcards.org",
+  "keywords": [
+    "twitter",
+    "bootstrap",
+    "cards"
+  ]
 }

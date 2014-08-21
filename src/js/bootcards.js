@@ -158,7 +158,7 @@ bootcards._setOrientation = function(init) {
 
     var isPortrait = (window.orientation===0 || window.orientation===180);
 
-   isPortrait = true;
+   //isPortrait = true;
 
     if (isPortrait) {
 
@@ -259,16 +259,18 @@ bootcards._setOrientation = function(init) {
         bootcards.offCanvasToggleEl.show();
 
         //hide the button to show the list, remove the list & title
-        bootcards.listOffcanvasToggle.hide();
-        bootcards.listTitleEl.removeClass("active");
+        if ( bootcards.listOffcanvasToggle ) {
+            bootcards.listOffcanvasToggle.hide();
+            bootcards.listTitleEl.removeClass("active");
 
-        bootcards.listEl
-            .removeClass('offcanvas-list active')
-            .addClass(bootcards.listColClass);
+            bootcards.listEl
+                .removeClass('offcanvas-list active')
+                .addClass(bootcards.listColClass);
 
-        bootcards.cardsEl
-            .removeClass('col-xs-12')
-            .addClass( bootcards.cardsColClass );
+            bootcards.cardsEl
+                .removeClass('col-xs-12')
+                .addClass( bootcards.cardsColClass );
+        }
 
 
     }
