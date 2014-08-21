@@ -81,6 +81,13 @@
 }
 
 
+/* BUTTONS */
+
+.btn i { margin-right: 5px; }
+
+.btn i.icon-only { margin-right: 0; }
+
+
 /* LISTS */
 
 .list-group-item {
