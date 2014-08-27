@@ -36,10 +36,13 @@
   transform: translate3d(200px, 0px, 0px);
 }
 
+
+/* OFFCANVAS LIST FOR TABLET PORTRAIT MODE */
 .offcanvas-list {
   width: 350px;
   left: -350px;
 }
+
  .offcanvas-list.active {
   -webkit-transform: translate3d(350px, 0px, 0px);
   -moz-transform: translate3d(350px, 0px, 0px);
@@ -56,17 +59,9 @@
     font-weight: 500;
     line-height: 44px;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
-    text-align: center;
- 
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.navbar-fixed-top .offcanvas-list-title > .btn,
-.navbar-fixed-top .offcanvas-list-title > .btn:hover
- {
-	position:absolute;
-	left:10px;
-
-}
 
 .offcanvaslist-toggle.active {
   -webkit-transform: translate3d(50px, 0px, 0px);

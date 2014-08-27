@@ -112,6 +112,7 @@ bootcards._initOffCanvasMenu = function(offCanvasMenuEl, mainContentEl, hideOnMa
     this.offCanvasToggleEl = $toggleEl;
     this.offCanvasMenuEl = offCanvasMenuEl;
     this.mainContentEl = mainContentEl;
+    console.log(' k');
 
     this.offCanvasToggleEl.on("click", function() {
       bootcards.offCanvasMenuEl.toggleClass("active");
@@ -121,10 +122,10 @@ bootcards._initOffCanvasMenu = function(offCanvasMenuEl, mainContentEl, hideOnMa
     //hide the offcanvas if you click on the body
     if (hideOnMainClick && bootcards.mainContentEl) {
         this.mainContentEl.on("click", function() {
+            bootcards.offCanvasMenuEl.removeClass('active');
             var $this = $(this);
             if ($this.hasClass('active-left') ) {
                 $this.removeClass('active-left');
-                bootcards.offCanvasMenuEl.removeClass('active');
             }
 
         });
@@ -157,8 +158,6 @@ bootcards._initTabletPortraitMode = function() {
 bootcards._setOrientation = function(init) {
 
     var isPortrait = (window.orientation===0 || window.orientation===180);
-
-   //isPortrait = true;
 
     if (isPortrait) {
 
@@ -210,30 +209,68 @@ bootcards._setOrientation = function(init) {
                 
                     });
 
-            //create the title
+            //create the title element of the list offcanvas
             bootcards.listTitleEl = $("<div class='offcanvas-list offcanvas-list-title'>"  +
                "<span>" + bootcards.listTitle + "</span></div>");
 
+            //create the title element for the menu offcanvas, insert it before the menu offcanvas
+            bootcards.offCanvasMenuTitleEl = $("<div class='offcanvas-list offcanvas-list-title'>"  +
+               "<span>Menu</span></div>");
+            bootcards.offCanvasMenuEl.before( bootcards.offCanvasMenuTitleEl );
 
             //clone the button to show/hide the menu in the list title
-            var menu = bootcards.offCanvasToggleEl.clone(true).prependTo(bootcards.listTitleEl);
-            menu.children("i").removeClass('fa-bars').addClass('fa-angle-left');
+            bootcards.offCanvasToggleEl.clone(false)
+                .prependTo(bootcards.listTitleEl)
+                .on("click", function() {
+                    bootcards.offCanvasMenuEl.toggleClass("active");
+                    bootcards.offCanvasMenuTitleEl.toggleClass("active");
+                })
+                .children("i")
+                    .removeClass('fa-bars')
+                    .addClass('fa-angle-left');
 
             //add the title element and the toggle button to the top navbar
            $('.navbar-header')
                .after(
                     bootcards.listTitleEl, bootcards.listOffcanvasToggle);   
 
-            //hide the list when to body is clicked
+            //hide the list & list title when to body is clicked
             bootcards.mainContentEl.on("click", function() {
                 
                 bootcards.listEl.removeClass('active');
                 bootcards.listTitleEl.removeClass('active'); 
+                bootcards.offCanvasMenuTitleEl.removeClass('active');
+
+            });
+            
+            bootcards.listEl.on("click", function() {
+
+                var $this = $(this);
+                $this.removeClass('active');
+                bootcards.listTitleEl.removeClass('active');
+
+                //stop propagation when an element in the list offcanvas is clicked
+                event.stopPropagation();
 
             });
 
             //increase the width of the menu: set it to the same size as the list
-            bootcards.offCanvasMenuEl.addClass('offcanvas-list');
+            bootcards.offCanvasMenuEl
+                .addClass('offcanvas-list')
+                .on("click", function() {
+
+                    //hide the menu on click 
+
+                    var $this = $(this);
+                    $this.removeClass('active');
+                    bootcards.offCanvasMenuTitleEl.removeClass('active');
+                    bootcards.listEl.removeClass('active');
+                    bootcards.listTitleEl.removeClass('active'); 
+
+                    //stop propagation when an element in the list offcanvas is clicked
+                    event.stopPropagation();
+
+                });
 
         }
 
@@ -275,7 +312,4 @@ bootcards._setOrientation = function(init) {
 
     }
 
-    
-
 };
-
