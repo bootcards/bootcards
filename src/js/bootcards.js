@@ -112,12 +112,12 @@ bootcards._initOffCanvasMenu = function(offCanvasMenuEl, mainContentEl, hideOnMa
     this.offCanvasToggleEl = $toggleEl;
     this.offCanvasMenuEl = offCanvasMenuEl;
     this.mainContentEl = mainContentEl;
-    console.log(' k');
 
-    this.offCanvasToggleEl.on("click", function() {
-      bootcards.offCanvasMenuEl.toggleClass("active");
-      if (bootcards.mainContentEl) { bootcards.mainContentEl.toggleClass("active-left"); }
-    });
+    this.offCanvasToggleEl
+        .on("click", function() {
+          bootcards.offCanvasMenuEl.toggleClass("active");
+          if (bootcards.mainContentEl) { bootcards.mainContentEl.toggleClass("active-left"); }
+        });
 
     //hide the offcanvas if you click on the body
     if (hideOnMainClick && bootcards.mainContentEl) {

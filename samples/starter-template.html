@@ -19,7 +19,7 @@
 
   <!-- Uncompressed Bootcards CSS files: use these for dev only -->
   <link href="../src/css/bootcards.css" rel="stylesheet">
-  <link href="../src/css/bootcards-android.css" rel="stylesheet">
+  <link href="../src/css/bootcards-ios.css" rel="stylesheet">
 
   <!-- Font awesome -->
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -55,18 +55,18 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a href="#" class="btn btn-default">
-              <i class="fa fa-2x fa-dashboard"></i>Dashboard
+            <a href="#">
+              <i class="fa fa-dashboard"></i>Dashboard
             </a>
           </li>
           <li>
-            <a href="#" class="btn btn-default">
-              <i class="fa fa-2x fa-building-o"></i>Companies
+            <a href="#">
+              <i class="fa fa-building-o"></i>Companies
             </a>
           </li>
           <li class="active">
-            <a href="#" class="btn btn-default">
-              <i class="fa fa-2x fa-users"></i>Contacts
+            <a href="#">
+              <i class="fa fa-users"></i>Contacts
             </a>
           </li>
         </ul>
@@ -78,17 +78,17 @@
   <nav class="navmenu offcanvas offcanvas-left">
     <ul class="nav">
       <li>
-        <a href="#" class="btn btn-default">
+        <a href="#">
           <i class="fa fa-lg fa-dashboard"></i>Dashboard
         </a>
       </li>
       <li>
-        <a href="#" class="btn btn-default">
+        <a href="#">
           <i class="fa fa-lg fa-building-o"></i>Companies
         </a>
       </li>
       <li class="active">
-        <a href="#" class="btn btn-default">
+        <a href="#">
           <i class="fa fa-lg fa-users"></i>Contacts
         </a>
       </li>
@@ -98,9 +98,11 @@
   <div class="container bootcards-container">
 
     <!-- This is where you come in... -->
+    <!-- I've added some sample data below so you can get a feel for the required markup -->
 
     <div class="row">
 
+      <!-- left list column -->
       <div class="col-sm-5 bootcards-list" id="list" data-title="Contacts">
         <div class="panel panel-default">       
           <div class="panel-body">
@@ -227,7 +229,7 @@
 
         </div><!--list-->
 
-        <!--list details-->
+        <!--list details column-->
         <div class="col-sm-7 bootcards-cards hidden-xs">
 
           <!--contact details -->
@@ -369,8 +371,8 @@
        * Initialize Bootcards.
        * 
        * Parameters:
-       * - offCanvasHideOnMainClick (boolean) hide the offcanvas menu on clicking outside the off canvas
-       * - enableTabletPortraitMode (boolean) enable single pane mode for tablets in portraitmode
+       * - offCanvasHideOnMainClick (boolean): hide the offcanvas menu on clicking outside the off canvas
+       * - enableTabletPortraitMode (boolean): enable single pane mode for tablets in portraitmode
        * - disableRubberBanding (boolean): disable the iOS rubber banding effect
        */
       bootcards.init( {
