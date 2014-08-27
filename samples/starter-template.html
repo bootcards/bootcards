@@ -95,7 +95,7 @@
     </ul>
   </nav><!--nav-->
 
-  <div class="container" id="main">
+  <div class="container bootcards-container">
 
     <!-- This is where you come in... -->
 
@@ -372,12 +372,9 @@
         bootcards.initOffCanvasMenu(
           $(".js-offcanvas-toggle"),
           $('#offCanvasMenu'),
-          $('#main'),
+          $('.bootcards-container'),
           false
           );
-
-        //this will make the portrait tablet mode single column
-        bootcards.addTabletPortraitHandlers();
 
         //relevant for iOS only
         bootcards.disableRubberBanding();

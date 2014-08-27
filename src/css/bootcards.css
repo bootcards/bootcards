@@ -54,7 +54,7 @@
   transform: translate3d(-200px, 0px, 0px);
 }
 
-#main {
+.bootcards-container {
   -webkit-transform: translate3d(0px, 0px, 0px);
   -moz-transform: translate3d(0px, 0px, 0px);
   -o-transform: translate3d(0px, 0px, 0px);
@@ -65,14 +65,14 @@
   -o-transition: 0.25s ease;
   transition: 0.25s ease;  
 }
-#main.active-left {
+.bootcards-container.active-left {
   -webkit-transform: translate3d(200px, 0px, 0px);
   -moz-transform: translate3d(200px, 0px, 0px);
   -o-transform: translate3d(200px, 0px, 0px);
   -ms-transform: translate3d(200px, 0px, 0px);
   transform: translate3d(200px, 0px, 0px);
 }
-#main.active-right {
+.bootcards-container.active-right {
   -webkit-transform: translate3d(-200px, 0px, 0px);
   -moz-transform: translate3d(-200px, 0px, 0px);
   -o-transform: translate3d(-200px, 0px, 0px);
