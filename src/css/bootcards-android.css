@@ -564,3 +564,9 @@ form .btn label {
 	display: none;
 	
 }
+
+/* List - AZ Picker */
+
+.bootcards-az-picker li a {
+	height: 3.3%;
+}
