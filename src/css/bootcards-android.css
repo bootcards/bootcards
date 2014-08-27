@@ -389,6 +389,7 @@ a.list-group-item:hover {
 .form-group select {
 	padding-top: 0;
 	padding-bottom: 0;
+	height: 40px;
 }
 
 .form-horizontal .form-group .control-label:first-child {

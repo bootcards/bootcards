@@ -311,9 +311,19 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 .bootcards-clearinput {
 	position: absolute;
 	right: 0;
-	top: 6px;
+	top: 11px;
 	color: #ccc;
 	display: block;
+	font-size: 0;
+}
+
+.bootcards-clearinput i {
+	line-height: 1;
+	font-size: 18px;
+}
+
+.form-horizontal .form-group div div {
+	padding: 0;
 }
 
 
