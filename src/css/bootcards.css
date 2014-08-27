@@ -1,15 +1,14 @@
 /* NAVBAR */
 
 /* OFFCANVAS MENU */
-
-.offcanvas-left { 
+.offcanvas, .offcanvas-list {
   position: fixed;
-  top: 45px;
+  top: 0;
   bottom: 0;
   width: 200px;
-  left: -200px;
   overflow-y: auto;
   z-index:1050;
+  height: 100%;
   -webkit-transform: translate3d(0px, 0px, 0px);
   -moz-transform: translate3d(0px, 0px, 0px);
   -o-transform: translate3d(0px, 0px, 0px);
@@ -18,7 +17,16 @@
   -webkit-transition: 0.25s ease;
   -moz-transition: 0.25s ease;
   -o-transition: 0.25s ease;
-  transition: 0.25s ease;
+  transition: 0.25s ease;	
+}
+
+.fa {
+	margin-right: 5px;
+
+}
+
+.offcanvas-left { 
+  left: -200px;
 }
  .offcanvas-left.active {
   -webkit-transform: translate3d(200px, 0px, 0px);
@@ -28,14 +36,41 @@
   transform: translate3d(200px, 0px, 0px);
 }
 
-.offcanvas-right { 
-  position: fixed;
-  top: 45px;
-  bottom: 0;
-  width: 200px;
-  right: -200px;
-  overflow-y: auto;
-  z-index:1050;
+
+/* OFFCANVAS LIST FOR TABLET PORTRAIT MODE */
+.offcanvas-list {
+  width: 350px;
+  left: -350px;
+}
+
+ .offcanvas-list.active {
+  -webkit-transform: translate3d(350px, 0px, 0px);
+  -moz-transform: translate3d(350px, 0px, 0px);
+  -o-transform: translate3d(350px, 0px, 0px);
+  -ms-transform: translate3d(350px, 0px, 0px);
+  transform: translate3d(350px, 0px, 0px);
+}
+
+.offcanvas-list-title {
+	position:fixed;
+	background: rgba(247,247,247,.98);
+	height: 45px; 
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 44px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.offcanvaslist-toggle.active {
+  -webkit-transform: translate3d(50px, 0px, 0px);
+  -moz-transform: translate3d(50px, 0px, 0px);
+  -o-transform: translate3d(50px, 0px, 0px);
+  -ms-transform: translate3d(50px, 0px, 0px);
+  transform: translate3d(50px, 0px, 0px);
+}
+.offcanvaslist-toggle {
   -webkit-transform: translate3d(0px, 0px, 0px);
   -moz-transform: translate3d(0px, 0px, 0px);
   -o-transform: translate3d(0px, 0px, 0px);
@@ -44,14 +79,7 @@
   -webkit-transition: 0.25s ease;
   -moz-transition: 0.25s ease;
   -o-transition: 0.25s ease;
-  transition: 0.25s ease;
-}
- .offcanvas-right.active {
-  -webkit-transform: translate3d(-200px, 0px, 0px);
-  -moz-transform: translate3d(-200px, 0px, 0px);
-  -o-transform: translate3d(-200px, 0px, 0px);
-  -ms-transform: translate3d(-200px, 0px, 0px);
-  transform: translate3d(-200px, 0px, 0px);
+  transition: 0.25s ease;	
 }
 
 .bootcards-container {

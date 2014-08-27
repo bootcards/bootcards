@@ -30,6 +30,21 @@ html, body {
 	min-height:100%; /* replaced height with min-height as it was causing problems on shorter screens */
 }
 
+/* OFFCANVAS LIST FOR TABLET PORTRAIT MODE */
+
+.offcanvas-list-title {
+	background: rgba(247,247,247,.98);
+	height: 45px;
+	text-align: center;
+}
+
+.navbar-fixed-top .offcanvas-list-title > .btn,
+.navbar-fixed-top .offcanvas-list-title > .btn:hover {
+	position:absolute;
+	left:10px;
+}
+
+
 /* BUTTONS */
 
 .btn,
