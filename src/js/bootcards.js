@@ -10,7 +10,7 @@ bootcards.init = function( options ) {
         //initialize the off canvas menu
         bootcards._initOffCanvasMenu(
           $('.offcanvas'),
-          $('#main'),
+          $('.bootcards-container'),
           options.offCanvasHideOnMainClick
         );
 
@@ -115,15 +115,15 @@ bootcards._initOffCanvasMenu = function(offCanvasMenuEl, mainContentEl, hideOnMa
 
     this.offCanvasToggleEl.on("click", function() {
       bootcards.offCanvasMenuEl.toggleClass("active");
-      if (bootcards.mainContentEl) { bootcards.mainContentEl.toggleClass("active"); }
+      if (bootcards.mainContentEl) { bootcards.mainContentEl.toggleClass("active-left"); }
     });
 
     //hide the offcanvas if you click on the body
     if (hideOnMainClick && bootcards.mainContentEl) {
         this.mainContentEl.on("click", function() {
             var $this = $(this);
-            if ($this.hasClass('active') ) {
-                $this.removeClass('active');
+            if ($this.hasClass('active-left') ) {
+                $this.removeClass('active-left');
                 bootcards.offCanvasMenuEl.removeClass('active');
             }
 

@@ -95,7 +95,7 @@
     </ul>
   </nav><!--nav-->
 
-  <div class="container" id="main">
+  <div class="container bootcards-container">
 
     <!-- This is where you come in... -->
 
@@ -369,11 +369,9 @@
        * Initialize Bootcards.
        * 
        * Parameters:
-       * - selector for the element that should be used to toggle an offcanvas menu
        * - offCanvasHideOnMainClick (boolean) hide the offcanvas menu on clicking outside the off canvas
        * - enableTabletPortraitMode (boolean) enable single pane mode for tablets in portraitmode
        * - disableRubberBanding (boolean): disable the iOS rubber banding effect
-
        */
       bootcards.init( {
         offCanvasHideOnMainClick : true,
@@ -381,14 +379,10 @@
         disableRubberBanding : true 
       });
 
-      $(document).ready(function() {
-
-        //enable FastClick
-        window.addEventListener('load', function() {
-            FastClick.attach(document.body);
-        }, false);
-
-      });
+      //enable FastClick
+      window.addEventListener('load', function() {
+          FastClick.attach(document.body);
+      }, false);
 
     </script>
   </body>
