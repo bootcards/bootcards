@@ -124,12 +124,12 @@ a.list-group-item.active:focus {
 	margin-bottom: 0;
 }
 
-@media (max-width:768px) {
+/*@media (max-width:768px) {
 	.bootcards-list .list-group-item-heading,
 	.bootcards-list .list-group-item-text {
 		padding-left: 55px;
 	}
-}
+}*/
 
 .list-group-item > img {
 	height: 40px;
