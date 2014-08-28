@@ -16,6 +16,10 @@ body {
 	color: #333;
 }
 
+.navbar button[data-toggle="offcanvas"] {
+    display: none !important;
+}
+
 
 /* LISTS */
 

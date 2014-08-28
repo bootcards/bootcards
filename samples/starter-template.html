@@ -44,7 +44,7 @@
         <span>Back</span>
       </button>
       <!-- menu button to show/ hide the off canvas menu -->
-      <button type="button" class="btn btn-default btn-menu pull-left js-offcanvas-toggle">
+      <button type="button" class="btn btn-default btn-menu pull-left" data-toggle="offcanvas">
         <i class="fa fa-lg fa-bars"></i>
         <span>Menu</span>
       </button>
@@ -55,18 +55,18 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a href="#" class="btn btn-default">
-              <i class="fa fa-2x fa-dashboard"></i>Dashboard
+            <a href="#">
+              <i class="fa fa-dashboard"></i>Dashboard
             </a>
           </li>
           <li>
-            <a href="#" class="btn btn-default">
-              <i class="fa fa-2x fa-building-o"></i>Companies
+            <a href="#">
+              <i class="fa fa-building-o"></i>Companies
             </a>
           </li>
           <li class="active">
-            <a href="#" class="btn btn-default">
-              <i class="fa fa-2x fa-users"></i>Contacts
+            <a href="#">
+              <i class="fa fa-users"></i>Contacts
             </a>
           </li>
         </ul>
@@ -75,20 +75,20 @@
   </div>   
 
   <!-- slide in off canvas menu (mobile only) -->
-  <nav id="offCanvasMenu" class="navmenu offcanvas-left">
+  <nav class="navmenu offcanvas offcanvas-left">
     <ul class="nav">
       <li>
-        <a href="#" class="btn btn-default">
+        <a href="#">
           <i class="fa fa-lg fa-dashboard"></i>Dashboard
         </a>
       </li>
       <li>
-        <a href="#" class="btn btn-default">
+        <a href="#">
           <i class="fa fa-lg fa-building-o"></i>Companies
         </a>
       </li>
       <li class="active">
-        <a href="#" class="btn btn-default">
+        <a href="#">
           <i class="fa fa-lg fa-users"></i>Contacts
         </a>
       </li>
@@ -98,10 +98,12 @@
   <div class="container bootcards-container">
 
     <!-- This is where you come in... -->
+    <!-- I've added some sample data below so you can get a feel for the required markup -->
 
     <div class="row">
 
-      <div class="col-sm-5 bootcards-list" id="list">
+      <!-- left list column -->
+      <div class="col-sm-5 bootcards-list" id="list" data-title="Contacts">
         <div class="panel panel-default">       
           <div class="panel-body">
             <div class="search-form">
@@ -123,6 +125,8 @@
           </div><!--panel body-->
 
           <div class="list-group">
+
+            <!-- list of sample data -->
 
             <a class="list-group-item" href="#">
               <img src="img/Joseph Barish.jpg" class="img-rounded pull-left">
@@ -225,7 +229,7 @@
 
         </div><!--list-->
 
-        <!--list details-->
+        <!--list details column-->
         <div class="col-sm-7 bootcards-cards hidden-xs">
 
           <!--contact details -->
@@ -235,12 +239,12 @@
               <div class="panel-heading clearfix">
                 <h3 class="panel-title pull-left">Contact Details</h3>
                 <div class="btn-group pull-right visible-xs">
-                  <a class="btn btn-primary" href="/contacts/VBMJHwcLX3Vx/edit" data-toggle="modal" data-target="#editModal">
+                  <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#editModal">
                     <i class="fa fa-pencil"></i>
                     <span>Edit</span>
                   </a>
                 </div>  
-                <a class="btn btn-primary pull-right hidden-xs" href="/contacts/VBMJHwcLX3Vx/edit" data-toggle="modal" data-target="#editModal">
+                <a class="btn btn-primary pull-right hidden-xs" href="#" data-toggle="modal" data-target="#editModal">
                   <i class="fa fa-pencil"></i>
                   <span>Edit</span>
                 </a>
@@ -257,24 +261,20 @@
                   <h4 class="list-group-item-heading">Masung Corp.</h4>
                 </div>
 
-
                 <div class="list-group-item">
                   <label>Job Title</label>
                   <h4 class="list-group-item-heading">Finance Director (ZCT)</h4>
                 </div>
-
 
                 <div class="list-group-item">
                   <label>Department</label>
                   <h4 class="list-group-item-heading">Finance</h4>
                 </div>
 
-
                 <a class="list-group-item" href="tel://+1 650-555-0055">
                   <label>Phone</label>
                   <h4 class="list-group-item-heading">+1 650-555-0055</h4>
                 </a>
-
 
                 <a class="list-group-item" href="mailto:Sofia.Acey@masung.com">
                   <label>Email</label>
@@ -282,6 +282,7 @@
                 </a>
 
               </div>
+
               <div class="panel-footer">
                 <small class="pull-left">Built with Bootcards - Base Card</small>
                 <a class="btn btn-link btn-xs pull-right" href="#">
@@ -291,7 +292,7 @@
 
             </div><!--contact card-->
 
-            <!--rich text card-->
+            <!--rich text card sample-->
             <div class="panel panel-default bootcards-richtext">
                 <div class="panel-heading">
                   <h3 class="panel-title">Rich Text Card Heading</h3>
@@ -366,25 +367,25 @@
 
     <script type="text/javascript">
 
-      $(document).ready(function() {
-
-        //initialize the off canvas menu
-        bootcards.initOffCanvasMenu(
-          $(".js-offcanvas-toggle"),
-          $('#offCanvasMenu'),
-          $('.bootcards-container'),
-          false
-          );
-
-        //relevant for iOS only
-        bootcards.disableRubberBanding();
-
-        //enable FastClick
-        window.addEventListener('load', function() {
-            FastClick.attach(document.body);
-        }, false);
-
+      /*
+       * Initialize Bootcards.
+       * 
+       * Parameters:
+       * - offCanvasHideOnMainClick (boolean): hide the offcanvas menu on clicking outside the off canvas
+       * - enableTabletPortraitMode (boolean): enable single pane mode for tablets in portraitmode
+       * - disableRubberBanding (boolean): disable the iOS rubber banding effect
+       */
+      bootcards.init( {
+        offCanvasHideOnMainClick : true,
+        enableTabletPortraitMode : true,
+        disableRubberBanding : true 
       });
+
+      //enable FastClick
+      window.addEventListener('load', function() {
+          FastClick.attach(document.body);
+      }, false);
+
     </script>
   </body>
 </html>
