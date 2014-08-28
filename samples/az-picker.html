@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google" value="notranslate">
 
-  <title>Starter Template for Bootcards</title>
+  <title>AZ picker for Bootcards</title>
 
   <!-- Bootstrap core CSS -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -66,7 +66,7 @@
           </li>
           <li class="active">
             <a href="#">
-              <i class="fa fa-font"></i>Contacts
+              <i class="fa fa-users"></i>Contacts
             </a>
           </li>
         </ul>
@@ -74,7 +74,6 @@
     </div>
   </div>   
 
-  <!-- slide in off canvas menu (mobile only) -->
   <nav class="navmenu offcanvas offcanvas-left">
     <ul class="nav">
       <li>
@@ -82,14 +81,14 @@
           <i class="fa fa-lg fa-dashboard"></i>Dashboard
         </a>
       </li>
-      <li class="active">
+      <li>
         <a href="starter-template.html">
           <i class="fa fa-lg fa-users"></i>Contacts
         </a>
       </li>
-      <li>
+      <li class="active">
         <a href="az-picker.html">
-          <i class="fa fa-lg fa-users"></i>AZ Picker
+          <i class="fa fa-lg fa-font"></i>AZ Picker
         </a>
       </li>
     </ul>
@@ -103,40 +102,86 @@
     <div class="row">
 
       <!-- left list column -->
-      <div class="col-sm-5 bootcards-list" id="list" data-title="Contacts">
+      <div class="col-sm-4 bootcards-list" id="list" data-title="Contacts">
+
+        <ol class="bootcards-az-picker">
+          <li><a href="">A</a></li>
+          <li><a href="">B</a></li>
+          <li><a href="">C</a></li>
+          <li><a href="">D</a></li>
+          <li><a href="">E</a></li>
+          <li><a href="">F</a></li>
+          <li><a href="">G</a></li>
+          <li><a href="">H</a></li>
+          <li><a href="">I</a></li>
+          <li><a href="">J</a></li>
+          <li><a href="">K</a></li>
+          <li><a href="">L</a></li>
+          <li><a href="">M</a></li> 
+          <li><a href="">N</a></li> 
+          <li><a href="">O</a></li> 
+          <li><a href="">P</a></li> 
+          <li><a href="">Q</a></li> 
+          <li><a href="">R</a></li> 
+          <li><a href="">S</a></li> 
+          <li><a href="">T</a></li> 
+          <li><a href="">U</a></li> 
+          <li><a href="">V</a></li> 
+          <li><a href="">W</a></li> 
+          <li><a href="">X</a></li> 
+          <li><a href="">Y</a></li> 
+          <li><a href="">Z</a></li> 
+        </ol>
+
         <div class="panel panel-default">       
-          <div class="panel-body">
-            <div class="search-form">
-              <div class="row">
-                <div class="col-xs-9">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search Contacts...">
-                    <i class="fa fa-search"></i>
-                  </div>
-                </div>
-                <div class="col-xs-3">
-                  <a class="btn btn-primary btn-block" href="#" onclick="bootcards.hideOffCanvasMenu()" >
-                    <i class="fa fa-plus"></i> 
-                    <span>Add</span>
-                  </a>
-                </div>
-              </div>                
-            </div>          
-          </div><!--panel body-->
 
           <div class="list-group">
 
             <!-- list of sample data -->
 
+            <div class="list-group-item bootcards-list-subheading">A</div>
+
+            <a class="list-group-item" href="#">
+              <img src="img/Sofia Acey.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Acey, Sofia</h4>
+              <p class="list-group-item-text">Masung Corp.</p>
+            </a>
+
+            <a class="list-group-item" href="#">
+              <img src="img/Sofia Acey.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Acey, Sofia</h4>
+              <p class="list-group-item-text">Masung Corp.</p>
+            </a>
+
+            <a class="list-group-item" href="#">
+              <img src="img/Sofia Acey.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Acey, Sofia</h4>
+              <p class="list-group-item-text">Masung Corp.</p>
+            </a>
+
+            <div class="list-group-item bootcards-list-subheading">B</div>
+
             <a class="list-group-item" href="#">
               <img src="img/Joseph Barish.jpg" class="img-rounded pull-left">
               <h4 class="list-group-item-heading">Barish, Joseph</h4>
               <p class="list-group-item-text">Masung Corp.</p>
             </a>
 
-            <a class="list-group-item active" href="#">
-              <img src="img/Sofia Acey.jpg" class="img-rounded pull-left">
-              <h4 class="list-group-item-heading">Acey, Sofia</h4>
+            <a class="list-group-item" href="#">
+              <img src="img/Joseph Barish.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Barish, Joseph</h4>
+              <p class="list-group-item-text">Masung Corp.</p>
+            </a>
+
+            <a class="list-group-item" href="#">
+              <img src="img/Joseph Barish.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Barish, Joseph</h4>
+              <p class="list-group-item-text">Masung Corp.</p>
+            </a>
+
+            <a class="list-group-item" href="#">
+              <img src="img/Joseph Barish.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Barish, Joseph</h4>
               <p class="list-group-item-text">Masung Corp.</p>
             </a>
             
@@ -158,30 +203,12 @@
               <p class="list-group-item-text">Burning Core</p>
             </a>
 
-            <a class="list-group-item" href="#">
-              <img src="img/Sofia Acey.jpg" class="img-rounded pull-left">
-              <h4 class="list-group-item-heading">Acey, Sofia</h4>
-              <p class="list-group-item-text">Masung Corp.</p>
+             <a class="list-group-item " href="#">
+              <img src="img/Mark Booth.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Booth, Mark</h4>
+              <p class="list-group-item-text">Burning Core</p>
             </a>
-            
-            <a class="list-group-item " href="#">
-              <img src="img/Joseph Barish.jpg" class="img-rounded pull-left">
-              <h4 class="list-group-item-heading">Barish, Joseph</h4>
-              <p class="list-group-item-text">Masung Corp.</p>
-            </a>
-            
-            <a class="list-group-item " href="#">
-              <img src="img/Jerry Bess.jpg" class="img-rounded pull-left">
-              <h4 class="list-group-item-heading">Bess, Jerry</h4>
-              <p class="list-group-item-text">ZetaComm</p>
-            </a>
-            
-            <a class="list-group-item " href="#">
-              <img src="img/Jamie Biddy.jpg" class="img-rounded pull-left">
-              <h4 class="list-group-item-heading">Biddy, Jamie</h4>
-              <p class="list-group-item-text">Masung Corp.</p>
-            </a>
-            
+
             <a class="list-group-item " href="#">
               <img src="img/Mark Booth.jpg" class="img-rounded pull-left">
               <h4 class="list-group-item-heading">Booth, Mark</h4>
@@ -189,32 +216,66 @@
             </a>
 
             <a class="list-group-item " href="#">
-              <img src="img/Sofia Acey.jpg" class="img-rounded pull-left">
-              <h4 class="list-group-item-heading">Acey, Sofia</h4>
-              <p class="list-group-item-text">Masung Corp.</p>
-            </a>
-            
-            <a class="list-group-item " href="#">
-              <img src="img/Joseph Barish.jpg" class="img-rounded pull-left">
-              <h4 class="list-group-item-heading">Barish, Joseph</h4>
-              <p class="list-group-item-text">Masung Corp.</p>
-            </a>
-            
-            <a class="list-group-item " href="#">
-              <img src="img/Jerry Bess.jpg" class="img-rounded pull-left">
-              <h4 class="list-group-item-heading">Bess, Jerry</h4>
-              <p class="list-group-item-text">ZetaComm</p>
-            </a>
-            
-            <a class="list-group-item " href="#">
-              <img src="img/Jamie Biddy.jpg" class="img-rounded pull-left">
-              <h4 class="list-group-item-heading">Biddy, Jamie</h4>
-              <p class="list-group-item-text">Masung Corp.</p>
-            </a>
-            
-            <a class="list-group-item " href="#">
               <img src="img/Mark Booth.jpg" class="img-rounded pull-left">
               <h4 class="list-group-item-heading">Booth, Mark</h4>
+              <p class="list-group-item-text">Burning Core</p>
+            </a>
+
+            <div class="list-group-item bootcards-list-subheading">C</div>
+
+            <a class="list-group-item " href="#">
+              <img src="img/Mark Booth.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Core, Jack</h4>
+              <p class="list-group-item-text">Burning Core</p>
+            </a>
+
+            <a class="list-group-item " href="#">
+              <img src="img/Mark Booth.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Core, Jack</h4>
+              <p class="list-group-item-text">Burning Core</p>
+            </a>
+
+            <div class="list-group-item bootcards-list-subheading">K</div>
+
+            <a class="list-group-item " href="#">
+              <img src="img/Mark Booth.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Kreps, Dan</h4>
+              <p class="list-group-item-text">Burning Core</p>
+            </a>
+
+            <div class="list-group-item bootcards-list-subheading">L</div>
+
+            <a class="list-group-item " href="#">
+              <img src="img/Mark Booth.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Lobo, Kurt</h4>
+              <p class="list-group-item-text">Burning Core</p>
+            </a>
+
+            <a class="list-group-item " href="#">
+              <img src="img/Mark Booth.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Long, Allan</h4>
+              <p class="list-group-item-text">Burning Core</p>
+            </a>
+
+            <div class="list-group-item bootcards-list-subheading">O</div>
+
+            <a class="list-group-item " href="#">
+              <img src="img/Mark Booth.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Orrel, Brent</h4>
+              <p class="list-group-item-text">Burning Core</p>
+            </a>
+
+            <div class="list-group-item bootcards-list-subheading">W</div>
+
+            <a class="list-group-item " href="#">
+              <img src="img/Mark Booth.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">Weimer, Norman</h4>
+              <p class="list-group-item-text">Burning Core</p>
+            </a>
+
+            <a class="list-group-item " href="#">
+              <img src="img/Mark Booth.jpg" class="img-rounded pull-left">
+              <h4 class="list-group-item-heading">West, Matt</h4>
               <p class="list-group-item-text">Burning Core</p>
             </a>
             
@@ -230,7 +291,7 @@
         </div><!--list-->
 
         <!--list details column-->
-        <div class="col-sm-7 bootcards-cards hidden-xs">
+        <div class="col-sm-8 bootcards-cards hidden-xs">
 
           <!--contact details -->
           <div id="contactCard">
@@ -342,10 +403,10 @@
         <a href="#" class="btn btn-default">
           <i class="fa fa-2x fa-dashboard"></i>Dashboard
         </a>
-        <a href="starter-template.html" class="btn btn-default active">
+        <a href="starter-template.html" class="btn btn-default">
           <i class="fa fa-2x fa-users"></i>Contacts
         </a>
-        <a href="az-picker.html" class="btn btn-default">
+        <a href="az-picker.html" class="btn btn-default active">
           <i class="fa fa-2x fa-font"></i>AZ Picker
         </a>
       </div>
@@ -377,9 +438,11 @@
        */
       bootcards.init( {
         offCanvasHideOnMainClick : true,
-        enableTabletPortraitMode : true,
+        enableTabletPortraitMode : false,
         disableRubberBanding : true 
       });
+
+      bootcards.initAZPicker(".bootcards-az-picker");
 
       //enable FastClick
       window.addEventListener('load', function() {

@@ -290,6 +290,9 @@ bootcards._setOrientation = function(init) {
             .removeClass(bootcards.cardsColClass)
             .addClass('col-xs-12');
 
+        //hide the az picker
+        $('.bootcards-az-picker').hide();
+
     } else {
 
         //show the menu button
@@ -309,7 +312,114 @@ bootcards._setOrientation = function(init) {
                 .addClass( bootcards.cardsColClass );
         }
 
+        $('.bootcards-az-picker').show();
+
 
     }
 
+};
+
+//initialize the AZ picker
+bootcards.initAZPicker = function( target ) {
+
+    var azPicker = $(target);
+    
+    if (azPicker.length > 0) {
+    
+        // Register the letter click events
+        $("a", azPicker).off().on('click', function(event) {
+            
+            var $this = $(this);
+    
+            event.stopPropagation();
+            bootcards._jumpToLetter($this, event);
+            return false;
+            
+        });
+        
+        //move the az picker to a different location so we can give it a fixed position
+        var $list = azPicker.parents(".bootcards-list")
+
+        if ( $list.length > 0) {
+            
+            //determine the width of the list column
+            var classList = $list.attr('class').split(/\s+/);
+            var colClass = "";
+            $.each( classList, function(index, entry) {
+                if (entry.indexOf('col-') ===0 ) {
+                    colClass = entry;
+                    return;
+                }
+                
+            });
+            
+            //translate the column name to one of the Bootstrap 'push' classes
+            var colSize = colClass.substring( colClass.lastIndexOf('-') + 1 );
+            var colPushClass = colClass.substring( 0, colClass.lastIndexOf('-')) + "-push-" + colSize;
+            
+            //move the picker as a direct child of the main bootcards container so we can give it fixed positioning
+            azPicker
+                .appendTo( $('.bootcards-container') )
+                .addClass(colPushClass);
+        
+        }
+        
+    }
+    
+};
+
+//jump to a specific letter in the list
+bootcards._jumpToLetter = function(letterelement, event) {
+    
+    var $list = $('#list');
+    
+    $list.animate( {
+        scrollTop : 0
+    }, 0);
+    
+    var letter = letterelement.text().toLowerCase();
+    var sel = "#list .list-group a";
+    if ($(".bootcards-list-subheading").length > 0){
+        sel = ".bootcards-list-subheading";
+    }
+    
+    var $sel = $(sel);
+    
+    var scrolled = false;   
+    $sel.each( function(idx, entry) {
+        var $entry = $(entry);
+        
+        var summary = "";
+        if ($entry.prop('tagName').toLowerCase() == "a"){
+            summary = $entry.find("h4").text();
+        }else{
+            summary = $entry.text();
+        }
+        
+        var firstletter = summary.substring(0, 1).toLowerCase();
+        var scrollTop = null;
+        
+        if (firstletter == letter) {
+            scrollTop = $entry.offset().top - 60;
+        } else if (firstletter > letter) {
+            scrollTop = $entry.offset().top - 120;
+        }
+
+        if (scrollTop !== null) {
+            $list.animate( {
+                scrollTop : scrollTop
+            }, 0);
+            scrolled = true;
+            return false; 
+        }
+    });
+    
+    if (!scrolled) {
+
+        var $last = $( $sel[$sel.length-1] );
+        $list.animate( {
+            scrollTop : $last.offset().top - 120
+        }, 0);
+    }
+    
 };
