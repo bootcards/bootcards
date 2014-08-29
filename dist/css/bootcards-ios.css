@@ -1,16 +1,15 @@
-/* bootcards 0.2.0 2014-08-26 */
+/* bootcards 0.2.0 2014-08-29 */
 /* NAVBAR */
 
 /* OFFCANVAS MENU */
-
-.offcanvas-left { 
+.offcanvas, .offcanvas-list {
   position: fixed;
-  top: 45px;
+  top: 0;
   bottom: 0;
   width: 200px;
-  left: -200px;
   overflow-y: auto;
   z-index:1050;
+  height: 100%;
   -webkit-transform: translate3d(0px, 0px, 0px);
   -moz-transform: translate3d(0px, 0px, 0px);
   -o-transform: translate3d(0px, 0px, 0px);
@@ -19,7 +18,16 @@
   -webkit-transition: 0.25s ease;
   -moz-transition: 0.25s ease;
   -o-transition: 0.25s ease;
-  transition: 0.25s ease;
+  transition: 0.25s ease;	
+}
+
+.fa {
+	margin-right: 5px;
+
+}
+
+.offcanvas-left { 
+  left: -200px;
 }
  .offcanvas-left.active {
   -webkit-transform: translate3d(200px, 0px, 0px);
@@ -29,14 +37,41 @@
   transform: translate3d(200px, 0px, 0px);
 }
 
-.offcanvas-right { 
-  position: fixed;
-  top: 45px;
-  bottom: 0;
-  width: 200px;
-  right: -200px;
-  overflow-y: auto;
-  z-index:1050;
+
+/* OFFCANVAS LIST FOR TABLET PORTRAIT MODE */
+.offcanvas-list {
+  width: 350px;
+  left: -350px;
+}
+
+ .offcanvas-list.active {
+  -webkit-transform: translate3d(350px, 0px, 0px);
+  -moz-transform: translate3d(350px, 0px, 0px);
+  -o-transform: translate3d(350px, 0px, 0px);
+  -ms-transform: translate3d(350px, 0px, 0px);
+  transform: translate3d(350px, 0px, 0px);
+}
+
+.offcanvas-list-title {
+	position:fixed;
+	background: rgba(247,247,247,.98);
+	height: 45px; 
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 44px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.offcanvaslist-toggle.active {
+  -webkit-transform: translate3d(50px, 0px, 0px);
+  -moz-transform: translate3d(50px, 0px, 0px);
+  -o-transform: translate3d(50px, 0px, 0px);
+  -ms-transform: translate3d(50px, 0px, 0px);
+  transform: translate3d(50px, 0px, 0px);
+}
+.offcanvaslist-toggle {
   -webkit-transform: translate3d(0px, 0px, 0px);
   -moz-transform: translate3d(0px, 0px, 0px);
   -o-transform: translate3d(0px, 0px, 0px);
@@ -45,17 +80,10 @@
   -webkit-transition: 0.25s ease;
   -moz-transition: 0.25s ease;
   -o-transition: 0.25s ease;
-  transition: 0.25s ease;
-}
- .offcanvas-right.active {
-  -webkit-transform: translate3d(-200px, 0px, 0px);
-  -moz-transform: translate3d(-200px, 0px, 0px);
-  -o-transform: translate3d(-200px, 0px, 0px);
-  -ms-transform: translate3d(-200px, 0px, 0px);
-  transform: translate3d(-200px, 0px, 0px);
+  transition: 0.25s ease;	
 }
 
-#main {
+.bootcards-container {
   -webkit-transform: translate3d(0px, 0px, 0px);
   -moz-transform: translate3d(0px, 0px, 0px);
   -o-transform: translate3d(0px, 0px, 0px);
@@ -66,14 +94,14 @@
   -o-transition: 0.25s ease;
   transition: 0.25s ease;  
 }
-#main.active-left {
+.bootcards-container.active-left {
   -webkit-transform: translate3d(200px, 0px, 0px);
   -moz-transform: translate3d(200px, 0px, 0px);
   -o-transform: translate3d(200px, 0px, 0px);
   -ms-transform: translate3d(200px, 0px, 0px);
   transform: translate3d(200px, 0px, 0px);
 }
-#main.active-right {
+.bootcards-container.active-right {
   -webkit-transform: translate3d(-200px, 0px, 0px);
   -moz-transform: translate3d(-200px, 0px, 0px);
   -o-transform: translate3d(-200px, 0px, 0px);
@@ -125,12 +153,12 @@ a.list-group-item.active:focus {
 	margin-bottom: 0;
 }
 
-@media (max-width:768px) {
+/*@media (max-width:768px) {
 	.bootcards-list .list-group-item-heading,
 	.bootcards-list .list-group-item-text {
 		padding-left: 55px;
 	}
-}
+}*/
 
 .list-group-item > img {
 	height: 40px;
@@ -217,8 +245,8 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	padding-top: 43px;
 	height: 100%;
+	background: #ffffff;
 }
 
 .bootcards-az-picker li {
@@ -231,7 +259,10 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 .bootcards-az-picker li a {
 	height: 3.4%; /* 100% / 27 */
 	display: block;
-	padding: 5px 5px;
+	padding: 0.35em 5px;
+}
+.bootcards-az-picker li:first-child a {
+	padding-top:10px;
 }
 
 .bootcards-az-picker li a:hover {
@@ -312,9 +343,19 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 .bootcards-clearinput {
 	position: absolute;
 	right: 0;
-	top: 6px;
+	top: 11px;
 	color: #ccc;
 	display: block;
+	font-size: 0;
+}
+
+.bootcards-clearinput i {
+	line-height: 1;
+	font-size: 18px;
+}
+
+.form-horizontal .form-group div div {
+	padding: 0;
 }
 
 
@@ -851,6 +892,21 @@ html, body {
 	min-height:100%; /* replaced height with min-height as it was causing problems on shorter screens */
 }
 
+/* OFFCANVAS LIST FOR TABLET PORTRAIT MODE */
+
+.offcanvas-list-title {
+	background: rgba(247,247,247,.98);
+	height: 45px;
+	text-align: center;
+}
+
+.navbar-fixed-top .offcanvas-list-title > .btn,
+.navbar-fixed-top .offcanvas-list-title > .btn:hover {
+	position:absolute;
+	left:10px;
+}
+
+
 /* BUTTONS */
 
 .btn,
@@ -1303,6 +1359,11 @@ form .btn label {
 	text-align: left;
 	display: block;
 }
+
+.bootcards-clearinput {
+	top: 9px;
+}
+
 
 
 /* Toggle – based on Ratchet.css */
