@@ -1,7 +1,7 @@
-Bootcards: A cards-based UI framework for mobile and desktop apps, built on top of Bootstrap
+Bootcards: A cards-based UI framework with dual-pane capability for mobile and desktop, built on top of Bootstrap
 =========
 
-Bootcards is a cards-based UI framework. It is built on top of Bootstrap and uses it's responsive features. Bootcards has a native look on Android, iOS and desktop.
+Bootcards is a cards-based UI framework. It is built on top of Bootstrap and uses it's responsive features. Bootcards has a native look on Android, iOS and desktop. Unlike most other UI frameworks, it includes a dual-pane interface for tablet users.
 
 **Why Bootcards?**
 
