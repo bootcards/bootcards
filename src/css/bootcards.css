@@ -245,6 +245,7 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 	right: 0;
 	bottom: 0;
 	height: 100%;
+	background: #ffffff;
 }
 
 .bootcards-az-picker li {
