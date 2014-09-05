@@ -95,7 +95,11 @@ html, body {
 	border: 0;
 }
 
-
+.btn[disabled]
+{
+	background-color: transparent;
+	border-color: transparent;
+}
 
 
 /* NAVBAR */
