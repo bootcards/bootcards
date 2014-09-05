@@ -78,6 +78,11 @@ a,
 	border: 0;
 }
 
+.btn[disabled]
+{
+	background-color: transparent;
+	border-color: transparent;
+}
 
 /* SIDE MENU */
 
