@@ -592,3 +592,12 @@ form .btn label {
 .bootcards-az-picker li a {
 	height: 3.3%;
 }
+
+
+
+/* CALENDAR */
+
+.bootcards-calendar .fc-header .fc-button {
+	color: #33b5e5;
+}
+
