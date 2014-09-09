@@ -425,8 +425,9 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 
 /* CALENDAR */
 
-.bootcards-calendar .panel-body {
-	padding: 0;
+.bootcards-calendar {
+	margin-top: -15px;
+	background: white;
 }
 
 .bootcards-calendar .fc-header-left,
@@ -438,14 +439,6 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 	margin: 0;
 }
 
-.bootcards-calendar .fc-header .fc-button {
-	background: transparent;
-	box-shadow: none;
-	border-color: transparent;
-	margin: 0;
-	padding: 0;
-}
-
 .bootcards-calendar .fc-content th:first-child,
 .bootcards-calendar .fc-content td:first-child {
 	border-left-width: 0;
@@ -454,6 +447,87 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 .bootcards-calendar .fc-content th:last-child,
 .bootcards-calendar .fc-content td:last-child {
 	border-right-width: 0;
+}
+
+.bootcards-calendar .fc-header-title h2 {
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #8f8f94;
+	font-weight: 400;
+	margin: 0;
+	padding: 8px 0;
+	line-height: 20px;
+}
+
+.bootcards-calendar .fc-header-left,
+.bootcards-calendar .fc-header-right {
+	padding: 0 10px;
+}
+
+.bootcards-calendar .fc-button .fc-icon {
+	margin: 0;
+}
+
+.bootcards-calendar .fc-header .fc-button {
+	background: transparent;
+	box-shadow: none;
+	border-color: transparent;
+	margin: 0;
+	height: 44px;
+	line-height: 40px;
+	font-size: 16px;
+	text-shadow: none;
+	padding: 0;	
+}
+
+.bootcards-calendar .fc-header-left .fc-button {
+	margin-right: 10px;
+}
+
+.bootcards-calendar .fc-header-right .fc-button {
+	margin-left: 10px;
+}
+
+.bootcards-calendar .fc-icon-left-single-arrow:after,
+.bootcards-calendar .fc-icon-right-single-arrow:after {
+	font-family: 'FontAwesome';
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.bootcards-calendar .fc-icon-left-single-arrow:after {
+	content: '';
+}
+
+.bootcards-calendar .fc-icon-right-single-arrow:after {
+	content: '';
+
+}
+
+.bootcards-calendar .fc-header .fc-button.fc-state-disabled {
+	color: #AAA;
+	opacity: 1;
+}
+
+.bootcards-calendar .fc-header .fc-button.fc-state-active {
+	color: #AAA;
+}
+
+.bootcards-calendar .fc-day-header {
+	font-weight: 400;
+	font-size: 12px;
+	border-left-color: transparent;
+	padding: 5px 0;
+	padding-right: 3px;
+}
+
+.bootcards-calendar .fc-event {
+	background: #007aff;
+	border-color: #007aff;
+}
+
+.bootcards-calendar .fc-today {
+	background: #FFF2F2;
 }
 
 
