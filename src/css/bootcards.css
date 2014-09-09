@@ -612,3 +612,18 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 .bootcards-richtext > .panel-body > *:first-child {
 	margin-top: 0;
 }
+
+
+/* ALERTS & DIALOGS */
+
+@media (max-width: 767px) {
+	.modal-dialog.modal-sm {
+		margin: 15px;
+	}
+}
+
+@media (min-width: 768px) {
+	.modal-dialog.modal-sm {
+		width: 400px;
+	}	
+}
