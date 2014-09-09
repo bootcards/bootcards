@@ -213,12 +213,15 @@ html, body {
 	line-height: 20px;
 }
 
+.panel-heading .btn,
 .panel-heading .btn-group .btn {
 	height: 29px;
 	font-size: 15px;
 	text-shadow: none;
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 15px;
 }
-
 
 
 

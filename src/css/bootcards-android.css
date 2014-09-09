@@ -197,6 +197,13 @@ a,
 	line-height: 20px;	
 }
 
+.panel-heading .btn,
+.panel-heading .btn-group .btn {
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 15px;
+}
+
 
 
 /* MODALS */
