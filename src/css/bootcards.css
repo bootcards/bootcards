@@ -20,11 +20,6 @@
   transition: 0.25s ease;	
 }
 
-.fa {
-	margin-right: 5px;
-
-}
-
 .offcanvas-left { 
   left: -200px;
 }
