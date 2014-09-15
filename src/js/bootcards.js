@@ -3,6 +3,7 @@ var bootcards = bootcards || {
     offCanvasToggleEl : null,
     offCanvasMenuEl : null,
     mainContentEl : null,
+    portraitModeEnabled : false,
     _isXS : null
 
 };
@@ -170,13 +171,25 @@ bootcards.hideOffCanvasMenu = function() {
 
 };
 
-
-bootcards._initTabletPortraitMode = function() {
+bootcards.enablePortraitMode = function() {
 
     //don't activate on desktop or smartphones
     if ( typeof window.orientation == 'undefined' || bootcards.isXS() ) {
+        return false;
+    } else {
+        return true;
+    }
+
+};
+
+
+bootcards._initTabletPortraitMode = function() {
+
+    if ( typeof window.orientation == 'undefined' || bootcards.isXS() ) {
         return;
     }
+    
+    bootcards.portraitModeEnabled = true;
 
     $(window)
         .on( 'resize', function() { 
@@ -189,6 +202,10 @@ bootcards._initTabletPortraitMode = function() {
 };
 
 bootcards._setOrientation = function(init) {
+
+    if ( !bootcards.portraitModeEnabled ) {
+        return;
+    }
 
     var isPortrait = ($(window).width() > $(window).height())? false : true;
 
