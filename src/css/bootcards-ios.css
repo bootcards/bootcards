@@ -173,6 +173,28 @@ html, body {
 	right: 15px;
 }
 
+/* iPhone Landscape */
+@media (orientation:landscape) and (max-width:767px) {
+	body {
+		padding-top: 32px;
+	}
+	.navbar-default {
+		height: 32px;
+		min-height: 32px;
+	}
+	.navbar-default .navbar-brand,
+	.navbar-default .navbar-brand:hover {
+		line-height: 32px;
+	}
+	.navbar-fixed-top .btn,
+	.navbar-fixed-top .btn:hover {
+		line-height: 32px;
+	}
+}
+
+
+
+
 
 
 /* SIDE MENU */
@@ -213,56 +235,22 @@ html, body {
 	line-height: 20px;
 }
 
+.panel-heading .btn,
 .panel-heading .btn-group .btn {
 	height: 29px;
 	font-size: 15px;
 	text-shadow: none;
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 15px;
 }
-
 
 
 
 /* CALENDAR */
 
-.bootcards-calendar .fc-header-title h2 {
-	font-size: 14px;
-	text-transform: uppercase;
-	color: #8f8f94;
-	font-weight: 400;
-	margin: 0;
-	padding: 8px 0;
-	line-height: 20px;
-}
-
-.bootcards-calendar .fc-header-left,
-.bootcards-calendar .fc-header-right {
-	padding-top: 3px;
-	padding-bottom: 3px;
-}
-
-.bootcards-calendar .fc-button {
-	height: 29px;
-	font-size: 15px;
-	text-shadow: none;
+.bootcards-calendar .fc-header .fc-button {
 	color: #007aff;
-}
-
-.bootcards-calendar .fc-day-header {
-	font-weight: 400;
-	font-size: 12px;
-	border-left-color: transparent;
-	padding: 5px 0;
-	text-align: right;
-	padding-right: 3px;
-}
-
-.bootcards-calendar .fc-event {
-	background: #007aff;
-	border-color: #007aff;
-}
-
-.bootcards-calendar .fc-today {
-	background: #FFF2F2;
 }
 
 
@@ -596,6 +584,7 @@ form .btn label {
 
 .navbar-fixed-bottom .btn-group .btn i {
 	display: block;
+	margin: 0;
 	margin-bottom: 2px;
 	font-size: 24px;
 }
@@ -619,7 +608,30 @@ form .btn label {
 	position: relative;
 	z-index: 20;
 	padding: 0;
-	line-height: 49px;
+	line-height: 50px;
 	border: 0;
 	font-weight: 400;
+}
+
+/* iPhone Landscape */
+@media (orientation:landscape) and (max-width:767px) {
+	.navbar-fixed-bottom {
+		height: 44px;
+	}
+	.navbar-fixed-bottom .btn-group .btn,
+	.navbar-fixed-bottom .btn-group .btn:hover,
+	.navbar-fixed-bottom .btn-group .btn:active,
+	.navbar-fixed-bottom .btn-group .btn:focus {
+		height: 44px;
+		padding-top: 5px;
+	}
+	.navbar-fixed-bottom .btn.pull-left,
+	.navbar-fixed-bottom .btn.pull-left:hover,
+	.navbar-fixed-bottom .btn.pull-right,
+	.navbar-fixed-bottom .btn.pull-right:hover {
+		line-height: 44px;
+	}
+	.bootcards-wrapper, body > .container > .row {
+		padding-bottom: 44px;
+	}
 }

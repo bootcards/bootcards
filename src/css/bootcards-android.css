@@ -197,6 +197,13 @@ a,
 	line-height: 20px;	
 }
 
+.panel-heading .btn,
+.panel-heading .btn-group .btn {
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 15px;
+}
+
 
 
 /* MODALS */
@@ -592,3 +599,12 @@ form .btn label {
 .bootcards-az-picker li a {
 	height: 3.3%;
 }
+
+
+
+/* CALENDAR */
+
+.bootcards-calendar .fc-header .fc-button {
+	color: #33b5e5;
+}
+

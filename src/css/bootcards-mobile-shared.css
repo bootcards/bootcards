@@ -196,9 +196,13 @@ a.list-group-item.bootcards-list-subheading:hover {
 }
 
 
-/* FORMS */
+/* RICH TEXT CARD */
 
-
+.bootcards-richtext .fa-search-plus,
+.bootcards-richtext .fa-search-minus {
+	font-size: 23px;
+	line-height: 1;
+}
 
 
 
