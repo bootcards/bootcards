@@ -192,11 +192,9 @@ bootcards._setOrientation = function(init) {
 
     var isPortrait = ($(window).width() > $(window).height())? false : true;
 
-    if (!init) {
-        if (bootcards.offCanvasMenuEl) { bootcards.offCanvasMenuEl.removeClass("active"); }
-        if (bootcards.offCanvasMenuTitleEl) { bootcards.offCanvasMenuTitleEl.removeClass("active"); }
-        if (bootcards.mainContentEl) { bootcards.mainContentEl.removeClass("active active-left"); }
-    }
+    if (bootcards.offCanvasMenuEl) { bootcards.offCanvasMenuEl.removeClass("active"); }
+    if (bootcards.offCanvasMenuTitleEl) { bootcards.offCanvasMenuTitleEl.removeClass("active"); }
+    if (bootcards.mainContentEl) { bootcards.mainContentEl.removeClass("active active-left"); }
 
     bootcards._initListEl();
     bootcards._initCardsEl();
