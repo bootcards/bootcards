@@ -173,6 +173,26 @@ html, body {
 	right: 15px;
 }
 
+/* iPhone Landscape */
+@media (orientation:landscape) and (max-width:767px) {
+	body {
+		padding-top: 32px;
+	}
+	.navbar-default {
+		height: 32px;
+		min-height: 32px;
+	}
+	.navbar-default .navbar-brand {	
+		line-height: 32px;
+	}
+	.navbar-fixed-top .btn {
+		line-height: 32px;
+	}
+}
+
+
+
+
 
 
 /* SIDE MENU */
