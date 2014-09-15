@@ -106,6 +106,12 @@ html, body {
 
 .navbar-fixed-top .container {
 	padding: 0;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
 }
 
 .navbar-default {
@@ -129,10 +135,6 @@ html, body {
 
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover {
-	position: absolute;
-	left: 0;
-	right: 0;
-	display: block;
 	padding: 0;
 	font-size: 17px;
 	font-weight: 500;
@@ -147,13 +149,14 @@ html, body {
 }
 
 .navbar > .container .navbar-brand {
-	margin: 0 -10px;
+	margin: 0;
 }
 
 .navbar-fixed-top .btn,
 .navbar-fixed-top .btn:hover {
 	font-size: 16px;
-	position: relative;
+	position: absolute;
+	left: 15px;
 	z-index: 20;
 	padding: 0;
 	line-height: 44px;
@@ -170,6 +173,7 @@ html, body {
 }
 
 .navbar-fixed-top .btn.navbar-right {
+	left: auto;
 	right: 15px;
 }
 
