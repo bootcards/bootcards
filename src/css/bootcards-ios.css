@@ -38,12 +38,6 @@ html, body {
 	text-align: center;
 }
 
-.navbar-fixed-top .offcanvas-list-title > .btn,
-.navbar-fixed-top .offcanvas-list-title > .btn:hover {
-	position:absolute;
-	left:10px;
-}
-
 
 /* BUTTONS */
 
