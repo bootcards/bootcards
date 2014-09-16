@@ -1,4 +1,4 @@
-/* bootcards 0.2.0 2014-08-29 */
+/* bootcards 0.2.0 2014-09-16 */
 /* NAVBAR */
 
 /* OFFCANVAS MENU */
@@ -19,11 +19,6 @@
   -moz-transition: 0.25s ease;
   -o-transition: 0.25s ease;
   transition: 0.25s ease;	
-}
-
-.fa {
-	margin-right: 5px;
-
 }
 
 .offcanvas-left { 
@@ -114,7 +109,7 @@
 
 .btn i { margin-right: 5px; }
 
-.btn i.icon-only { margin-right: 0; }
+.btn.icon-only i { margin-right: 0; }
 
 
 /* LISTS */
@@ -426,8 +421,9 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 
 /* CALENDAR */
 
-.bootcards-calendar .panel-body {
-	padding: 0;
+.bootcards-calendar {
+	margin-top: -15px;
+	background: white;
 }
 
 .bootcards-calendar .fc-header-left,
@@ -439,14 +435,6 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 	margin: 0;
 }
 
-.bootcards-calendar .fc-header .fc-button {
-	background: transparent;
-	box-shadow: none;
-	border-color: transparent;
-	margin: 0;
-	padding: 0;
-}
-
 .bootcards-calendar .fc-content th:first-child,
 .bootcards-calendar .fc-content td:first-child {
 	border-left-width: 0;
@@ -455,6 +443,87 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 .bootcards-calendar .fc-content th:last-child,
 .bootcards-calendar .fc-content td:last-child {
 	border-right-width: 0;
+}
+
+.bootcards-calendar .fc-header-title h2 {
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #8f8f94;
+	font-weight: 400;
+	margin: 0;
+	padding: 8px 0;
+	line-height: 20px;
+}
+
+.bootcards-calendar .fc-header-left,
+.bootcards-calendar .fc-header-right {
+	padding: 0 10px;
+}
+
+.bootcards-calendar .fc-button .fc-icon {
+	margin: 0;
+}
+
+.bootcards-calendar .fc-header .fc-button {
+	background: transparent;
+	box-shadow: none;
+	border-color: transparent;
+	margin: 0;
+	height: 44px;
+	line-height: 40px;
+	font-size: 16px;
+	text-shadow: none;
+	padding: 0;	
+}
+
+.bootcards-calendar .fc-header-left .fc-button {
+	margin-right: 10px;
+}
+
+.bootcards-calendar .fc-header-right .fc-button {
+	margin-left: 10px;
+}
+
+.bootcards-calendar .fc-icon-left-single-arrow:after,
+.bootcards-calendar .fc-icon-right-single-arrow:after {
+	font-family: 'FontAwesome';
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.bootcards-calendar .fc-icon-left-single-arrow:after {
+	content: '';
+}
+
+.bootcards-calendar .fc-icon-right-single-arrow:after {
+	content: '';
+
+}
+
+.bootcards-calendar .fc-header .fc-button.fc-state-disabled {
+	color: #AAA;
+	opacity: 1;
+}
+
+.bootcards-calendar .fc-header .fc-button.fc-state-active {
+	color: #AAA;
+}
+
+.bootcards-calendar .fc-day-header {
+	font-weight: 400;
+	font-size: 12px;
+	border-left-color: transparent;
+	padding: 5px 0;
+	padding-right: 3px;
+}
+
+.bootcards-calendar .fc-event {
+	background: #007aff;
+	border-color: #007aff;
+}
+
+.bootcards-calendar .fc-today {
+	background: #FFF2F2;
 }
 
 
@@ -612,6 +681,21 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 
 .bootcards-richtext > .panel-body > *:first-child {
 	margin-top: 0;
+}
+
+
+/* ALERTS & DIALOGS */
+
+@media (max-width: 767px) {
+	.modal-dialog.modal-sm {
+		margin: 15px;
+	}
+}
+
+@media (min-width: 768px) {
+	.modal-dialog.modal-sm {
+		width: 400px;
+	}	
 }
 html, 
 body {
@@ -811,9 +895,13 @@ a.list-group-item.bootcards-list-subheading:hover {
 }
 
 
-/* FORMS */
+/* RICH TEXT CARD */
 
-
+.bootcards-richtext .fa-search-plus,
+.bootcards-richtext .fa-search-minus {
+	font-size: 23px;
+	line-height: 1;
+}
 
 
 
@@ -940,6 +1028,11 @@ a,
 	border: 0;
 }
 
+.btn[disabled]
+{
+	background-color: transparent;
+	border-color: transparent;
+}
 
 /* SIDE MENU */
 
@@ -1052,6 +1145,13 @@ a,
 	margin: 0;
 	padding: 7px 0;
 	line-height: 20px;	
+}
+
+.panel-heading .btn,
+.panel-heading .btn-group .btn {
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 15px;
 }
 
 
@@ -1369,6 +1469,30 @@ form .btn label {
 	box-shadow: none;
 }
 
+/* Buttons */
+
+.navbar-fixed-bottom .btn,
+.navbar-fixed-bottom .btn:hover {
+	position: relative;
+	z-index: 20;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: inline-block;
+	background: transparent;
+	border: 0;
+}
+
+.navbar-fixed-bottom .btn i {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.navbar-fixed-bottom .btn span {
+	display: none;	
+}
+
+/* Tabs */
+
 .navbar-fixed-bottom .btn-group .btn {
 	width: 33.333%;
 }
@@ -1380,7 +1504,6 @@ form .btn label {
 }
 
 .navbar-fixed-bottom .btn-group .btn {
-	display: inline-block;
 	float: none;
 	font-size: 13px;
 	font-weight: bold;
@@ -1392,7 +1515,6 @@ form .btn label {
 	padding: 0;
 	text-shadow: none;
 	color: #777;
-	position: relative;
 	text-align: center;
 }
 
@@ -1415,38 +1537,24 @@ form .btn label {
 	display: none;
 }
 
+.navbar-fixed-bottom .btn-group .btn:hover,
 .navbar-fixed-bottom .btn-group .btn.active {
 	border-top-color: #35b3e4;
 }
 
-/* Button */
 
-.navbar-fixed-bottom .btn,
-.navbar-fixed-bottom .btn:hover {
-	position: relative;
-	z-index: 20;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	display: inline-block;
-	background: transparent;
-	border: 0;
-}
-
-.navbar-fixed-bottom .btn i {
-	font-size: 20px;
-	line-height: 30px;
-}
-
-
-
-
-.navbar-fixed-bottom .btn span {
-	display: none;
-	
-}
 
 /* List - AZ Picker */
 
 .bootcards-az-picker li a {
 	height: 3.3%;
 }
+
+
+
+/* CALENDAR */
+
+.bootcards-calendar .fc-header .fc-button {
+	color: #33b5e5;
+}
+

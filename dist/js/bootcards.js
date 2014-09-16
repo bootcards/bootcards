@@ -1,6 +1,12 @@
-var bootcards = bootcards || {};
+var bootcards = bootcards || {
 
-bootcards._isXS = null;
+    offCanvasToggleEl : null,
+    offCanvasMenuEl : null,
+    mainContentEl : null,
+    portraitModeEnabled : false,
+    _isXS : null
+
+};
 
 
 bootcards.init = function( options ) {
@@ -27,6 +33,30 @@ bootcards.init = function( options ) {
 
 
     } );
+
+    if ('standalone' in navigator && 
+        navigator.standalone && 
+        options.disableBreakoutSelector ) {
+
+        /*
+         * If an app on iOS is added to the home screen and a standard (non ajax)
+         * link is clicked, it tends to break-out out of full-screen mode
+         * This code helps to prevent that.
+         * 
+         * To use: add the break-out class to the options object used to initializ
+         * Bootcards and add the same class to any link you want to trigger this
+         * behaviour on (normally: all non-ajax links)
+         */
+        $(document).on(
+            "click",
+            options.disableBreakoutSelector,
+            function( event ){
+                event.preventDefault();
+                location.href = $(event.target).prop("href");
+            }
+        );
+
+    }
 
 
 };
@@ -136,20 +166,36 @@ bootcards._initOffCanvasMenu = function(offCanvasMenuEl, mainContentEl, hideOnMa
 //hide the offcanvas menu
 bootcards.hideOffCanvasMenu = function() {
 
-    this.offCanvasMenuEl.removeClass('active');
-    this.mainContentEl.removeClass('active');
+    if (this.offCanvasMenuEl) { this.offCanvasMenuEl.removeClass('active'); }
+    if (this.mainContentEl) { this.mainContentEl.removeClass('active'); }
+
+};
+
+bootcards.enablePortraitMode = function() {
+
+    //don't activate on desktop or smartphones
+    if ( typeof window.orientation == 'undefined' || bootcards.isXS() ) {
+        return false;
+    } else {
+        return true;
+    }
 
 };
 
 
 bootcards._initTabletPortraitMode = function() {
 
+    if ( typeof window.orientation == 'undefined' || bootcards.isXS() ) {
+        return;
+    }
+    
+    bootcards.portraitModeEnabled = true;
+
     $(window)
-        .on( 'orientationchange', function() { 
+        .on( 'resize', function() { 
             setTimeout( function() { 
                 bootcards._setOrientation(false);
-            } , 200);
-            event.stopPropagation();
+            } , 150);
         } )
         .on( 'load', bootcards._setOrientation(true) );
 
@@ -157,23 +203,28 @@ bootcards._initTabletPortraitMode = function() {
 
 bootcards._setOrientation = function(init) {
 
-    var isPortrait = (window.orientation===0 || window.orientation===180);
+    if ( !bootcards.portraitModeEnabled ) {
+        return;
+    }
 
+    var isPortrait = ($(window).width() > $(window).height())? false : true;
+
+    if (bootcards.offCanvasMenuEl) { bootcards.offCanvasMenuEl.removeClass("active"); }
+    if (bootcards.offCanvasMenuTitleEl) { bootcards.offCanvasMenuTitleEl.removeClass("active"); }
+    if (bootcards.mainContentEl) { bootcards.mainContentEl.removeClass("active active-left"); }
+
+    bootcards._initListEl();
+    bootcards._initCardsEl();
+ 
     if (isPortrait) {
 
-        //get the columns classes for the list and details
-        if (!bootcards.listEl) {
-            
-            bootcards.listEl = $('.bootcards-list');
-            bootcards.listColClass = '';
-            bootcards.listTitle = bootcards.listEl.data('title');
-
-            $.each(bootcards.listEl.prop('class').split(' '), function(idx, value) {
-                if (value.indexOf('col')===0) {
-                    bootcards.listColClass += value + ' ';
-                }
-            });
-
+        //no list found
+        if (bootcards.listEl.length === 0) {
+            //no list found (anymore), enable the off canvas toggle (might have been hidden) and abort
+            if (bootcards.offCanvasToggleEl) {
+                bootcards.offCanvasToggleEl.show();
+            }
+            return;
         }
 
         //immediately hide the list on load in portrait mode
@@ -181,18 +232,13 @@ bootcards._setOrientation = function(init) {
             bootcards.listEl.hide();
         }
 
-        if (!bootcards.cardsEl) {
+        //set the column to full width
+        bootcards.cardsEl
+            .removeClass(bootcards.cardsColClass)
+            .addClass('col-xs-12');
 
-            bootcards.cardsEl = $('.bootcards-cards');
-            bootcards.cardsColClass = '';
-
-            $.each(bootcards.cardsEl.prop('class').split(' '), function(idx, value) {
-                if (value.indexOf('col')===0) {
-                    bootcards.cardsColClass += value + ' ';
-                }
-            });
-
-        }
+        //hide the az picker
+        $('.bootcards-az-picker').hide();
 
         if (!bootcards.listOffcanvasToggle) {
             //create the list title & toggle elements
@@ -213,21 +259,25 @@ bootcards._setOrientation = function(init) {
             bootcards.listTitleEl = $("<div class='offcanvas-list offcanvas-list-title'>"  +
                "<span>" + bootcards.listTitle + "</span></div>");
 
-            //create the title element for the menu offcanvas, insert it before the menu offcanvas
-            bootcards.offCanvasMenuTitleEl = $("<div class='offcanvas-list offcanvas-list-title'>"  +
-               "<span>Menu</span></div>");
-            bootcards.offCanvasMenuEl.before( bootcards.offCanvasMenuTitleEl );
+            if (bootcards.offCanvasToggleEl) {
+                //if we have an offcanvas: add the toggle button to the list
 
-            //clone the button to show/hide the menu in the list title
-            bootcards.offCanvasToggleEl.clone(false)
-                .prependTo(bootcards.listTitleEl)
-                .on("click", function() {
-                    bootcards.offCanvasMenuEl.toggleClass("active");
-                    bootcards.offCanvasMenuTitleEl.toggleClass("active");
-                })
-                .children("i")
-                    .removeClass('fa-bars')
-                    .addClass('fa-angle-left');
+                //create the title element for the menu offcanvas, insert it before the menu offcanvas
+                bootcards.offCanvasMenuTitleEl = $("<div class='offcanvas-list offcanvas-list-title'>"  +
+                   "<span>Menu</span></div>");
+                bootcards.offCanvasMenuEl.before( bootcards.offCanvasMenuTitleEl );
+
+                //clone the button to show/hide the menu in the list title
+                bootcards.offCanvasToggleEl.clone(false)
+                    .prependTo(bootcards.listTitleEl)
+                    .on("click", function() {
+                        bootcards.offCanvasMenuEl.toggleClass("active");
+                        bootcards.offCanvasMenuTitleEl.toggleClass("active");
+                    })
+                    .children("i")
+                        .removeClass('fa-bars')
+                        .addClass('fa-angle-left');
+            }
 
             //add the title element and the toggle button to the top navbar
            $('.navbar-header')
@@ -249,33 +299,30 @@ bootcards._setOrientation = function(init) {
                 $this.removeClass('active');
                 bootcards.listTitleEl.removeClass('active');
 
-                //stop propagation when an element in the list offcanvas is clicked
-                event.stopPropagation();
-
             });
 
             //increase the width of the menu: set it to the same size as the list
-            bootcards.offCanvasMenuEl
-                .addClass('offcanvas-list')
-                .on("click", function() {
+            if ( bootcards.offCanvasMenuEl ) {
+                bootcards.offCanvasMenuEl
+                    .addClass('offcanvas-list')
+                    .on("click", function() {
 
-                    //hide the menu on click 
+                        //hide the menu on click 
+                        var $this = $(this);
+                        $this.removeClass('active');
+                        if (bootcards.offCanvasMenuTitleEl) { bootcards.offCanvasMenuTitleEl.removeClass('active'); }
+                        if (bootcards.listEl) { bootcards.listEl.removeClass('active'); }
+                        if (bootcards.listTitleEl) { bootcards.listTitleEl.removeClass('active'); }
 
-                    var $this = $(this);
-                    $this.removeClass('active');
-                    bootcards.offCanvasMenuTitleEl.removeClass('active');
-                    bootcards.listEl.removeClass('active');
-                    bootcards.listTitleEl.removeClass('active'); 
-
-                    //stop propagation when an element in the list offcanvas is clicked
-                    event.stopPropagation();
-
-                });
+                    });
+            }
 
         }
 
         //hide the menu button
-        bootcards.offCanvasToggleEl.hide();
+        if (bootcards.offCanvasToggleEl) {
+            bootcards.offCanvasToggleEl.hide();
+        }
 
         //show the button to toggle the list
         bootcards.listOffcanvasToggle.show();
@@ -285,28 +332,28 @@ bootcards._setOrientation = function(init) {
             .addClass('offcanvas-list')
             .show();
 
-        //set the column to full width
-        bootcards.cardsEl
-            .removeClass(bootcards.cardsColClass)
-            .addClass('col-xs-12');
-
-        //hide the az picker
-        $('.bootcards-az-picker').hide();
-
     } else {
 
         //show the menu button
-        bootcards.offCanvasToggleEl.show();
+        if (bootcards.offCanvasToggleEl) {
+            bootcards.offCanvasToggleEl.show();
+        }
+
+        //show the list again
+        if (bootcards.listEl) {
+            bootcards.listEl
+                .removeClass('offcanvas-list active')
+                .addClass(bootcards.listColClass)
+                .show();
+        }
 
         //hide the button to show the list, remove the list & title
         if ( bootcards.listOffcanvasToggle ) {
             bootcards.listOffcanvasToggle.hide();
             bootcards.listTitleEl.removeClass("active");
+        }
 
-            bootcards.listEl
-                .removeClass('offcanvas-list active')
-                .addClass(bootcards.listColClass);
-
+        if (bootcards.cardsEl) {   
             bootcards.cardsEl
                 .removeClass('col-xs-12')
                 .addClass( bootcards.cardsColClass );
@@ -314,7 +361,50 @@ bootcards._setOrientation = function(init) {
 
         $('.bootcards-az-picker').show();
 
+    }
 
+};
+
+//get the list element and it's classes
+bootcards._initListEl = function() {
+
+    if (bootcards.listEl != null) {
+        return bootcards.listEl;
+    }
+            
+    bootcards.listEl = $('.bootcards-list');
+    bootcards.listColClass = '';
+
+    if ( bootcards.listEl.length > 0 ) {
+            
+        bootcards.listTitle = bootcards.listEl.data('title') || 'List';
+
+        $.each(bootcards.listEl.prop('class').split(' '), function(idx, value) {
+            if (value.indexOf('col')===0) {
+                bootcards.listColClass += value + ' ';
+            }
+        });
+
+    }
+
+};
+
+bootcards._initCardsEl = function() {
+
+    if (bootcards.cardsEl != null) {
+        return bootcards.cardsEl;
+    }
+
+    bootcards.cardsEl = $('.bootcards-cards');
+    bootcards.cardsColClass = '';
+
+    if ( bootcards.cardsEl.length > 0 ) {
+
+        $.each(bootcards.cardsEl.prop('class').split(' '), function(idx, value) {
+            if (value.indexOf('col')===0) {
+                bootcards.cardsColClass += value + ' ';
+            }
+        });
     }
 
 };
@@ -338,7 +428,7 @@ bootcards.initAZPicker = function( target ) {
         });
         
         //move the az picker to a different location so we can give it a fixed position
-        var $list = azPicker.parents(".bootcards-list")
+        var $list = azPicker.parents(".bootcards-list");
 
         if ( $list.length > 0) {
             
