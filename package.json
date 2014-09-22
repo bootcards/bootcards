@@ -1,13 +1,10 @@
 {
   "name": "bootcards",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "A cards-based UI framework for mobile and desktop apps, built on top of Bootstrap",
   "repository": {
     "type": "git",
     "url": "https://github.com/bootcards/bootcards.git"
-  },
-  "dependencies": {
-    "express" : "~4"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
