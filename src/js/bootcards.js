@@ -206,7 +206,7 @@ bootcards._initTabletPortraitMode = function() {
         .on( 'resize', function() { 
             setTimeout( function() { 
                 bootcards._setOrientation(false);
-            } , 150);
+            } , 250);
         } )
         .on( 'load', bootcards._setOrientation(true) );
 
@@ -351,11 +351,22 @@ bootcards._setOrientation = function(init) {
         }
 
         //show the list again
-        if (bootcards.listEl) {
+        if (bootcards.listEl && bootcards.listEl.hasClass('offcanvas-list') ) {
+
             bootcards.listEl
                 .removeClass('offcanvas-list active')
                 .addClass(bootcards.listColClass)
                 .show();
+
+            /*
+             * deal with a iOS 8 issue: after rotating back to portrait,
+             * the list el remains in a (partly) offscreen position
+             * note that we need the timer: if we try to do this in 1 step, it fails
+             */
+            bootcards.listEl.css('overflow', 'hidden');
+            setTimeout( function() {
+                bootcards.listEl.css('overflow-y', 'auto');
+            }, 300);
         }
 
         //hide the button to show the list, remove the list & title
