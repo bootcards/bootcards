@@ -45,7 +45,12 @@ html, body {
 .btn:hover,
 .btn:active,
 .btn:focus,
-.btn-group.open .dropdown-toggle {
+.btn-group.open .dropdown-toggle,
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open>.dropdown-toggle.btn-primary {
 	background-color: transparent;
 	border-color: transparent;
 	box-shadow: none;

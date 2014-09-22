@@ -34,7 +34,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn,
 .btn:hover,
 .btn:active,
-.btn-group.open .dropdown-toggle {
+.btn-group.open .dropdown-toggle,
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open>.dropdown-toggle.btn-primary {
 	background: transparent;
 	border-color: transparent;
 	box-shadow: none;
