@@ -188,6 +188,7 @@ html, body {
 	.navbar-default .navbar-brand,
 	.navbar-default .navbar-brand:hover {
 		line-height: 32px;
+		height: 32px;
 	}
 	.navbar-fixed-top .btn,
 	.navbar-fixed-top .btn:hover {
