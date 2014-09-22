@@ -658,7 +658,7 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 }
 
 .bootcards-summary .panel-body .bootcards-summary-item h4 {
-	margin: 0 10px;
+	margin: 0 auto;
 }
 
 
