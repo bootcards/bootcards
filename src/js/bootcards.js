@@ -145,8 +145,19 @@ bootcards._initOffCanvasMenu = function(offCanvasMenuEl, mainContentEl, hideOnMa
 
     this.offCanvasToggleEl
         .on("click", function() {
-          bootcards.offCanvasMenuEl.toggleClass("active");
+
+            //set opacity here to keep the menu button from keeping the hover state
+            var $this = $(this);
+            if (bootcards.offCanvasMenuEl.hasClass('active') ) {
+                $this.css('opacity', '1');
+                bootcards.offCanvasMenuEl.removeClass("active");
+            } else {
+                $this.css('opacity', '');
+                bootcards.offCanvasMenuEl.addClass("active");
+            }
+           
           if (bootcards.mainContentEl) { bootcards.mainContentEl.toggleClass("active-left"); }
+
         });
 
     //hide the offcanvas if you click on the body
