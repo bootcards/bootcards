@@ -85,7 +85,8 @@ html, body {
 
 .btn-xs,
 .btn-xs:hover,
-.btn-xs:active {
+.btn-xs:active,
+.btn-xs:focus {
 	font-size: 10px;
 	line-height: 20px;
 }
