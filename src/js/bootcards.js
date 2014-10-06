@@ -4,12 +4,15 @@ var bootcards = bootcards || {
     offCanvasMenuEl : null,
     mainContentEl : null,
     portraitModeEnabled : false,
-    _isXS : null
+    _isXS : null,
+    isFullScreen : false
 
 };
 
 
 bootcards.init = function( options ) {
+
+    this.isFullScreen = ('standalone' in navigator && navigator.standalone);
 
     $(document).ready( function() {
 
@@ -34,8 +37,7 @@ bootcards.init = function( options ) {
 
     } );
 
-    if ('standalone' in navigator && 
-        navigator.standalone && 
+    if (this.isFullScreen && 
         options.disableBreakoutSelector ) {
 
         /*
