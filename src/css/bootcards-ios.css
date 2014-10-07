@@ -639,4 +639,7 @@ form .btn label {
 	.bootcards-wrapper, body > .container > .row {
 		padding-bottom: 44px;
 	}
+	.bootcards-az-picker {
+		padding-bottom: 44px;
+	}
 }
