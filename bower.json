@@ -28,6 +28,7 @@
   "dependencies": {
     "bootstrap": "^3",
     "jquery": ">1.8",
-    "font-awesome": ">=4"
+    "font-awesome": ">=4",
+    "fastclick": "~1.0.3"
   }
 }
