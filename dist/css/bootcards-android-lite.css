@@ -1,4 +1,4 @@
-/* bootcards 0.2.0 2014-09-16 */
+/* bootcards 1.0.0 2014-10-24 10:19 */
 /* NAVBAR */
 
 /* OFFCANVAS MENU */
@@ -78,7 +78,7 @@
   transition: 0.25s ease;	
 }
 
-.bootcards-container {
+.push-right {
   -webkit-transform: translate3d(0px, 0px, 0px);
   -moz-transform: translate3d(0px, 0px, 0px);
   -o-transform: translate3d(0px, 0px, 0px);
@@ -89,14 +89,14 @@
   -o-transition: 0.25s ease;
   transition: 0.25s ease;  
 }
-.bootcards-container.active-left {
+.push-right.active-left {
   -webkit-transform: translate3d(200px, 0px, 0px);
   -moz-transform: translate3d(200px, 0px, 0px);
   -o-transform: translate3d(200px, 0px, 0px);
   -ms-transform: translate3d(200px, 0px, 0px);
   transform: translate3d(200px, 0px, 0px);
 }
-.bootcards-container.active-right {
+.push-right.active-right {
   -webkit-transform: translate3d(-200px, 0px, 0px);
   -moz-transform: translate3d(-200px, 0px, 0px);
   -o-transform: translate3d(-200px, 0px, 0px);
@@ -131,6 +131,7 @@ a.list-group-item.active:focus {
 .list-group-item-text {
 	line-height: 18px;
 	margin-bottom: 5px;
+	overflow: hidden;
 }
 
 .list-group-item-heading:last-child,
@@ -148,14 +149,7 @@ a.list-group-item.active:focus {
 	margin-bottom: 0;
 }
 
-/*@media (max-width:768px) {
-	.bootcards-list .list-group-item-heading,
-	.bootcards-list .list-group-item-text {
-		padding-left: 55px;
-	}
-}*/
-
-.list-group-item > img {
+.list-group-item img {
 	height: 40px;
 	width: 40px;
 }
@@ -173,6 +167,12 @@ a.list-group-item.active:focus {
 
 .panel > .list-group .list-group-item:last-child {
 	border-bottom: 0;
+}
+
+/* List Images */
+
+.bootcards-list-group-item-content {
+	overflow: hidden;
 }
 
 /* Disclosure Indicators */
@@ -242,6 +242,8 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 	bottom: 0;
 	height: 100%;
 	background: #ffffff;
+	padding-bottom: 50px;
+	padding-top:5px;
 }
 
 .bootcards-az-picker li {
@@ -250,20 +252,44 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 	text-align: center;
 	padding: 0;
 	background: #ffffff;
+	height: 3.846%; /* 100% / 26 */
 }
 .bootcards-az-picker li a {
-	height: 3.4%; /* 100% / 27 */
-	display: block;
-	padding: 0.35em 5px;
-}
-.bootcards-az-picker li:first-child a {
-	padding-top:10px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-moz-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-moz-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height:100%;
 }
 
 .bootcards-az-picker li a:hover {
 	text-decoration: none;
 } 
 
+@media only screen and (min-device-width: 480px) 
+				   and (max-device-width: 767px)
+                   and (orientation: landscape)  {
+
+    /*hide every other letter on smartphones/ landscape*/
+	.bootcards-az-picker li:nth-child(even) {
+		display:none;
+	}
+	.bootcards-az-picker li {
+		height: 7.692%; /* 100% / 13 */
+	}
+
+}
 
 /* List - Search Form */
 
@@ -659,7 +685,7 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 }
 
 .bootcards-summary .panel-body .bootcards-summary-item h4 {
-	margin: 0 10px;
+	margin: 0 auto;
 }
 
 
@@ -948,7 +974,7 @@ a.list-group-item.bootcards-list-subheading:hover {
 }
 
 
-
+@import "bootcards-mobile-shared.css";
 
 body {
 	background-color: #eee;
@@ -984,7 +1010,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn,
 .btn:hover,
 .btn:active,
-.btn-group.open .dropdown-toggle {
+.btn-group.open .dropdown-toggle,
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open>.dropdown-toggle.btn-primary {
 	background: transparent;
 	border-color: transparent;
 	box-shadow: none;
@@ -1064,20 +1095,17 @@ a,
 
 .navbar-default .navbar-brand,
 .navbar-default .navbar-brand:hover {
-	display: block;
-	padding: 0;
-	margin: 0 -10px;
+	position: absolute;
+	left: 26px;
+	font-weight: 500;
 	color: #000;
 	white-space: nowrap;
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 49px;
-	text-align: left;
 }
 
-.navbar > .container .navbar-brand {
-	margin-left: 0;
-	padding-left: 0;
+@media (min-width: 768px) {
+	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+		margin-left: 0; 
+	}
 }
 
 .navbar-fixed-top .btn,

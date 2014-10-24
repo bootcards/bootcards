@@ -26,26 +26,47 @@ module.exports = function(grunt) {
       },
 
       concat: {
-        cssdesktop: {
+        cssdesktoplite: {
           options: { banner: '<%= banner %>' },
           src: [
          'src/css/bootcards.css','src/css/bootcards-desktop.css'
          ],
-         dest: 'dist/css/bootcards-desktop.css'
+         dest: 'dist/css/bootcards-desktop-lite.css'
         },
-        cssios: {
+        cssioslite: {
           options: { banner: '<%= banner %>' },
            src: [
            'src/css/bootcards.css','src/css/bootcards-mobile-shared.css','src/css/bootcards-ios.css'
            ],
-           dest: 'dist/css/bootcards-ios.css'
+           dest: 'dist/css/bootcards-ios-lite.css'
         },
-        cssandroid: {
+        cssandroidlite: {
           options: { banner: '<%= banner %>' },
            src: [
            'src/css/bootcards.css','src/css/bootcards-mobile-shared.css','src/css/bootcards-android.css'
            ],
-           dest: 'dist/css/bootcards-android.css'
+           dest: 'dist/css/bootcards-android-lite.css'
+        },
+        cssdesktop: {
+          options: { banner: '<%= banner %>' },
+          src: [
+         'bower_components/bootstrap/dist/css/bootstrap.min.css','dist/css/bootcards-desktop-lite.min.css'
+         ],
+         dest: 'dist/css/bootcards-desktop.min.css'
+        },
+        cssios: {
+          options: { banner: '<%= banner %>' },
+           src: [
+           'bower_components/bootstrap/dist/css/bootstrap.min.css','dist/css/bootcards-ios-lite.min.css'
+           ],
+           dest: 'dist/css/bootcards-ios.min.css'
+        },
+        cssandroid: {
+          options: { banner: '<%= banner %>' },
+           src: [
+           'bower_components/bootstrap/dist/css/bootstrap.min.css','dist/css/bootcards-android-lite.min.css'
+           ],
+           dest: 'dist/css/bootcards-android.min.css'
         }
      },
 
@@ -90,8 +111,9 @@ module.exports = function(grunt) {
     'clean',
     'copy',
     'uglify',
-    'concat:cssdesktop','concat:cssios','concat:cssandroid', 
+    'concat:cssdesktoplite','concat:cssioslite','concat:cssandroidlite', 
     'replace:imports',
-    'cssmin:minify']);
+    'cssmin:minify', 
+    'concat:cssdesktop','concat:cssios','concat:cssandroid',]);
 
 };

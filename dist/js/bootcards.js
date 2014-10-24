@@ -4,12 +4,15 @@ var bootcards = bootcards || {
     offCanvasMenuEl : null,
     mainContentEl : null,
     portraitModeEnabled : false,
-    _isXS : null
+    _isXS : null,
+    isFullScreen : false
 
 };
 
 
 bootcards.init = function( options ) {
+
+    this.isFullScreen = ('standalone' in navigator && navigator.standalone);
 
     $(document).ready( function() {
 
@@ -34,8 +37,7 @@ bootcards.init = function( options ) {
 
     } );
 
-    if ('standalone' in navigator && 
-        navigator.standalone && 
+    if (this.isFullScreen && 
         options.disableBreakoutSelector ) {
 
         /*
@@ -145,8 +147,19 @@ bootcards._initOffCanvasMenu = function(offCanvasMenuEl, mainContentEl, hideOnMa
 
     this.offCanvasToggleEl
         .on("click", function() {
-          bootcards.offCanvasMenuEl.toggleClass("active");
+
+            //set opacity here to keep the menu button from keeping the hover state
+            var $this = $(this);
+            if (bootcards.offCanvasMenuEl.hasClass('active') ) {
+                $this.css('opacity', '1');
+                bootcards.offCanvasMenuEl.removeClass("active");
+            } else {
+                $this.css('opacity', '');
+                bootcards.offCanvasMenuEl.addClass("active");
+            }
+           
           if (bootcards.mainContentEl) { bootcards.mainContentEl.toggleClass("active-left"); }
+
         });
 
     //hide the offcanvas if you click on the body
@@ -195,7 +208,7 @@ bootcards._initTabletPortraitMode = function() {
         .on( 'resize', function() { 
             setTimeout( function() { 
                 bootcards._setOrientation(false);
-            } , 150);
+            } , 250);
         } )
         .on( 'load', bootcards._setOrientation(true) );
 
@@ -340,11 +353,22 @@ bootcards._setOrientation = function(init) {
         }
 
         //show the list again
-        if (bootcards.listEl) {
+        if (bootcards.listEl && bootcards.listEl.hasClass('offcanvas-list') ) {
+
             bootcards.listEl
                 .removeClass('offcanvas-list active')
                 .addClass(bootcards.listColClass)
                 .show();
+
+            /*
+             * deal with a iOS 8 issue: after rotating back to portrait,
+             * the list el remains in a (partly) offscreen position
+             * note that we need the timer: if we try to do this in 1 step, it fails
+             */
+            bootcards.listEl.css('overflow', 'hidden');
+            setTimeout( function() {
+                bootcards.listEl.css('overflow-y', 'auto');
+            }, 300);
         }
 
         //hide the button to show the list, remove the list & title
