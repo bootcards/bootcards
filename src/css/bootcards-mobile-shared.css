@@ -248,3 +248,10 @@ a.list-group-item.bootcards-list-subheading:hover {
 	}
 }
 
+/*
+ * change z-index of a backdrop in the bootcards container so the
+ * header and footer stay on top
+ */
+.bootcards-container > .modal-backdrop {
+	z-index: 9;
+}
