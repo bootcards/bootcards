@@ -1,44 +1,36 @@
 var bootcards = bootcards || {
 
-    offCanvasToggleEl : null,
-    offCanvasMenuEl : null,
-    mainContentEl : null,
     portraitModeEnabled : false,
     _isXS : null,
     isFullScreen : false
 
 };
 
-
-bootcards.init = function( options ) {
+bootcards.init = function( _options ) {
 
     this.isFullScreen = ('standalone' in navigator && navigator.standalone);
 
     $(document).ready( function() {
 
-        //initialize the off canvas menu
-        bootcards._initOffCanvasMenu(
-          $('.offcanvas'),
-          $('.bootcards-container'),
-          options.offCanvasHideOnMainClick
-        );
+        Bootcards.init(_options);
 
-        if (options.enableTabletPortraitMode) {
+        Bootcards.OffCanvas.init();
+
+        if (Bootcards.options.enableTabletPortraitMode) {
 
            bootcards._initTabletPortraitMode();
 
         }
 
-        if (options.disableRubberBanding) {
+        if (Bootcards.options.disableRubberBanding) {
 
             bootcards.disableRubberBanding();
         }
 
-
     } );
 
     if (this.isFullScreen && 
-        options.disableBreakoutSelector ) {
+        _options.disableBreakoutSelector ) {
 
         /*
          * If an app on iOS is added to the home screen and a standard (non ajax)
@@ -51,7 +43,7 @@ bootcards.init = function( options ) {
          */
         $(document).on(
             "click",
-            options.disableBreakoutSelector,
+            _options.disableBreakoutSelector,
             function( event ){
                 event.preventDefault();
                 location.href = $(event.target).prop("href");
@@ -133,56 +125,152 @@ bootcards.disableRubberBanding = function() {
  * An off canvas menu is required for the portrait-single-pane mode
  *
  */
-bootcards._initOffCanvasMenu = function(offCanvasMenuEl, mainContentEl, hideOnMainClick) {
 
-    var $toggleEl = $('[data-toggle=offcanvas]');
+var Bootcards = ( function() {
 
-    if ($toggleEl.length===0 ) {
-        return;
-    }
+    this.$mainContentEl = null;
+    this.options = null;
 
-    this.offCanvasToggleEl = $toggleEl;
-    this.offCanvasMenuEl = offCanvasMenuEl;
-    this.mainContentEl = mainContentEl;
+    return {
 
-    this.offCanvasToggleEl
-        .on("click", function() {
+        init : function(_options) {
+            this.$mainContentEl = $('.bootcards-container');
+            this.options = $.extend({}, Bootcards.DEFAULTS, _options);
+        }
+
+    };
+
+})();
+
+Bootcards.DEFAULTS = {
+    offCanvasHideOnMainClick : false,
+    offCanvasBackdrop : false,
+    enableTabletPortraitMode : false,
+    disableRubberBanding : false,
+    disableBreakoutSelector : null
+};
+
+//OffCanvas module
+(function (Bootcards) {
+
+    Bootcards.OffCanvas = {
+
+        $backdrop : null,
+        $toggleEl : null,
+        $menuEl : null,
+        $menuTitleEl : null,
+        offCanvasHideOnMainClick : false,
+        offCanvasBackdrop : false,
+
+        init : function() {
+            this.offCanvasHideOnMainClick = Bootcards.options.offCanvasHideOnMainClick;
+            this.offCanvasBackdrop = Bootcards.options.offCanvasBackdrop;
+            this.$toggleEl = $('[data-toggle=offcanvas]');
+            this.$menuEl = $('.offcanvas');
+
+            if (this.$menuEl.length>0 && this.$toggleEl.length>0) {
+
+                this.$toggleEl.on("click", function() {
+                    Bootcards.OffCanvas.toggle();
+                });
+
+            }
+
+            //add handler to body to hide the offcanvas when clicking
+            if (this.offCanvasHideOnMainClick && Bootcards.$mainContentEl) {
+                Bootcards.$mainContentEl.on("click", function() {
+                    Bootcards.OffCanvas.hide();
+                });
+            }
+
+        },
+
+        toggle : function() {
+            if (this.$menuEl.hasClass('active') ) {        //hide
+                this.hide();
+            } else {     
+                this.show();
+            }
+        },
+
+        show : function() {
 
             //set opacity here to keep the menu button from keeping the hover state
-            var $this = $(this);
-            if (bootcards.offCanvasMenuEl.hasClass('active') ) {
-                $this.css('opacity', '1');
-                bootcards.offCanvasMenuEl.removeClass("active");
-            } else {
-                $this.css('opacity', '');
-                bootcards.offCanvasMenuEl.addClass("active");
-            }
-           
-          if (bootcards.mainContentEl) { bootcards.mainContentEl.toggleClass("active-left"); }
+            this.showBackdrop();
 
-        });
+            this.$toggleEl.css('opacity', '');
+            this.$menuEl.addClass("active");
 
-    //hide the offcanvas if you click on the body
-    if (hideOnMainClick && bootcards.mainContentEl) {
-        this.mainContentEl.on("click", function() {
-            bootcards.offCanvasMenuEl.removeClass('active');
-            var $this = $(this);
-            if ($this.hasClass('active-left') ) {
-                $this.removeClass('active-left');
+            if (this.offCanvasHideOnMainClick && Bootcards.$mainContentEl) {
+                Bootcards.$mainContentEl.addClass("active-left");
             }
 
-        });
-    }
 
-};
+        },
 
-//hide the offcanvas menu
-bootcards.hideOffCanvasMenu = function() {
+        hide : function() {
+            this.hideBackdrop();
 
-    if (this.offCanvasMenuEl) { this.offCanvasMenuEl.removeClass('active'); }
-    if (this.mainContentEl) { this.mainContentEl.removeClass('active'); }
+            if (this.$toggleEl) { this.$toggleEl.css('opacity', '1'); }
+            if (this.$menuEl) { this.$menuEl.removeClass("active"); }
 
-};
+            if (this.offCanvasHideOnMainClick && Bootcards.$mainContentEl) {
+                Bootcards.$mainContentEl.removeClass("active-left");
+            }
+
+            if (this.$menuTitleEl) { this.$menuTitleEl.removeClass('active'); }
+
+        },
+
+        showBackdrop : function() {
+            if (!this.offCanvasBackdrop) { return; }
+            this.$backdrop = $('<div class="modal-backdrop fade in" />')
+                .appendTo( Bootcards.$mainContentEl );
+        },
+
+        hideBackdrop : function() {
+            if (!this.offCanvasBackdrop) { return; }
+            //remove the backdrop
+            this.$backdrop && this.$backdrop.remove();
+            this.$backdrop = null;
+        },
+
+        showToggleEl : function() {
+            if (this.$toggleEl) {
+                this.$toggleEl.show();
+            }
+        },
+
+        hideToggleEl : function() {
+            if (this.$toggleEl) {
+                this.$toggleEl.hide();
+            }
+        },
+
+        insertToggleButton : function(target) {
+
+            //create the title element for the menu offcanvas, insert it before the menu offcanvas
+            this.$menuTitleEl = $("<div class='offcanvas-list offcanvas-list-title'>"  +
+                "<span>Menu</span></div>");
+            this.$menuEl.before( this.$menuTitleEl );
+
+            //clone the button to show/hide the menu in the list title
+            this.$toggleEl.clone(false)
+                .prependTo(target)
+                .on("click", function() {
+                    Bootcards.OffCanvas.$menuEl.toggleClass("active");
+                    Bootcards.OffCanvas.$menuTitleEl.toggleClass("active");
+                })
+                .children("i")
+                    .removeClass('fa-bars')
+                    .addClass('fa-angle-left');
+        }
+
+    };
+    
+    return Bootcards;
+ 
+})(Bootcards);
 
 bootcards.enablePortraitMode = function() {
 
@@ -222,21 +310,21 @@ bootcards._setOrientation = function(init) {
 
     var isPortrait = ($(window).width() > $(window).height())? false : true;
 
-    if (bootcards.offCanvasMenuEl) { bootcards.offCanvasMenuEl.removeClass("active"); }
-    if (bootcards.offCanvasMenuTitleEl) { bootcards.offCanvasMenuTitleEl.removeClass("active"); }
-    if (bootcards.mainContentEl) { bootcards.mainContentEl.removeClass("active active-left"); }
+    //on rotation: hide the offcanvas
+    Bootcards.OffCanvas.hide();
 
     bootcards._initListEl();
     bootcards._initCardsEl();
  
     if (isPortrait) {
 
+        //portrait
+
         //no list found
         if (bootcards.listEl.length === 0) {
             //no list found (anymore), enable the off canvas toggle (might have been hidden) and abort
-            if (bootcards.offCanvasToggleEl) {
-                bootcards.offCanvasToggleEl.show();
-            }
+
+            Bootcards.OffCanvas.showToggleEl();
             return;
         }
 
@@ -262,6 +350,12 @@ bootcards._setOrientation = function(init) {
                 '</button>')
                     .on("click", function() {
 
+                        if (bootcards.listTitleEl.hasClass("active") ) {
+                            Bootcards.OffCanvas.hideBackdrop();
+                        } else {
+                            Bootcards.OffCanvas.showBackdrop();
+                        }
+
                         //on click: show the list & title
                         bootcards.listEl.toggleClass("active");
                         bootcards.listTitleEl.toggleClass("active");
@@ -272,24 +366,11 @@ bootcards._setOrientation = function(init) {
             bootcards.listTitleEl = $("<div class='offcanvas-list offcanvas-list-title'>"  +
                "<span>" + bootcards.listTitle + "</span></div>");
 
-            if (bootcards.offCanvasToggleEl) {
+            if (Bootcards.OffCanvas.$toggleEl) {
                 //if we have an offcanvas: add the toggle button to the list
 
-                //create the title element for the menu offcanvas, insert it before the menu offcanvas
-                bootcards.offCanvasMenuTitleEl = $("<div class='offcanvas-list offcanvas-list-title'>"  +
-                   "<span>Menu</span></div>");
-                bootcards.offCanvasMenuEl.before( bootcards.offCanvasMenuTitleEl );
+                Bootcards.OffCanvas.insertToggleButton( bootcards.listTitleEl );
 
-                //clone the button to show/hide the menu in the list title
-                bootcards.offCanvasToggleEl.clone(false)
-                    .prependTo(bootcards.listTitleEl)
-                    .on("click", function() {
-                        bootcards.offCanvasMenuEl.toggleClass("active");
-                        bootcards.offCanvasMenuTitleEl.toggleClass("active");
-                    })
-                    .children("i")
-                        .removeClass('fa-bars')
-                        .addClass('fa-angle-left');
             }
 
             //add the title element and the toggle button to the top navbar
@@ -298,32 +379,34 @@ bootcards._setOrientation = function(init) {
                     bootcards.listTitleEl, bootcards.listOffcanvasToggle);   
 
             //hide the list & list title when to body is clicked
-            bootcards.mainContentEl.on("click", function() {
+            Bootcards.$mainContentEl.on("click", function() {
                 
                 bootcards.listEl.removeClass('active');
                 bootcards.listTitleEl.removeClass('active'); 
-                bootcards.offCanvasMenuTitleEl.removeClass('active');
+                Bootcards.OffCanvas.$menuTitleEl.removeClass('active');
+                Bootcards.OffCanvas.hideBackdrop();
 
             });
             
             bootcards.listEl.on("click", function() {
 
-                var $this = $(this);
-                $this.removeClass('active');
+                bootcards.listEl.removeClass('active');
                 bootcards.listTitleEl.removeClass('active');
+                Bootcards.OffCanvas.hideBackdrop();
 
             });
 
             //increase the width of the menu: set it to the same size as the list
-            if ( bootcards.offCanvasMenuEl ) {
-                bootcards.offCanvasMenuEl
+            if ( Bootcards.OffCanvas.$menuEl ) {
+                Bootcards.OffCanvas.$menuEl
                     .addClass('offcanvas-list')
                     .on("click", function() {
 
                         //hide the menu on click 
                         var $this = $(this);
                         $this.removeClass('active');
-                        if (bootcards.offCanvasMenuTitleEl) { bootcards.offCanvasMenuTitleEl.removeClass('active'); }
+                        Bootcards.OffCanvas.hide();
+                        //if (bootcards.offCanvasMenuTitleEl) { bootcards.offCanvasMenuTitleEl.removeClass('active'); }
                         if (bootcards.listEl) { bootcards.listEl.removeClass('active'); }
                         if (bootcards.listTitleEl) { bootcards.listTitleEl.removeClass('active'); }
 
@@ -333,9 +416,7 @@ bootcards._setOrientation = function(init) {
         }
 
         //hide the menu button
-        if (bootcards.offCanvasToggleEl) {
-            bootcards.offCanvasToggleEl.hide();
-        }
+        Bootcards.OffCanvas.hideToggleEl();
 
         //show the button to toggle the list
         bootcards.listOffcanvasToggle.show();
@@ -347,10 +428,10 @@ bootcards._setOrientation = function(init) {
 
     } else {
 
+        //landscape
+
         //show the menu button
-        if (bootcards.offCanvasToggleEl) {
-            bootcards.offCanvasToggleEl.show();
-        }
+        Bootcards.OffCanvas.showToggleEl();
 
         //show the list again
         if (bootcards.listEl && bootcards.listEl.hasClass('offcanvas-list') ) {

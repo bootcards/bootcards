@@ -12,16 +12,11 @@
   <!-- You'll only need to load one of these (depending on the device you're using) in production -->
   <!-- (these include the required Bootstrap CSS) -->
   <!--<link href="../dist/css/bootcards-desktop.min.css" rel="stylesheet">-->
-  <!--<link href="../dist/css/bootcards-ios.min.css" rel="stylesheet">-->
+  <link href="../dist/css/bootcards-ios.min.css" rel="stylesheet">
   <!--<link href="../dist/css/bootcards-android.min.css" rel="stylesheet">-->
 
-  <!-- Uncompressed Bootcards CSS files and Bootstrap use these for development only -->
-  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../src/css/bootcards.css" rel="stylesheet">
-  <link href="../src/css/bootcards-ios.css" rel="stylesheet">
-
   <!-- Font awesome -->
-  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 
 </head>
 
@@ -401,14 +396,14 @@
     <!-- Bootstrap & jQuery core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <!-- Bootcards JS -->
     <script src="../src/js/bootcards.js"></script>
 
     <!--recommended: FTLabs FastClick library-->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.2/fastclick.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.2/fastclick.min.js"></script>
 
     <script type="text/javascript">
 
@@ -416,11 +411,16 @@
        * Initialize Bootcards.
        * 
        * Parameters:
+       * - offCanvasBackdrop (boolean): show a backdrop when the offcanvas is shown
        * - offCanvasHideOnMainClick (boolean): hide the offcanvas menu on clicking outside the off canvas
        * - enableTabletPortraitMode (boolean): enable single pane mode for tablets in portraitmode
        * - disableRubberBanding (boolean): disable the iOS rubber banding effect
+       * - disableBreakoutSelector (boolean) : for iOS apps that are added to the home screen:
+                            jQuery selector to target links for which a fix should be added to not
+                            allow those links to break out of fullscreen mode.
        */
       bootcards.init( {
+        offCanvasBackdrop : true,
         offCanvasHideOnMainClick : true,
         enableTabletPortraitMode : true,
         disableRubberBanding : true 
