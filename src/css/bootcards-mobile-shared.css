@@ -142,6 +142,7 @@ body.bootcards-nofooter > .container > .row {
 
 .bootcards-list {
 	padding: 0;
+	background-color: #ffffff;
 }
 
 .bootcards-list .panel {
@@ -151,6 +152,10 @@ body.bootcards-nofooter > .container > .row {
 .list-group-item:first-child,
 .list-group-item:last-child {
 	border-radius: 0;
+}
+
+.bootcards-list .panel-footer {
+	border-bottom: 1px solid #DDD;
 }
 
 

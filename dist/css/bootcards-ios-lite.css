@@ -1,4 +1,4 @@
-/* bootcards 1.0.1 2014-10-31 3:10 */
+/* bootcards 1.0.1 2014-10-31 3:34 */
 /* NAVBAR */
 
 /* OFFCANVAS MENU */
@@ -872,6 +872,7 @@ body.bootcards-nofooter > .container > .row {
 
 .bootcards-list {
 	padding: 0;
+	background-color: #ffffff;
 }
 
 .bootcards-list .panel {
@@ -881,6 +882,10 @@ body.bootcards-nofooter > .container > .row {
 .list-group-item:first-child,
 .list-group-item:last-child {
 	border-radius: 0;
+}
+
+.bootcards-list .panel-footer {
+	border-bottom: 1px solid #DDD;
 }
 
 
