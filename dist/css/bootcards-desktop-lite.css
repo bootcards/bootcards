@@ -1,4 +1,4 @@
-/* bootcards 1.0.0 2014-10-31 3:04 */
+/* bootcards 1.0.1 2014-10-31 3:10 */
 /* NAVBAR */
 
 /* OFFCANVAS MENU */
@@ -350,6 +350,11 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 	display: block;
 	text-align: center;
 	line-height: 22px; /* Line up vertically with .btn */
+}
+
+/* ML: panel-footer has a top border, but that's removed by Bootstrap if there's a list-group before it. We restore it here.*/
+.list-group + .panel-footer {
+  border-top-width: 1px;
 }
 
 
@@ -773,11 +778,6 @@ a.list-group-item.active:before {
 
 .panel-content form {
 	padding: 15px;
-}
-
-/* ML: panel-footer has a top border, but that's removed by Bootstrap if there's a list-group before it. We restore it here.*/
-.list-group + .panel-footer {
-  border-top-width: 1px;
 }
 
 

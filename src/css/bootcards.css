@@ -351,6 +351,11 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 	line-height: 22px; /* Line up vertically with .btn */
 }
 
+/* ML: panel-footer has a top border, but that's removed by Bootstrap if there's a list-group before it. We restore it here.*/
+.list-group + .panel-footer {
+  border-top-width: 1px;
+}
+
 
 /* FORM CARD */
 
