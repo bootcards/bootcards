@@ -50,6 +50,10 @@ a.list-group-item.active:before {
 	padding: 15px;
 }
 
+/* ML: panel-footer has a top border, but that's removed by Bootstrap if there's a list-group before it. We restore it here.*/
+.list-group + .panel-footer {
+  border-top-width: 1px;
+}
 
 
 /* MODAL */
