@@ -1,4 +1,4 @@
-/* bootcards 1.0.0 2014-10-28 7:53 */
+/* bootcards 1.0.0 2014-10-31 3:04 */
 /* NAVBAR */
 
 /* OFFCANVAS MENU */
@@ -656,7 +656,7 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 	padding: 8px;
 }
 
-.bootcards-summary .panel-body .bootcards-summary-item {
+.bootcards-summary-item {
 	background: #f5f5f5;
 	display: block;
 	border-radius: 4px;
@@ -667,30 +667,30 @@ a.list-group-item.bootcards-list-subheading.collapsed:before {
 }
 
 @media (max-width:400px) {
-	.bootcards-summary .panel-body .bootcards-summary-item {
+	.bootcards-summary-item {
 		padding: 15px 5px;
 	}	
 }
 
-.bootcards-summary .panel-body .bootcards-summary-item:hover {
+.bootcards-summary-item:hover {
 	text-decoration: none;
 	background: #eee;
 }
 
-.bootcards-summary .panel-body .bootcards-summary-item > i {
+.bootcards-summary-item > i {
 	color: #bbb;
 	display: block;
 	text-align: center;
 	margin-bottom: 5px;
 }
 
-.bootcards-summary .panel-body .bootcards-summary-item h4 {
+.bootcards-summary-item h4 {
 	margin: 0 auto;
 }
 
 
-.bootcards-summary .panel-body .bootcards-summary-item .badge,
-.bootcards-summary .panel-body .bootcards-summary-item .label {
+.bootcards-summary-item .badge,
+.bootcards-summary-item .label {
 	position: absolute;
 	top:10px;
 	right: 10px;
@@ -775,6 +775,10 @@ a.list-group-item.active:before {
 	padding: 15px;
 }
 
+/* ML: panel-footer has a top border, but that's removed by Bootstrap if there's a list-group before it. We restore it here.*/
+.list-group + .panel-footer {
+  border-top-width: 1px;
+}
 
 
 /* MODAL */
