@@ -39,16 +39,14 @@
       </button>
       <!-- menu button to show/ hide the off canvas menu -->
       <button type="button" class="btn btn-default btn-menu pull-left" data-toggle="offcanvas">
-        <i class="fa fa-lg fa-bars"></i>
-        <span>Menu</span>
+        <i class="fa fa-lg fa-bars"></i><span>Menu</span>
       </button>
 
       <a class="navbar-brand" title="Bootcards Starter" href="/">Bootcards Starter</a>  
 
       <!--right aligned button-->
       <button type="button" class="btn btn-warning navbar-right">
-        <i class="fa fa-lg fa-refresh"></i>
-        <span>Refresh</span>
+        <i class="fa fa-lg fa-refresh"></i><span>Refresh</span>
       </button> 
 
       <!--navbar menu options: shown on desktop only -->
@@ -263,13 +261,11 @@
                 <h3 class="panel-title pull-left">Contact Details</h3>
                 <div class="btn-group pull-right visible-xs">
                   <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#editModal">
-                    <i class="fa fa-pencil"></i>
-                    <span>Edit</span>
+                    <i class="fa fa-pencil"></i><span>Edit</span>
                   </a>
                 </div>  
                 <a class="btn btn-primary pull-right hidden-xs" href="#" data-toggle="modal" data-target="#editModal">
-                  <i class="fa fa-pencil"></i>
-                  <span>Edit</span>
+                  <i class="fa fa-pencil"></i><span>Edit</span>
                 </a>
               </div>
               <div class="list-group">
@@ -392,6 +388,87 @@
     </div>
 
   </div><!--footer-->
+
+  <!--edit contact modal-->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <form class="form-horizontal" method="POST" action="/contacts/{{contact.id}}" data-pjax="#main">
+        
+        <div class="modal-header">
+
+          <div class="btn-group pull-left">
+            <button class="btn btn-danger" data-dismiss="modal">
+              Cancel
+            </button>
+          </div>
+        
+          <div class="btn-group pull-right">
+            <button class="btn btn-success" data-dismiss="modal">
+              <i class="fa fa-check"></i>Save
+            </button>
+          </div>
+
+          <h4 class="modal-title">
+              Edit Contact
+          </h4>   
+        </div>  
+
+        <div class="modal-body">
+            <input type="hidden" name="companyId" value="{{contact.companyId}}">
+            <input type="hidden" name="_method" value="put">
+            <div class="form-group">
+              <label class="col-xs-4 control-label">First Name</label>
+              <div class="col-xs-8">
+                <input type="text" name="firstName" class="form-control" placeholder="First Name"
+                value="Sofia">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-4 control-label">Last Name</label>
+              <div class="col-xs-8">
+                <input type="text" name="lastName" class="form-control" placeholder="Last Name"
+                value="Acey">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-4 control-label">Company</label>
+              <div class="col-xs-8">
+                <input type="text" name="department" class="form-control" placeholder="Department"
+                  value="Masung Corp.">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-4 control-label">Phone</label>
+              <div class="col-xs-8">
+                <input type="text" name="phone" class="form-control" 
+                placeholder="Phone"
+                value="+1 650-555-0055">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-xs-4 control-label">Email</label>
+              <div class="col-xs-8">
+                <input type="email" name="email" class="form-control" placeholder="Email"
+                value="Sofia.Acey@masung.com">
+              </div>
+            </div>
+                  
+        </div>
+        </form>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-block"
+            onclick="bootcards.confirmDelete('contact'); return false;">
+            <i class="fa fa-trash-o"></i>
+            Delete Contact
+          </button>   
+        </div>
+
+      </div><!--modal-content-->
+    </div>
+  </div><!--modal-->
 
     <!-- Bootstrap & jQuery core JavaScript
     ================================================== -->
