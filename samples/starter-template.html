@@ -8,11 +8,12 @@
 
   <title>Starter Template for Bootcards</title>
 
-  <!-- Bootcards CSS files for desktop, iOS and Android -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Bootcards CSS files for desktop, iOS and Android -->
   <!-- You'll only need to load one of these (depending on the device you're using) in production -->
-  <!-- (these include the required Bootstrap CSS) -->
+  <!-- (the version without the -lite suffix includes Bootstrap v3+) -->
   <!--<link href="../dist/css/bootcards-desktop.min.css" rel="stylesheet">-->
-  <link href="../dist/css/bootcards-ios.min.css" rel="stylesheet">
+  <link href="../dist/css/bootcards-ios-lite.min.css" rel="stylesheet">
   <!--<link href="../dist/css/bootcards-android.min.css" rel="stylesheet">-->
 
   <!-- Font awesome -->
@@ -45,7 +46,7 @@
       <a class="navbar-brand" title="Bootcards Starter" href="/">Bootcards Starter</a>  
 
       <!--right aligned button-->
-      <button type="button" class="btn btn-warning navbar-right">
+      <button type="button" class="btn btn-warning navbar-right hidden-sm">
         <i class="fa fa-lg fa-refresh"></i><span>Refresh</span>
       </button> 
 
@@ -54,17 +55,17 @@
         <ul class="nav navbar-nav">
           <li>
             <a href="#">
-              <i class="fa fa-dashboard"></i>Dashboard
+              <i class="fa fa-dashboard"></i> Dashboard
             </a>
           </li>
           <li>
             <a href="#">
-              <i class="fa fa-building-o"></i>Companies
+              <i class="fa fa-building-o"></i> Companies
             </a>
           </li>
           <li class="active">
             <a href="#">
-              <i class="fa fa-font"></i>Contacts
+              <i class="fa fa-font"></i> Contacts
             </a>
           </li>
         </ul>
@@ -77,20 +78,40 @@
     <ul class="nav">
       <li>
         <a href="#">
-          <i class="fa fa-lg fa-dashboard"></i>Dashboard
+          <i class="fa fa-fw fa-dashboard"></i>Dashboard
         </a>
       </li>
       <li class="active">
         <a href="starter-template.html">
-          <i class="fa fa-lg fa-users"></i>Contacts
+          <i class="fa fa-fw fa-users"></i>Contacts
         </a>
       </li>
       <li>
         <a href="az-picker.html">
-          <i class="fa fa-lg fa-users"></i>AZ Picker
+          <i class="fa fa-fw fa-users"></i>AZ Picker
         </a>
       </li>
+
+      <!--option with submenu-->
+      <li class="collapse litop4">
+        <a href="#otherControls" class="bootcards-parent" data-toggle="collapse" data-parent=".collapse">
+          <i class="fa fa-lg fa-fw fa-chevron-circle-right"></i>&nbsp;Settings
+        </a>
+        <div id="otherControls" class="collapse in">
+          <ul class="nav navmenu-nav"><li >
+            <a href="#" ><i class="fa fa-lg fa-fw fa-cog"></i>&nbsp;General</a></li>
+          <li>
+            <a href="#"><i class="fa fa-lg fa-fw fa-user"></i>&nbsp;Account</a>
+          </li>
+           <li>
+            <a href="#"><i class="fa fa-lg fa-fw fa-refresh"></i>&nbsp;Sync</a>
+          </li>
+          </ul>
+        </div>
+      </li>
+
     </ul>
+
   </nav><!--nav-->
 
   <div class="container bootcards-container push-right">
@@ -238,8 +259,8 @@
               <p>This page shows you how to create a master/detail view using Bootcards. Main features:</p>
               <ul>
                 <li>Markup based on <a href="http://getbootstrap.com" target="_blank">Bootstrap 3+</a>.</li>
-                <li>Near-native iOS look (there's one for Android and Desktop too).</li>
-                <li>Fixed header and footer</li>
+                <li>Near-native iOS and Android look (there's one for Desktop too).</li>
+                <li>Fixed header and footer.</li>
                 <li>Independent scrolling columns.</li>
                 <li>Automatic single pane portrait mode (similar to the iOS Mail app): make sure you also view this page using a tablet and rotate to portrait.</li>
                 <li>Off-canvas menu. On this page it is configured to push the main content away, it can also be configured as an overlay.</li>
@@ -247,11 +268,31 @@
               <p>
               This is only a sample page: it is not meant to be fully functional. We've used <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> for the icons and have include FTLabs' <a href="https://github.com/ftlabs/fastclick" target="_blank">FastClick</a> library to make tapping links on iOS faster.
               </p>
-            </div>
-            <div class="panel-footer">
-              <small>Built with Bootcards - Rich Text Card</small>
+             
             </div>
           </div><!--end rich text card--> 
+
+          <div class="panel panel-default bootcards-richtext">
+            <div class="panel-heading">
+              <h3 class="panel-title">Theme Switcher</h3>
+            </div>
+            <div class="panel-body">
+
+              <!--theme switcher-->
+                <div class="btn-group" data-toggle="buttons">
+                  <label class="btn btn-primary active">
+                    <input type="radio" name="themeSwitcher" value="ios" autocomplete="off" checked> iOS
+                  </label>
+                  <label class="btn btn-primary">
+                    <input type="radio" name="themeSwitcher" value="android" autocomplete="off"> Android
+                  </label>
+                  <label class="btn btn-primary">
+                    <input type="radio" name="themeSwitcher" value="desktop" autocomplete="off"> Desktop
+                  </label>
+                </div>
+            </div>
+
+          </div>
 
           <!--contact details -->
           <div id="contactCard">
@@ -507,6 +548,36 @@
       window.addEventListener('load', function() {
           FastClick.attach(document.body);
       }, false);
+
+      //activate the sub-menu options in the offcanvas menu
+      $('.collapse').collapse();
+
+      //theme switcher: only needed for this sample page to set the active CSS
+      $('input[name=themeSwitcher]').on('change', function(ev) {
+        var theme = $(ev.target).val();
+        var themeCSSLoaded = false;
+
+        $.each( document.styleSheets, function(idx, css) {
+          var href = css.href;
+          if (href.indexOf('bootcards')>-1 && href.indexOf('lite')>-1) {
+            if (href.indexOf(theme)>-1) {
+              themeCSSLoaded = true;
+              css.disabled = false;
+            } else {
+              css.disabled = true;
+            }
+          }
+        });
+
+        if (!themeCSSLoaded) {
+          $("<link/>", {
+             rel: "stylesheet",
+             type: "text/css",
+             href: "../dist/css/bootcards-" + theme + "-lite.min.css"
+          }).appendTo("head");
+        }
+        
+      });
 
     </script>
   </body>
