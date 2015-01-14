@@ -1,4 +1,4 @@
-/* bootcards 1.0.1 2014-10-31 3:34 */
+/* bootcards 1.1.0 2015-01-14 1:40 */
 /* NAVBAR */
 
 /* OFFCANVAS MENU */
@@ -748,6 +748,35 @@ body {
 
 .navbar button[data-toggle="offcanvas"] {
     display: none !important;
+}
+
+
+/* NAVBAR WITH 2 LINES OF LINKS (DESKTOP ONLY) */
+
+@media (min-width: 768px) {
+	body.has-bootcards-navbar-double {
+		padding-top: 110px;
+	}
+	
+	.bootcards-navbar-double .navbar-brand {
+		line-height: 50px;
+	}
+	
+	.bootcards-nav-secondary.navbar-nav>li>a {
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}	
+	
+	.bootcards-nav-primary,
+	.bootcards-nav-secondary {
+		margin-right: -15px;
+		clear: right;
+	}
+
+	.bootcards-nav-secondary,
+	.bootcards-nav-secondary .dropdown-menu {
+		font-size: 12px;
+	}	
 }
 
 
