@@ -1,0 +1,262 @@
+html, 
+body {
+	height: 100%;
+}
+
+body {
+	padding-top: 50px;
+	overflow-x:hidden;
+}
+
+.wrapper {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+
+small {
+	font-size: 70%;
+}
+
+
+
+
+
+/* NAVBAR */
+
+.navbar-header {
+	display: block;
+}
+
+.navbar-nav {
+	display: none;
+}
+
+.navbar-toggle {
+	display: none;
+}
+
+
+
+
+/* GRID */
+
+.container {
+	width: auto;
+	height: 100%;
+	margin: 0;
+}
+
+.bootcards-wrapper,
+body > .container > .row {
+	height: 100%;
+	padding-bottom: 50px;
+}
+
+body.bootcards-nofooter .bootcards-wrapper,
+body.bootcards-nofooter > .container > .row {
+	padding-bottom: 0;
+}
+
+.container .bootcards-cards,
+.container .bootcards-list {
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	height: 100%;	
+}
+
+@media (min-width:768px) {
+	.container .bootcards-list {
+		border-right: 1px solid rgba(0,0,0,0.2);
+	}	
+}
+
+.container .bootcards-cards {
+	padding-top: 15px;
+}
+
+@media (min-width:768px) {
+	.bootcards-cards > div[class*='col-']:not(:first-child) {
+		padding-left:8px;
+	}	
+	.bootcards-cards > div[class*='col-']:not(:last-child) {
+		padding-right:8px;
+	}		
+}
+
+
+/* MENU */
+
+.navmenu {
+	padding: 0;
+	background-color: #f8f8f8;
+	border-right: 1px solid #e7e7e7;
+}
+
+.navmenu li {
+	font-size: 15px;
+	line-height: 30px;
+}
+
+.navmenu li a {
+	color: #777;	
+}
+.navmenu li.active>a, .navmenu li.active>a:hover {
+	color: #555;
+	background-color: #e7e7e7;
+}
+.navmenu li>a:hover {
+	color: #333;
+	background:transparent;
+}
+
+.navmenu i {
+	width: 24px;
+	text-align: center;
+}
+
+.navmenu .bootcards-parent:not(.collapsed) {
+	color: #333;
+}
+
+.navmenu .bootcards-parent:not(.collapsed) .fa-chevron-circle-right {
+	-webkit-transform:rotate(90deg);
+}
+
+/* Menu Children */
+
+.navmenu li li {
+	padding-left: 32px;
+}
+
+.navmenu li li li {
+	padding-left: 32px;
+}
+
+
+/* LISTS */
+
+.bootcards-list {
+	padding: 0;
+	background-color: #ffffff;
+}
+
+.bootcards-list .panel {
+	margin-bottom: 0;
+}
+
+.list-group-item:first-child,
+.list-group-item:last-child {
+	border-radius: 0;
+}
+
+.bootcards-list .panel-footer {
+	border-bottom: 1px solid #DDD;
+}
+
+
+/* List - Subheadings */
+
+a.list-group-item.bootcards-list-subheading:hover {
+	background: #f5f5f5;
+}
+
+
+/* List - Search Form */
+
+.bootcards-list .panel-body {
+	padding: 0;
+}
+
+.bootcards-list form, .bootcards-list .search-form {
+	background: #BBB;
+	padding: 8px;
+}
+
+.bootcards-list form .row, .bootcards-list .search-form .row {
+	margin: 0;
+}
+
+.bootcards-list form .row > div:first-child, .bootcards-list .search-form .row > div:first-child {
+	padding-right: 4px;
+	padding-left: 0;
+}
+
+.bootcards-list form .row > div:last-child, .bootcards-list .search-form .row > div:last-child {
+	padding-left: 4px;
+	padding-right: 0;
+}
+
+
+
+
+/* CARDS */
+
+.panel-footer {
+	background: 0;
+}
+
+
+/* RICH TEXT CARD */
+
+.bootcards-richtext .fa-search-plus,
+.bootcards-richtext .fa-search-minus {
+	font-size: 23px;
+	line-height: 1;
+}
+
+
+
+
+/* FOOTER */
+
+.bootcards-nofooter .navbar-fixed-bottom {
+	display: none;
+}
+
+.navbar-fixed-bottom .container {
+	padding: 0;
+	margin: 0;
+}
+
+.navbar-fixed-bottom .btn-group {
+	list-style: none;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.navbar-fixed-bottom .btn,
+.navbar-fixed-bottom .btn:hover,
+.navbar-fixed-bottom .btn:active,
+.navbar-fixed-bottom .btn:focus {
+	padding: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	display: inline-block;
+	opacity: 1;
+}
+
+.navbar-fixed-bottom .btn-group .btn {
+	width: 25%;
+}
+
+@media (min-width:768px) {
+	.navbar-fixed-bottom .btn-group .btn {
+		width: 16.66666%;
+	}
+}
+
+/*
+ * change z-index of a backdrop in the bootcards container so the
+ * header and footer stay on top
+ */
+.bootcards-container > .modal-backdrop {
+	z-index: 9;
+}
