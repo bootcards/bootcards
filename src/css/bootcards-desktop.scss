@@ -11,6 +11,14 @@ body {
   	font-weight: bold;
   	color: #333;
   }
+  
+  .btn i {
+	  vertical-align: 0;
+  }
+  
+  .navbar-left {
+	  margin-left: -15px;
+  }
 
   .btn-back,
   .btn-menu,
@@ -85,7 +93,6 @@ a.list-group-item.active:before {
 /* MODAL */
 
 .modal-header {
-	overflow: hidden;
 	line-height: 32px;
 }
 

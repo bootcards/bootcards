@@ -63,87 +63,31 @@ a {
   .open > .dropdown-toggle.btn:hover,
   .open > .dropdown-toggle.btn.active {
     opacity: 0.5; }
-  .btn.btn-xs,
-  .btn:hover.btn-xs,
-  .btn:active.btn-xs,
-  .btn:focus.btn-xs,
-  .btn-group.open .dropdown-toggle.btn-xs,
-  .open > .dropdown-toggle.btn.btn-xs {
-    font-size: 10px;
-    line-height: 20px; }
-  .btn.btn-link,
-  .btn:hover.btn-link,
-  .btn:active.btn-link,
-  .btn:focus.btn-link,
-  .btn-group.open .dropdown-toggle.btn-link,
-  .open > .dropdown-toggle.btn.btn-link {
-    border: 0; }
-  .btn.btn-primary, .btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active,
-  .btn:hover.btn-primary,
-  .btn:hover.btn-primary:hover,
-  .btn:hover.btn-primary:focus,
-  .btn:hover.btn-primary:active,
-  .btn:active.btn-primary,
-  .btn:active.btn-primary:hover,
-  .btn:active.btn-primary:focus,
-  .btn:active.btn-primary:active,
-  .btn:focus.btn-primary,
-  .btn:focus.btn-primary:hover,
-  .btn:focus.btn-primary:focus,
-  .btn:focus.btn-primary:active,
-  .btn-group.open .dropdown-toggle.btn-primary,
-  .btn-group.open .dropdown-toggle.btn-primary:hover,
-  .btn-group.open .dropdown-toggle.btn-primary:focus,
-  .btn-group.open .dropdown-toggle.btn-primary:active,
-  .open > .dropdown-toggle.btn.btn-primary,
-  .open > .dropdown-toggle.btn.btn-primary:hover,
-  .open > .dropdown-toggle.btn.btn-primary:focus,
-  .open > .dropdown-toggle.btn.btn-primary:active {
-    color: #007aff; }
-  .btn.btn-danger, .btn.btn-danger:hover, .btn.btn-danger:active, .btn.btn-danger:focus,
-  .btn:hover.btn-danger,
-  .btn:hover.btn-danger:hover,
-  .btn:hover.btn-danger:active,
-  .btn:hover.btn-danger:focus,
-  .btn:active.btn-danger,
-  .btn:active.btn-danger:hover,
-  .btn:active.btn-danger:active,
-  .btn:active.btn-danger:focus,
-  .btn:focus.btn-danger,
-  .btn:focus.btn-danger:hover,
-  .btn:focus.btn-danger:active,
-  .btn:focus.btn-danger:focus,
-  .btn-group.open .dropdown-toggle.btn-danger,
-  .btn-group.open .dropdown-toggle.btn-danger:hover,
-  .btn-group.open .dropdown-toggle.btn-danger:active,
-  .btn-group.open .dropdown-toggle.btn-danger:focus,
-  .open > .dropdown-toggle.btn.btn-danger,
-  .open > .dropdown-toggle.btn.btn-danger:hover,
-  .open > .dropdown-toggle.btn.btn-danger:active,
-  .open > .dropdown-toggle.btn.btn-danger:focus {
-    color: #d43f3a; }
-  .btn.btn-success, .btn.btn-success:hover, .btn.btn-success:active, .btn.btn-success:focus,
-  .btn:hover.btn-success,
-  .btn:hover.btn-success:hover,
-  .btn:hover.btn-success:active,
-  .btn:hover.btn-success:focus,
-  .btn:active.btn-success,
-  .btn:active.btn-success:hover,
-  .btn:active.btn-success:active,
-  .btn:active.btn-success:focus,
-  .btn:focus.btn-success,
-  .btn:focus.btn-success:hover,
-  .btn:focus.btn-success:active,
-  .btn:focus.btn-success:focus,
-  .btn-group.open .dropdown-toggle.btn-success,
-  .btn-group.open .dropdown-toggle.btn-success:hover,
-  .btn-group.open .dropdown-toggle.btn-success:active,
-  .btn-group.open .dropdown-toggle.btn-success:focus,
-  .open > .dropdown-toggle.btn.btn-success,
-  .open > .dropdown-toggle.btn.btn-success:hover,
-  .open > .dropdown-toggle.btn.btn-success:active,
-  .open > .dropdown-toggle.btn.btn-success:focus {
-    color: #4cae4c; }
+
+.btn-xs {
+  font-size: 10px;
+  line-height: 20px; }
+
+.btn-link {
+  border: 0; }
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #007aff; }
+
+.btn-danger,
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:focus {
+  color: #d43f3a; }
+
+.btn-success,
+.btn-success:hover,
+.btn-success:active,
+.btn-success:focus {
+  color: #4cae4c; }
 
 .btn[disabled] {
   background-color: transparent;
@@ -246,7 +190,6 @@ a {
   .navbar-default .navbar-nav > li > a {
     color: #007aff; }
 
-/* iPhone Landscape */
 /* SIDE MENU */
 .offcanvas {
   margin-top: 45px; }
@@ -313,8 +256,7 @@ a {
   background-color: rgba(247, 247, 247, 0.98);
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
-  padding: 0 10px;
-  overflow: hidden; }
+  padding: 0 10px; }
 
 .modal-header .btn {
   line-height: 32px;

@@ -6,6 +6,10 @@ body {
 .navbar .navbar-brand {
   font-weight: bold;
   color: #333; }
+.navbar .btn i {
+  vertical-align: 0; }
+.navbar .navbar-left {
+  margin-left: -15px; }
 .navbar .btn-back,
 .navbar .btn-menu,
 .navbar button[data-toggle="offcanvas"] {
@@ -48,7 +52,6 @@ a.list-group-item.active:before {
 
 /* MODAL */
 .modal-header {
-  overflow: hidden;
   line-height: 32px; }
 
 .modal-title {

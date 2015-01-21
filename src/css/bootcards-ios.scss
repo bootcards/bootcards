@@ -71,36 +71,36 @@ a {
   &.active {
   	opacity: 0.5;
   }	
+}
 
-  &.btn-xs {
-  	font-size: 10px;
-  	line-height: 20px;
-  }
-  
-  &.btn-link {
-  	border: 0;
-  }
+.btn-xs {
+	font-size: 10px;
+	line-height: 20px;
+}
 
-  &.btn-primary,
-  &.btn-primary:hover, 
-  &.btn-primary:focus, 
-  &.btn-primary:active {
-    color: #007aff;
-  }
-  
-  &.btn-danger,
-  &.btn-danger:hover,
-  &.btn-danger:active,
-  &.btn-danger:focus {
-  	color: #d43f3a;
-  }
-  
-  &.btn-success,
-  &.btn-success:hover,
-  &.btn-success:active,
-  &.btn-success:focus {
-  	color: #4cae4c;
-  }
+.btn-link {
+	border: 0;
+}
+
+.btn-primary,
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active {
+  color: #007aff;
+}
+
+.btn-danger,
+.btn-danger:hover,
+.btn-danger:active,
+.btn-danger:focus {
+	color: #d43f3a;
+}
+
+.btn-success,
+.btn-success:hover,
+.btn-success:active,
+.btn-success:focus {
+	color: #4cae4c;
 }
 
 .btn[disabled] {
@@ -218,29 +218,6 @@ a {
 }
 
 
-/* iPhone Landscape */
-
-@media (orientation:landscape) and (max-width:767px) {
-	
-	.navbar-default {
-
-	}
-	
-	.navbar-default .navbar-brand,
-	.navbar-default .navbar-brand:hover {
-
-	}
-	
-	.navbar-fixed-top .btn,
-	.navbar-fixed-top .btn:hover {
-
-	}
-}
-
-
-
-
-
 
 /* SIDE MENU */
 
@@ -331,7 +308,6 @@ a {
 	-webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
 	box-shadow: 0 0 1px rgba(0,0,0,.85);	
 	padding: 0 10px;
-	overflow: hidden;
 }
 
 .modal-header .btn {
