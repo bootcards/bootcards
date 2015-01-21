@@ -29,10 +29,6 @@ h1, h2, h3, h4, h5, h6 {
 .btn:hover,
 .btn:active,
 .btn-group.open .dropdown-toggle,
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   background: transparent;
   border-color: transparent;
@@ -41,6 +37,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 14px;
   margin-bottom: 0;
   text-decoration: none; }
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #999; }
 
 .btn-danger,
 .btn-danger:hover,
@@ -79,62 +80,68 @@ a,
   margin-top: 50px; }
 
 /* NAVBAR */
-@media (min-width: 767px) {
-  .navbar .container {
-    padding: 0; } }
-.navbar-default {
+.navbar-fixed-top {
   height: 50px;
   background-color: #ddd;
   border-bottom: 1px solid #b1b1b1;
   -webkit-box-shadow: inset 0 -2px 0 #d2d2d2, 0 3px 3px rgba(0, 0, 0, 0.07);
   box-shadow: inset 0 -2px 0 #d2d2d2, 0 3px 3px rgba(0, 0, 0, 0.07); }
-
-.navbar-header {
-  float: none; }
-
-.navbar-default .navbar-brand,
-.navbar-default .navbar-brand:hover {
-  position: absolute;
-  left: 26px;
-  font-weight: 500;
-  color: #000;
-  white-space: nowrap; }
-
-@media (min-width: 768px) {
-  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-    margin-left: 0; } }
-.navbar-fixed-top .btn,
-.navbar-fixed-top .btn:hover {
-  position: relative;
-  z-index: 20;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: inline-block;
-  background: transparent;
-  color: #33b5e5;
-  border: 0; }
-
-.navbar-fixed-top .btn,
-.navbar-fixed-top .btn:focus,
-.navbar-fixed-top .btn:active {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  /* Remove orange focus BG on Android */
-  -webkit-tap-highlight-color: transparent;
-  /* Remove orange focus BG on Android */
-  outline: none; }
-
-.navbar-fixed-top .btn i {
-  font-size: 20px;
-  line-height: 30px; }
-
-@media (max-width: 767px) {
-  .navbar-fixed-top .btn.pull-left {
-    margin-left: -15px; }
-
-  .navbar-fixed-top .btn.pull-right {
-    margin-right: -15px; } }
-.navbar-fixed-top .btn span {
-  display: none; }
+  .navbar-fixed-top .container,
+  .navbar-fixed-top .container-fluid {
+    margin: 0;
+    padding: 0; }
+  @media (min-width: 768px) {
+    .navbar-fixed-top .navbar > .container .navbar-brand,
+    .navbar-fixed-top .navbar > .container-fluid .navbar-brand {
+      margin-left: 0; } }
+  .navbar-fixed-top .navbar-brand,
+  .navbar-fixed-top .navbar-brand:hover {
+    font-weight: 500;
+    white-space: nowrap;
+    color: #000;
+    margin: 0;
+    padding-left: 0; }
+    @media (min-width: 768px) {
+      .navbar-fixed-top .navbar-brand,
+      .navbar-fixed-top .navbar-brand:hover {
+        padding-left: 15px; } }
+  .navbar-fixed-top .navbar-header {
+    float: none; }
+  .navbar-fixed-top .navbar-nav {
+    margin: 0;
+    float: left; }
+    .navbar-fixed-top .navbar-nav.navbar-right {
+      float: right;
+      margin-right: 0; }
+  .navbar-fixed-top .btn,
+  .navbar-fixed-top .btn:hover {
+    position: relative;
+    z-index: 20;
+    padding: 0 15px;
+    background: transparent;
+    color: #33b5e5;
+    border: 0;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    /* Remove orange focus BG on Android */
+    -webkit-tap-highlight-color: transparent;
+    /* Remove orange focus BG on Android */
+    outline: none; }
+    @media (max-width: 767px) {
+      .navbar-fixed-top .btn.pull-left,
+      .navbar-fixed-top .btn:hover.pull-left {
+        margin-left: -15px; } }
+    @media (max-width: 767px) {
+      .navbar-fixed-top .btn.pull-right,
+      .navbar-fixed-top .btn:hover.pull-right {
+        margin-right: -15px; } }
+    .navbar-fixed-top .btn i,
+    .navbar-fixed-top .btn:hover i {
+      font-size: 20px;
+      line-height: 50px;
+      vertical-align: 0; }
+    .navbar-fixed-top .btn span,
+    .navbar-fixed-top .btn:hover span {
+      display: none; }
 
 /* CARDS */
 .panel {

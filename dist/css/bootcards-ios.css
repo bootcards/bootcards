@@ -12,6 +12,9 @@ body {
   padding-top: 44px;
   color: black;
   background: #efeff4; }
+  @media (orientation: landscape) and (max-width: 767px) {
+    body {
+      padding-top: 32px; } }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -153,73 +156,97 @@ a {
   z-index: 10;
   height: 44px;
   min-height: 44px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 0;
   border-bottom: 0;
   box-shadow: none; }
-  .navbar-fixed-top .container {
+  @media (orientation: landscape) and (max-width: 767px) {
+    .navbar-fixed-top {
+      height: 32px;
+      min-height: 32px; } }
+  .navbar-fixed-top > .container,
+  .navbar-fixed-top > .container-fluid {
     padding: 0;
-    display: -webkit-flex;
+    /*display: -webkit-flex;
     display: flex;
     -webkit-justify-content: center;
     justify-content: center;
     -webkit-align-items: center;
-    align-items: center; }
-  .navbar-fixed-top .navbar-header {
-    float: none; }
-  .navbar-fixed-top .navbar-brand,
-  .navbar-fixed-top .navbar-brand:hover {
-    padding: 0;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 44px;
-    color: #000;
-    text-align: center;
-    white-space: nowrap;
-    height: 44px;
-    float: none !important;
-    display: block;
-    margin: 0; }
-  .navbar-fixed-top .btn,
-  .navbar-fixed-top .btn:hover {
-    font-size: 16px;
-    position: absolute;
-    left: 15px;
-    z-index: 20;
-    padding: 0;
-    line-height: 44px;
-    border: 0;
-    font-weight: 400; }
-    .navbar-fixed-top .btn.navbar-left,
-    .navbar-fixed-top .btn:hover.navbar-left {
-      left: 15px; }
-    .navbar-fixed-top .btn.navbar-right,
-    .navbar-fixed-top .btn:hover.navbar-right {
-      left: auto;
-      right: 15px; }
+    align-items: center;*/ }
+    .navbar-fixed-top > .container .navbar-header,
+    .navbar-fixed-top > .container-fluid .navbar-header {
+      float: none; }
+    .navbar-fixed-top > .container .navbar-brand,
+    .navbar-fixed-top > .container .navbar-brand:hover,
+    .navbar-fixed-top > .container-fluid .navbar-brand,
+    .navbar-fixed-top > .container-fluid .navbar-brand:hover {
+      padding: 0;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 44px;
+      color: #000;
+      text-align: center;
+      white-space: nowrap;
+      height: 44px;
+      float: none !important;
+      display: block;
+      margin: 0; }
+      @media (orientation: landscape) and (max-width: 767px) {
+        .navbar-fixed-top > .container .navbar-brand,
+        .navbar-fixed-top > .container .navbar-brand:hover,
+        .navbar-fixed-top > .container-fluid .navbar-brand,
+        .navbar-fixed-top > .container-fluid .navbar-brand:hover {
+          line-height: 32px;
+          height: 32px; } }
+    .navbar-fixed-top > .container .navbar-nav,
+    .navbar-fixed-top > .container-fluid .navbar-nav {
+      margin: 0; }
+    .navbar-fixed-top > .container .navbar-left,
+    .navbar-fixed-top > .container-fluid .navbar-left {
+      position: absolute;
+      left: 0; }
+    .navbar-fixed-top > .container .navbar-right,
+    .navbar-fixed-top > .container-fluid .navbar-right {
+      position: absolute;
+      right: 0; }
+    .navbar-fixed-top > .container .btn,
+    .navbar-fixed-top > .container .btn:hover,
+    .navbar-fixed-top > .container-fluid .btn,
+    .navbar-fixed-top > .container-fluid .btn:hover {
+      font-size: 16px;
+      z-index: 20;
+      padding: 0 15px;
+      line-height: 44px;
+      border: 0;
+      font-weight: 400; }
+      @media (orientation: landscape) and (max-width: 767px) {
+        .navbar-fixed-top > .container .btn,
+        .navbar-fixed-top > .container .btn:hover,
+        .navbar-fixed-top > .container-fluid .btn,
+        .navbar-fixed-top > .container-fluid .btn:hover {
+          line-height: 32px; } }
+      .navbar-fixed-top > .container .btn i,
+      .navbar-fixed-top > .container .btn:hover i,
+      .navbar-fixed-top > .container-fluid .btn i,
+      .navbar-fixed-top > .container-fluid .btn:hover i {
+        vertical-align: 0; }
+    .navbar-fixed-top > .container .navbar-text,
+    .navbar-fixed-top > .container-fluid .navbar-text {
+      margin: 0;
+      font-size: 12px;
+      line-height: 44px; }
+      @media (orientation: landscape) and (max-width: 767px) {
+        .navbar-fixed-top > .container .navbar-text,
+        .navbar-fixed-top > .container-fluid .navbar-text {
+          line-height: 32px; } }
 
 /* Navbar Default Color Scheme */
 .navbar-default {
   background-color: rgba(247, 247, 247, 0.98);
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.85); }
+  .navbar-default .navbar-nav > li > a {
+    color: #007aff; }
 
 /* iPhone Landscape */
-@media (orientation: landscape) and (max-width: 767px) {
-  body {
-    padding-top: 32px; }
-
-  .navbar-default {
-    height: 32px;
-    min-height: 32px; }
-
-  .navbar-default .navbar-brand,
-  .navbar-default .navbar-brand:hover {
-    line-height: 32px;
-    height: 32px; }
-
-  .navbar-fixed-top .btn,
-  .navbar-fixed-top .btn:hover {
-    line-height: 32px; } }
 /* SIDE MENU */
 .offcanvas {
   margin-top: 45px; }

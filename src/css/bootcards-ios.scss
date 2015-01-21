@@ -1,5 +1,10 @@
 @import "bootcards-mobile-shared.css";
 
+$navbar-height: 44px;
+$navbar-height-phone-landscape: 32px;
+$footer-height: 50px;
+$footer-height-phone-landscape: 44px;
+
 html, body {
   height: 100%;
   /*overflow-y: scroll;*/
@@ -10,9 +15,13 @@ html, body {
 body {
 	background-color: #efeff4;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	padding-top: 44px;
+	padding-top: $navbar-height;
 	color: black;
 	background: #efeff4;
+	
+	@media (orientation:landscape) and (max-width:767px) {
+		padding-top: $navbar-height-phone-landscape;	
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -106,61 +115,93 @@ a {
 	right: 0;
 	left: 0;
 	z-index: 10;
-	height: 44px;
-	min-height: 44px;
-	padding-right: 10px;
-	padding-left: 10px; 
+	height: $navbar-height;
+	min-height: $navbar-height;
+	padding:0;
 	border-bottom: 0; 
 	box-shadow: none;
+	
+	@media (orientation:landscape) and (max-width:767px) {
+		height: $navbar-height-phone-landscape;
+		min-height: $navbar-height-phone-landscape;		
+	}
   
-  .container {
+  > .container,
+  > .container-fluid {
   	padding: 0;
-  	display: -webkit-flex;
+  	/*display: -webkit-flex;
   	display: flex;
   	-webkit-justify-content: center;
   	justify-content: center;
   	-webkit-align-items: center;
-  	align-items: center;
-  }
+  	align-items: center;*/
 
-  .navbar-header {
-  	float: none;
-  }
+	  .navbar-header {
+	  	float: none;
+	  }
+	
+	  .navbar-brand,
+	  .navbar-brand:hover {
+	  	padding: 0;
+	  	font-size: 17px;
+	  	font-weight: 500;
+	  	line-height: $navbar-height;
+	  	color: #000;
+	  	text-align: center;
+	  	white-space: nowrap;
+	  	height: $navbar-height;
+	  	float: none !important;
+	  	display: block;
+	  	margin: 0;
+	  	
+	  	@media (orientation:landscape) and (max-width:767px) {
+				line-height: $navbar-height-phone-landscape;
+				height: $navbar-height-phone-landscape;	  	
+		  }
+	  }
 
-  .navbar-brand,
-  .navbar-brand:hover {
-  	padding: 0;
-  	font-size: 17px;
-  	font-weight: 500;
-  	line-height: 44px;
-  	color: #000;
-  	text-align: center;
-  	white-space: nowrap;
-  	height: 44px;
-  	float: none !important;
-  	display: block;
-  	margin: 0;
-  }
+		.navbar-nav {
+			margin: 0;	
+		}
+	  
+	  .navbar-left {
+		  position: absolute;
+		  left: 0;
+	  }
+	  
+	  .navbar-right {
+		  position: absolute;
+		  right: 0;
+	  }
+	
+	  .btn,
+	  .btn:hover {
+	  	font-size: 16px;
+	  	z-index: 20;
+	  	padding: 0 15px;
+	  	line-height: $navbar-height;
+	  	border: 0;
+	  	font-weight: 400;
+	  	
+	  	@media (orientation:landscape) and (max-width:767px) {
+				line-height: $navbar-height-phone-landscape;		  	
+		  }
+	  	
+	  	i {
+		  	vertical-align: 0;
+	  	}
+	  }
+	  
+	  .navbar-text {
+			margin:0;
+			font-size: 12px;
+			line-height: $navbar-height;
 
-  .btn,
-  .btn:hover {
-  	font-size: 16px;
-  	position: absolute;
-  	left: 15px;
-  	z-index: 20;
-  	padding: 0;
-  	line-height: 44px;
-  	border: 0;
-  	font-weight: 400;
-
-    &.navbar-left {
-    	left: 15px;
-    }
-    
-    &.navbar-right {
-    	left: auto;
-    	right: 15px;
-    }
+	  	@media (orientation:landscape) and (max-width:767px) {
+				line-height: $navbar-height-phone-landscape;	  	
+		  }			
+			
+	  }
   }
 }
 
@@ -170,29 +211,29 @@ a {
 .navbar-default {
 	background-color: rgba(247,247,247,.98);
 	-webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
+	
+	.navbar-nav>li>a {
+		color: #007aff;
+	}
 }
-
-
 
 
 /* iPhone Landscape */
 
 @media (orientation:landscape) and (max-width:767px) {
-	body {
-		padding-top: 32px;
-	}
+	
 	.navbar-default {
-		height: 32px;
-		min-height: 32px;
+
 	}
+	
 	.navbar-default .navbar-brand,
 	.navbar-default .navbar-brand:hover {
-		line-height: 32px;
-		height: 32px;
+
 	}
+	
 	.navbar-fixed-top .btn,
 	.navbar-fixed-top .btn:hover {
-		line-height: 32px;
+
 	}
 }
 
@@ -565,7 +606,7 @@ form .btn label {
 
 .navbar-fixed-bottom {
 	box-shadow: 0 -1px rgba(0,0,0,0.2);
-	height: 50px;
+	height: $footer-height;
 	text-align: center;
 	border: 0;
 	background-color: #f9f9f9;
@@ -588,7 +629,7 @@ form .btn label {
     .btn:active,
     .btn:focus {
     	float: none;
-    	height: 50px;
+    	height: $footer-height;
     	text-align: center;	
     	line-height: 1;
     	font-size: 10px;
@@ -626,7 +667,7 @@ form .btn label {
 	position: relative;
 	z-index: 20;
 	padding: 0;
-	line-height: 50px;
+	line-height: $footer-height;
 	border: 0;
 	font-weight: 400;
 }
@@ -634,25 +675,25 @@ form .btn label {
 /* iPhone Landscape */
 @media (orientation:landscape) and (max-width:767px) {
 	.navbar-fixed-bottom {
-		height: 44px;
+		height: $footer-height-phone-landscape;
 	}
 	.navbar-fixed-bottom .btn-group .btn,
 	.navbar-fixed-bottom .btn-group .btn:hover,
 	.navbar-fixed-bottom .btn-group .btn:active,
 	.navbar-fixed-bottom .btn-group .btn:focus {
-		height: 44px;
+		height: $footer-height-phone-landscape;
 		padding-top: 5px;
 	}
 	.navbar-fixed-bottom .btn.pull-left,
 	.navbar-fixed-bottom .btn.pull-left:hover,
 	.navbar-fixed-bottom .btn.pull-right,
 	.navbar-fixed-bottom .btn.pull-right:hover {
-		line-height: 44px;
+		line-height: $footer-height-phone-landscape;
 	}
 	.bootcards-wrapper, body > .container > .row {
-		padding-bottom: 44px;
+		padding-bottom: $footer-height-phone-landscape;
 	}
 	.bootcards-az-picker {
-		padding-bottom: 44px;
+		padding-bottom: $footer-height-phone-landscape;
 	}
 }
