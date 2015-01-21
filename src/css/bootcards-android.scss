@@ -444,6 +444,24 @@ form .btn label {
 	display: block;
 }
 
+/* Radio Buttons */
+
+.bootcards-radio-buttons {
+	.btn {
+		color: white;
+		border-color: transparent;
+		font-weight: bold;
+		-webkit-box-shadow: none;
+		-webkit-border-radius: 0;
+		background: #424542;
+		
+		&:hover,
+		&:active,
+		&.active {
+			background: #0082ad;
+		}
+	}
+}
 
 /* Toggle – based on Ratchet.css */
 

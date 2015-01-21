@@ -20,7 +20,7 @@ small {
 .navbar-header {
   display: block; }
 
-.navbar-nav {
+.navbar-collapse {
   display: none; }
 
 .navbar-toggle {

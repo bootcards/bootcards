@@ -305,22 +305,27 @@ a.list-group-item.bootcards-list-subheading {
     }
   }
   
-  form input, 
-  .search-form input {
-  	padding-left: 32px;
-
+  form, 
+  .search-form {
+    input {
+    	padding-left: 32px;
+    }
+    
     .btn {
     	color: white;
-    }
-
+    } 	
+      	
     i.fa-search {
     	position: absolute;
     	left: 12px;
     	top: 10px;
     	color: #999;
     	font-size: 14px;
-    }  	  	
+    } 
   }
+
+
+
 }
 
 
@@ -358,6 +363,7 @@ a.list-group-item.bootcards-list-subheading {
 .list-group + .panel-footer {
   border-top-width: 1px; /* ML: panel-footer has a top border, but that's removed by Bootstrap if there's a list-group before it. We restore it here. */
 }
+
 
 
 /* FORM CARD */

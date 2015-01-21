@@ -233,16 +233,16 @@ a.list-group-item.bootcards-list-subheading {
 .bootcards-list form input,
 .bootcards-list .search-form input {
   padding-left: 32px; }
-  .bootcards-list form input .btn,
-  .bootcards-list .search-form input .btn {
-    color: white; }
-  .bootcards-list form input i.fa-search,
-  .bootcards-list .search-form input i.fa-search {
-    position: absolute;
-    left: 12px;
-    top: 10px;
-    color: #999;
-    font-size: 14px; }
+.bootcards-list form .btn,
+.bootcards-list .search-form .btn {
+  color: white; }
+.bootcards-list form i.fa-search,
+.bootcards-list .search-form i.fa-search {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  color: #999;
+  font-size: 14px; }
 
 /* FOOTER */
 .bootcards-desktop-footer {
