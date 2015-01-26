@@ -352,6 +352,8 @@ a {
   margin-bottom: 0;
   margin-left: 0;
   margin-right: 0; }
+  .form-group:last-of-type {
+    border-bottom: 0; }
   .form-group .form-control {
     padding-left: 0;
     padding-right: 0; }
@@ -372,9 +374,6 @@ a {
   padding-top: 7px; }
   .form-horizontal .form-group .control-label:first-child {
     padding-left: 0; }
-.form-horizontal .form-group input {
-  padding-left: 0;
-  padding-right: 0; }
 .form-horizontal .form-group .btn {
   padding-left: 0;
   padding-right: 0;

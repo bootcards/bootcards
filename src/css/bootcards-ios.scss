@@ -444,6 +444,10 @@ a {
 	margin-bottom: 0;
 	margin-left: 0;
 	margin-right: 0;
+	
+	&:last-of-type {
+  	border-bottom: 0;
+	}
 
   .form-control {
     padding-left: 0;
@@ -479,11 +483,6 @@ a {
       &:first-child {
       	padding-left: 0;
       }
-    }
-
-    input {
-      padding-left: 0;
-      padding-right: 0;
     }
     
     .btn {
