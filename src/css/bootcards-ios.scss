@@ -437,15 +437,24 @@ a {
 
 /* FORMS */
 
+.form-group {
+	border-bottom: 1px solid #ddd;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+
+  .form-control {
+    padding-left: 0;
+    padding-right: 0;
+  }  
+}
+
+ 
+
 .form-horizontal {
   .form-group {
-  	border-bottom: 1px solid #ddd;
-  	padding-top: 5px;
-  	padding-bottom: 5px;
-  	margin-bottom: 0;
-  	margin-left: 0;
-  	margin-right: 0;
-
     &:first-of-type {
     	margin-top: -15px;
     }

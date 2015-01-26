@@ -345,36 +345,40 @@ a {
   .bootcards-list form .btn, .bootcards-list .search-form .btn {
     /*line-height: 28px;*/ } }
 /* FORMS */
-.form-horizontal .form-group {
+.form-group {
   border-bottom: 1px solid #ddd;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-bottom: 0;
   margin-left: 0;
   margin-right: 0; }
-  .form-horizontal .form-group:first-of-type {
-    margin-top: -15px; }
-  .form-horizontal .form-group:last-child {
-    margin-bottom: -15px; }
-  .form-horizontal .form-group div {
-    padding: 0; }
-  .form-horizontal .form-group .control-label {
-    color: #007aff;
-    font-weight: normal;
-    font-size: 13px;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-right: 15px;
-    padding-top: 7px; }
-    .form-horizontal .form-group .control-label:first-child {
-      padding-left: 0; }
-  .form-horizontal .form-group input {
+  .form-group .form-control {
     padding-left: 0;
     padding-right: 0; }
-  .form-horizontal .form-group .btn {
-    padding-left: 0;
-    padding-right: 0;
-    font-size: 14px; }
+
+.form-horizontal .form-group:first-of-type {
+  margin-top: -15px; }
+.form-horizontal .form-group:last-child {
+  margin-bottom: -15px; }
+.form-horizontal .form-group div {
+  padding: 0; }
+.form-horizontal .form-group .control-label {
+  color: #007aff;
+  font-weight: normal;
+  font-size: 13px;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-right: 15px;
+  padding-top: 7px; }
+  .form-horizontal .form-group .control-label:first-child {
+    padding-left: 0; }
+.form-horizontal .form-group input {
+  padding-left: 0;
+  padding-right: 0; }
+.form-horizontal .form-group .btn {
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 14px; }
 
 select,
 textarea,
