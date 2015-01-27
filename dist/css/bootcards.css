@@ -94,7 +94,8 @@
 .btn i {
   margin-right: 5px; }
 
-.btn.icon-only i {
+.btn.icon-only i,
+.btn.icononly i {
   margin-right: 0; }
 
 /* LISTS */
@@ -124,9 +125,11 @@
     text-align: center;
     margin-right: 15px; }
 
-a.list-group-item:hover, a.list-group-item:active, a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
-  margin-left: 0;
-  padding-left: 15px; }
+a.list-group-item {
+  cursor: pointer; }
+  a.list-group-item:hover, a.list-group-item:active, a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+    margin-left: 0;
+    padding-left: 15px; }
 
 .panel > .list-group .list-group-item:last-child {
   border-bottom: 0; }

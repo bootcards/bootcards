@@ -31,12 +31,13 @@ small {
 	display: block;
 }
 
-.navbar-collapse {
-	display: none;
+.navbar-collapse,
+.navbar-collapse.collapse {
+	display: none !important;
 }
 
 .navbar-toggle {
-	display: none;
+	display: none !important;
 }
 
 
