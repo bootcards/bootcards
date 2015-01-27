@@ -8,8 +8,6 @@ body {
   color: #333; }
 .navbar .btn i {
   vertical-align: 0; }
-.navbar .navbar-left {
-  margin-left: -15px; }
 .navbar .btn-back,
 .navbar .btn-menu,
 .navbar button[data-toggle="offcanvas"] {
