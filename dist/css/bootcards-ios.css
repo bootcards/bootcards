@@ -127,7 +127,6 @@ a {
       font-size: 17px;
       font-weight: 500;
       line-height: 44px;
-      color: #000;
       text-align: center;
       white-space: nowrap;
       height: 44px;
@@ -152,8 +151,10 @@ a {
     .navbar-fixed-top > .container-fluid .navbar-right {
       position: absolute;
       right: 0; }
+    .navbar-fixed-top > .container .navbar-nav > li > a,
     .navbar-fixed-top > .container .btn,
     .navbar-fixed-top > .container .btn:hover,
+    .navbar-fixed-top > .container-fluid .navbar-nav > li > a,
     .navbar-fixed-top > .container-fluid .btn,
     .navbar-fixed-top > .container-fluid .btn:hover {
       font-size: 16px;
@@ -161,23 +162,29 @@ a {
       padding: 0 15px;
       line-height: 44px;
       border: 0;
-      font-weight: 400; }
+      font-weight: 400;
+      opacity: 1; }
       @media (orientation: landscape) and (max-width: 767px) {
+        .navbar-fixed-top > .container .navbar-nav > li > a,
         .navbar-fixed-top > .container .btn,
         .navbar-fixed-top > .container .btn:hover,
+        .navbar-fixed-top > .container-fluid .navbar-nav > li > a,
         .navbar-fixed-top > .container-fluid .btn,
         .navbar-fixed-top > .container-fluid .btn:hover {
           line-height: 32px; } }
+      .navbar-fixed-top > .container .navbar-nav > li > a i,
       .navbar-fixed-top > .container .btn i,
       .navbar-fixed-top > .container .btn:hover i,
+      .navbar-fixed-top > .container-fluid .navbar-nav > li > a i,
       .navbar-fixed-top > .container-fluid .btn i,
       .navbar-fixed-top > .container-fluid .btn:hover i {
         vertical-align: 0; }
     .navbar-fixed-top > .container .navbar-text,
     .navbar-fixed-top > .container-fluid .navbar-text {
-      margin: 0;
       font-size: 12px;
-      line-height: 44px; }
+      line-height: 44px;
+      margin-top: 0;
+      margin-bottom: 0; }
       @media (orientation: landscape) and (max-width: 767px) {
         .navbar-fixed-top > .container .navbar-text,
         .navbar-fixed-top > .container-fluid .navbar-text {
@@ -187,8 +194,19 @@ a {
 .navbar-default {
   background-color: rgba(247, 247, 247, 0.98);
   -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.85); }
+  .navbar-default .navbar-brand {
+    color: black; }
   .navbar-default .navbar-nav > li > a {
     color: #007aff; }
+
+/* Navbar Inverse Color Scheme */
+.navbar-inverse {
+  background-color: rgba(50, 50, 50, 0.95); }
+  .navbar-inverse .navbar-brand,
+  .navbar-inverse .navbar-text {
+    color: white; }
+  .navbar-inverse .navbar-nav > li > a {
+    color: white; }
 
 /* SIDE MENU */
 .offcanvas {

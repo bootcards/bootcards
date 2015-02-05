@@ -146,7 +146,6 @@ a {
 	  	font-size: 17px;
 	  	font-weight: 500;
 	  	line-height: $navbar-height;
-	  	color: #000;
 	  	text-align: center;
 	  	white-space: nowrap;
 	  	height: $navbar-height;
@@ -173,7 +172,8 @@ a {
 		  position: absolute;
 		  right: 0;
 	  }
-	
+    
+    .navbar-nav>li>a,
 	  .btn,
 	  .btn:hover {
 	  	font-size: 16px;
@@ -182,6 +182,7 @@ a {
 	  	line-height: $navbar-height;
 	  	border: 0;
 	  	font-weight: 400;
+	  	opacity: 1;
 	  	
 	  	@media (orientation:landscape) and (max-width:767px) {
 				line-height: $navbar-height-phone-landscape;		  	
@@ -193,9 +194,10 @@ a {
 	  }
 	  
 	  .navbar-text {
-			margin:0;
 			font-size: 12px;
 			line-height: $navbar-height;
+			margin-top: 0;
+			margin-bottom: 0;
 
 	  	@media (orientation:landscape) and (max-width:767px) {
 				line-height: $navbar-height-phone-landscape;	  	
@@ -205,16 +207,33 @@ a {
   }
 }
 
-
 /* Navbar Default Color Scheme */
 
 .navbar-default {
 	background-color: rgba(247,247,247,.98);
 	-webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
+
+  .navbar-brand {
+    color: black;
+  }
 	
 	.navbar-nav>li>a {
 		color: #007aff;
 	}
+}
+
+/* Navbar Inverse Color Scheme */
+
+.navbar-inverse {
+  background-color: rgba(50,50,50,.95);
+  
+  .navbar-brand,
+  .navbar-text {
+    color: white;
+  }
+  .navbar-nav>li>a {
+    color: white;
+  }
 }
 
 
