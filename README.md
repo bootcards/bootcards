@@ -16,3 +16,14 @@ Want to help or want to know more? Drop us a note at bootcards@gmail.com. Look f
 **License**
 
 Bootcards is released under an MIT license. It contains code from the <a href="http://getbootstrap.com" target="_blank">Twitter Bootstrap</a> and <a href="http://goratchet.com/" target="_blank">Ratchet</a> projects (both also MIT licensed).
+
+**Building**
+
+To build the Bootcards source files using Grunt you'll need:
+
+- Node & NPM
+- Grunt: npm install -g grunt-cli
+- Ruby: check if it's install by running ruby -v in your terminal. (should be Ok if you're on Linux or Mac OS X, otherwise see http://www.ruby-lang.org/en/downloads/)
+- Sass: install using Ruby by running: gem install sass
+
+Bootcards uses Grunt to build the source files. You'lou will need Sass too to compile CSS files from the Sass source files.
