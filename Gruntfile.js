@@ -8,9 +8,6 @@ module.exports = function(grunt) {
     clean: {
       output : {
         src: ["dist"]
-      },
-      unused : {
-        src : ['dist/css/bootcards.css*', 'dist/css/bootcards-mobile*']
       }
     },
 
@@ -38,7 +35,7 @@ module.exports = function(grunt) {
       dist: {
         files: [{
           expand: true,
-          src: ['src/css/*.scss'],
+          src: ['src/css/bootcards-android.scss', 'src/css/bootcards-desktop.scss', 'src/css/bootcards-ios.scss'],
           dest: 'dist/css',
           ext: '.css',
           flatten: true
@@ -71,7 +68,7 @@ module.exports = function(grunt) {
 
   });
 
-  // Load the plugin that provides the "uglify"/ contat task.
+  //load grunt plugins
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -85,7 +82,6 @@ module.exports = function(grunt) {
     'copy',
     'uglify',
     'sass',
-    'clean:unused',
     'cssmin:minify'
     ]);
 
