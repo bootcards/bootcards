@@ -15,12 +15,14 @@
     "cards"
   ],
   "main": [
-    "dist/css/bootcards.css",
-    "dist/js/bootcards.js",
-    "dist/fonts/icomoon.eot",
-    "dist/fonts/icomoon.svg",
-    "dist/fonts/icomoon.ttf",
-    "dist/fonts/icomoon.woff"
+    "./dist/css/bootcards-desktop.css",
+    "./dist/css/bootcards-android.css",
+    "./dist/css/bootcards-ios.css",
+    "./dist/js/bootcards.js",
+    "./dist/fonts/icomoon.eot",
+    "./dist/fonts/icomoon.svg",
+    "./dist/fonts/icomoon.ttf",
+    "./dist/fonts/icomoon.woff"
   ],
   "ignore": [
     "**/.*"
