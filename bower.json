@@ -16,8 +16,11 @@
   ],
   "main": [
     "./dist/css/bootcards-desktop.css",
+    "./dist/css/bootcards-desktop.min.css",
     "./dist/css/bootcards-android.css",
+    "./dist/css/bootcards-android.min.css",
     "./dist/css/bootcards-ios.css",
+    "./dist/css/bootcards-ios.min.css",
     "./dist/js/bootcards.js",
     "./dist/fonts/icomoon.eot",
     "./dist/fonts/icomoon.svg",
