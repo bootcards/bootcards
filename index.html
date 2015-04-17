@@ -32,8 +32,8 @@
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="site/css/bootcards-site.css">
 
-  <!--font awesome-->
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/styles/github.min.css">
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -216,8 +216,8 @@
 
   <div class="row">
 
-    <a href="https://github.com/bootcards/bootcards/archive/1.1.0.zip" target="_blank" class="btn btn-link">
-      <i class="fa fa-download fa-2x"></i> Download (v1.1)</a>
+    <a href="https://github.com/bootcards/bootcards/archive/1.1.1.zip" target="_blank" class="btn btn-link">
+      <i class="fa fa-download fa-2x"></i> Download (v1.1.1)</a>
       <a href="https://github.com/bootcards/bootcards" target="_blank" class="btn btn-link"><i class="fa fa-github fa-2x"></i> GitHub Project</a>
       <a href="http://demo.bootcards.org" target="_blank" class="btn btn-link"><i class="fa fa-mobile-phone fa-2x"></i> Demo App</a>
       <a href="https://twitter.com/bootcards" target="_blank" class="btn btn-link"><i class="fa fa-twitter fa-2x"></i> Follow @bootcards</a>
@@ -290,8 +290,10 @@
       </p>
 
       <p>
-        To add Bootcards to your application you'll need to include the Bootcards OS-specific CSS file (for iOS, Android or desktop) and the Bootcards JavaScript file. Since Bootcards is build on top of Bootstrap (3+), including the Bootstrap CSS file is required too. We've made that easy for you by embedding it into the Bootcards CSS files. We've also included 'lite' versions of the CSS files that don't include Bootstrap.
-        <pre>&lt;!-- Important: you'll only need one of the Bootcards CSS files below for every platform --&gt;
+        To add Bootcards to your application you'll need to include the Bootcards OS-specific CSS file (for iOS, Android or desktop) and the Bootcards JavaScript file. Since Bootcards is build on top of Bootstrap (3+), including the Bootstrap CSS file is required too. We've made that easy for you by embedding it into the Bootcards CSS files.
+        <pre><code>&lt;link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+&lt;!-- Important: you'll only need one of the Bootcards CSS files below for every platform --&gt;
 
 &lt;!-- Bootcards CSS for iOS: --&gt;
 &lt;link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.0.0/css/bootcards-ios.min.css"&gt;
@@ -304,8 +306,36 @@
 
 &lt;!-- Bootstrap and Bootcards JS --&gt;
 &lt;script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"&gt;&lt;/script&gt;
-&lt;script src="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.0.0/js/bootcards.min.js"&gt;&lt;/script&gt;</pre>
+&lt;script src="//cdnjs.cloudflare.com/ajax/libs/bootcards/1.0.0/js/bootcards.min.js"&gt;&lt;/script&gt;</code></pre>
         </p>
+
+        <p>
+        The Bootcards styling will work by just loading the CSS files. If you want to use features like the built-in offcanvas, automatic portrait mode, you'll need to initialize Bootcards using the following Javascript function:
+        </p>
+
+        <pre><code>/*
+ * Initialize Bootcards.
+ * 
+ * Parameters:
+ * - offCanvasBackdrop (boolean): show a backdrop when the offcanvas is shown
+ * - offCanvasHideOnMainClick (boolean): hide the offcanvas menu on clicking outside the off canvas
+ * - enableTabletPortraitMode (boolean): enable single pane mode for tablets in portraitmode
+ * - disableRubberBanding (boolean): disable the iOS rubber banding effect
+ * - disableBreakoutSelector (string) : for iOS apps that are added to the home screen:
+                      jQuery selector to target links for which a fix should be added to not
+                      allow those links to break out of fullscreen mode.
+ */
+ 
+bootcards.init( {
+  offCanvasBackdrop : true,
+  offCanvasHideOnMainClick : true,
+  enableTabletPortraitMode : true,
+  disableRubberBanding : true,
+  disableBreakoutSelector : 'a.no-break-out'
+});
+        </code></pre>
+
+        <p>See the <a href="https://github.com/bootcards/bootcards/blob/master/samples/starter-template.html">starter template</a> in the "samples" folder for an example.</p>
 
       </div>
 
@@ -318,6 +348,13 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js"></script>
+
+<script type="text/javascript">
+  //activate highlight.js
+  hljs.initHighlightingOnLoad();
+</script>
 
 <!--analytics tracking-->
 <script type="text/javascript">
