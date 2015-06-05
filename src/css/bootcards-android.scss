@@ -1,13 +1,15 @@
 @import "bootcards-mobile-shared.scss";
 
-body {
+#bootcards {
 	background-color: #eee;
 	font-family:"Roboto",sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight: normal;
-	font-family:"Roboto",sans-serif;
+#bootcards {
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: normal;
+		font-family:"Roboto",sans-serif;
+	}
 }
 
 /* OFFCANVAS LIST FOR TABLET PORTRAIT MODE */
