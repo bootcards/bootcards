@@ -71,7 +71,6 @@ body {
 }
 .carousel .item img {
 	max-height: 392px;
-    height: 100%;
     margin: auto;
 }
 .carousel a {
