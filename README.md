@@ -19,16 +19,12 @@ Bootcards is released under an MIT license. It contains code from the <a href="h
 
 **Building**
 
-To build the Bootcards source files using Grunt you'll need:
+To build the Bootcards source files you'll need to have **Node** and **NPM** installed. Bootcards uses Grunt to build the source files and uses the **grunt-sass** Grunt task (which uses <a href="http://libsass.org/" target="_blank">libsass</a>) to compile the SASS files.
 
-- Node & NPM
-- Grunt: npm install -g grunt-cli
-- Ruby: check if it's install by running ruby -v in your terminal. (should be Ok if you're on Linux or Mac OS X, otherwise see http://www.ruby-lang.org/en/downloads/)
-- Sass: install using Ruby by running: gem install sass
+Install Grunt using:
 
-Bootcards uses Grunt to build the source files. You'lou will need Sass too to compile CSS files from the Sass source files.
+`npm install -g grunt-cli`
 
-Then you can run:
+Then run an `npm install` and `bower install` to resolve all other dependencies. You can then build Bootcards from the source files by calling `grunt`. You can also use `grunt watch` to continuously monitor the source folder for changes and auto-build the project.
 
-    grunt
-    
+
