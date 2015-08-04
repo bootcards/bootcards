@@ -1,11 +1,11 @@
 @import "bootcards.scss";
 
-html, 
-body {
+html,
+#bootcards {
 	height: 100%;
 }
 
-body {
+#bootcards {
 	padding-top: 50px;
 	overflow-x:hidden;
 }
@@ -19,8 +19,10 @@ body {
 }
 
 
-small {
-	font-size: 70%;
+#bootcards {
+	small {
+		font-size: 70%;
+	}
 }
 
 

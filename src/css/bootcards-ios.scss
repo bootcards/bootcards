@@ -5,14 +5,14 @@ $navbar-height-phone-landscape: 32px;
 $footer-height: 50px;
 $footer-height-phone-landscape: 44px;
 
-html, body {
+html, #bootcards {
   height: 100%;
   /*overflow-y: scroll;*/
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
 }
 
-body {
+#bootcards {
 	background-color: #efeff4;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	padding-top: $navbar-height;

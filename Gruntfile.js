@@ -39,7 +39,11 @@ module.exports = function(grunt) {
           dest: 'dist/css',
           ext: '.css',
           flatten: true
-        }]
+        }],
+        options : {
+          banner: '<%= banner %>',
+          sourceMap : true
+        }
       }
     },
 
@@ -74,7 +78,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
 
   // Default task(s).
   grunt.registerTask('default', [
