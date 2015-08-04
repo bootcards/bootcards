@@ -27,3 +27,10 @@ To build the Bootcards source files using Grunt you'll need:
 - Sass: install using Ruby by running: gem install sass
 
 Bootcards uses Grunt to build the source files. You'lou will need Sass too to compile CSS files from the Sass source files.
+
+Then you can run:
+
+.. code-block:: bash
+
+    grunt sass
+    
