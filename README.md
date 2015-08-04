@@ -30,5 +30,5 @@ Bootcards uses Grunt to build the source files. You'lou will need Sass too to co
 
 Then you can run:
 
-    grunt sass
+    grunt
     
