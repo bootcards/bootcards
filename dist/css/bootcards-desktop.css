@@ -94,8 +94,7 @@
 .btn i {
   margin-right: 5px; }
 
-.btn.icon-only i,
-.btn.icononly i {
+.btn.icon-only i, .btn.icononly i {
   margin-right: 0; }
 
 /* LISTS */
@@ -127,7 +126,11 @@
 
 a.list-group-item {
   cursor: pointer; }
-  a.list-group-item:hover, a.list-group-item:active, a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+  a.list-group-item:hover,
+  a.list-group-item:active,
+  a.list-group-item.active,
+  a.list-group-item.active:hover,
+  a.list-group-item.active:focus {
     margin-left: 0;
     padding-left: 15px; }
 
@@ -233,12 +236,15 @@ a.list-group-item.bootcards-list-subheading {
   @media (min-width: 768px) {
     .bootcards-list .form-group {
       margin-bottom: 0; } }
+
 .bootcards-list form input,
 .bootcards-list .search-form input {
   padding-left: 32px; }
+
 .bootcards-list form .btn,
 .bootcards-list .search-form .btn {
   color: white; }
+
 .bootcards-list form i.fa-search,
 .bootcards-list .search-form i.fa-search {
   position: absolute;
@@ -467,6 +473,7 @@ a.list-group-item.bootcards-list-subheading {
   src: url("../fonts/icomoon.eot?#iefix-n2q9vw") format("embedded-opentype"), url("../fonts/icomoon.woff?-n2q9vw") format("woff"), url("../fonts/icomoon.ttf?-n2q9vw") format("truetype"), url("../fonts/icomoon.svg?-n2q9vw#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon';
   speak: none;
@@ -531,6 +538,7 @@ a.list-group-item.bootcards-list-subheading {
 @media (max-width: 400px) {
   .bootcards-summary-item {
     padding: 15px 5px; } }
+
 .bootcards-summary-item:hover {
   text-decoration: none;
   background: #eee; }
@@ -563,10 +571,12 @@ a.list-group-item.bootcards-list-subheading {
 @media (max-width: 767px) {
   .modal-dialog.modal-sm {
     margin: 15px; } }
+
 @media (min-width: 768px) {
   .modal-dialog.modal-sm {
     width: 400px; } }
-body {
+
+#bootcards {
   padding-top: 80px;
   background: #f5f5f5; }
 
@@ -574,8 +584,12 @@ body {
 .navbar .navbar-brand {
   font-weight: bold;
   color: #333; }
+  .navbar .navbar-brand.navbar-brand-multiline {
+    margin-top: -12px; }
+
 .navbar .btn i {
   vertical-align: 0; }
+
 .navbar .btn-back,
 .navbar .btn-menu,
 .navbar button[data-toggle="offcanvas"] {
@@ -597,6 +611,7 @@ body {
     body.has-bootcards-navbar-double .bootcards-nav-secondary,
     body.has-bootcards-navbar-double .bootcards-nav-secondary .dropdown-menu {
       font-size: 12px; } }
+
 /* LISTS */
 .list-group label {
   font-weight: normal; }

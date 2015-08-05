@@ -382,16 +382,20 @@ bootcards._setOrientation = function(init) {
             //increase the width of the menu: set it to the same size as the list
             if ( Bootcards.OffCanvas.$menuEl ) {
                 Bootcards.OffCanvas.$menuEl
-                    .addClass('offcanvas-list')
+                    .addClass('offcanvas-list');
+
+                //hide the offcanvas if a link is clicked, except links that have submenus
+                //(that have a data-toggle attribute)
+                Bootcards.OffCanvas.$menuEl.find('a')
                     .on("click", function() {
 
-                        //hide the menu on click 
                         var $this = $(this);
-                        $this.removeClass('active');
-                        Bootcards.OffCanvas.hide();
-                        //if (bootcards.offCanvasMenuTitleEl) { bootcards.offCanvasMenuTitleEl.removeClass('active'); }
-                        if (bootcards.listEl) { bootcards.listEl.removeClass('active'); }
-                        if (bootcards.listTitleEl) { bootcards.listTitleEl.removeClass('active'); }
+                        if (!$this.data('toggle')) {
+                            Bootcards.OffCanvas.$menuEl.removeClass('active');
+                            Bootcards.OffCanvas.hide();
+                            if (bootcards.listEl) { bootcards.listEl.removeClass('active'); }
+                            if (bootcards.listTitleEl) { bootcards.listTitleEl.removeClass('active'); }
+                        }
 
                     });
             }
