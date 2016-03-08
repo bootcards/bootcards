@@ -191,7 +191,7 @@ a.list-group-item {
 
 a.list-group-item:before {
 	font-family: 'FontAwesome';
-	content: '';
+	content: '\f054';
 	position: absolute;
 	right: 15px;
 	top: 50%;
@@ -221,7 +221,7 @@ a.list-group-item.bootcards-list-subheading {
 
   &:before {
   	font-family: 'FontAwesome';
-  	content: '';
+  	content: '\f13a';
   	position: absolute;
   	left: 15px;
   	top: 50%;
@@ -232,7 +232,7 @@ a.list-group-item.bootcards-list-subheading {
   }
   
   &.collapsed:before {
-  	content: '';
+  	content: '\f138';
   }
 }
 
@@ -536,11 +536,11 @@ a.list-group-item.bootcards-list-subheading {
 }
 
 .bootcards-calendar .fc-icon-left-single-arrow:after {
-	content: '';
+	content: '\f053';
 }
 
 .bootcards-calendar .fc-icon-right-single-arrow:after {
-	content: '';
+	content: '\f054';
 
 }
 
