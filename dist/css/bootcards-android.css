@@ -466,8 +466,8 @@ a.list-group-item.bootcards-list-subheading {
 /* FILE CARD */
 @font-face {
   font-family: 'icomoon';
-  src: url("..fonts/icomoon.eot?-n2q9vw");
-  src: url("..fonts/icomoon.eot?#iefix-n2q9vw") format("embedded-opentype"), url("..fonts/icomoon.woff?-n2q9vw") format("woff"), url("..fonts/icomoon.ttf?-n2q9vw") format("truetype"), url("..fonts/icomoon.svg?-n2q9vw#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?-n2q9vw");
+  src: url("../fonts/icomoon.eot?#iefix-n2q9vw") format("embedded-opentype"), url("../fonts/icomoon.woff?-n2q9vw") format("woff"), url("../fonts/icomoon.ttf?-n2q9vw") format("truetype"), url("../fonts/icomoon.svg?-n2q9vw#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 
