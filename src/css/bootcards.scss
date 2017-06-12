@@ -1,3 +1,5 @@
+$icomoon-font-path: '..fonts';
+
 /* NAVBAR */
 
 /* OFFCANVAS MENU */
@@ -599,11 +601,11 @@ a.list-group-item.bootcards-list-subheading {
 
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?-n2q9vw');
-	src:url('../fonts/icomoon.eot?#iefix-n2q9vw') format('embedded-opentype'),
-		url('../fonts/icomoon.woff?-n2q9vw') format('woff'),
-		url('../fonts/icomoon.ttf?-n2q9vw') format('truetype'),
-		url('../fonts/icomoon.svg?-n2q9vw#icomoon') format('svg');
+	src:url('#{$icomoon-font-path}/icomoon.eot?-n2q9vw');
+	src:url('#{$icomoon-font-path}/icomoon.eot?#iefix-n2q9vw') format('embedded-opentype'),
+		url('#{$icomoon-font-path}/icomoon.woff?-n2q9vw') format('woff'),
+		url('#{$icomoon-font-path}/icomoon.ttf?-n2q9vw') format('truetype'),
+		url('#{$icomoon-font-path}/icomoon.svg?-n2q9vw#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
