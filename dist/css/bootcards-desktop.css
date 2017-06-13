@@ -94,7 +94,8 @@
 .btn i {
   margin-right: 5px; }
 
-.btn.icon-only i, .btn.icononly i {
+.btn.icon-only i,
+.btn.icononly i {
   margin-right: 0; }
 
 /* LISTS */
@@ -126,11 +127,7 @@
 
 a.list-group-item {
   cursor: pointer; }
-  a.list-group-item:hover,
-  a.list-group-item:active,
-  a.list-group-item.active,
-  a.list-group-item.active:hover,
-  a.list-group-item.active:focus {
+  a.list-group-item:hover, a.list-group-item:active, a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
     margin-left: 0;
     padding-left: 15px; }
 
@@ -144,7 +141,7 @@ a.list-group-item {
 /* Disclosure Indicators */
 a.list-group-item:before {
   font-family: 'FontAwesome';
-  content: '';
+  content: '\f054';
   position: absolute;
   right: 15px;
   top: 50%;
@@ -168,7 +165,7 @@ a.list-group-item.bootcards-list-subheading {
   padding-left: 40px; }
   a.list-group-item.bootcards-list-subheading:before {
     font-family: 'FontAwesome';
-    content: '';
+    content: '\f13a';
     position: absolute;
     left: 15px;
     top: 50%;
@@ -177,7 +174,7 @@ a.list-group-item.bootcards-list-subheading {
     margin-top: -7px;
     color: #ccc; }
   a.list-group-item.bootcards-list-subheading.collapsed:before {
-    content: ''; }
+    content: '\f138'; }
 
 /* List - AZ Picker */
 .bootcards-az-picker {
@@ -423,10 +420,10 @@ a.list-group-item.bootcards-list-subheading {
   font-weight: normal; }
 
 .bootcards-calendar .fc-icon-left-single-arrow:after {
-  content: ''; }
+  content: '\f053'; }
 
 .bootcards-calendar .fc-icon-right-single-arrow:after {
-  content: ''; }
+  content: '\f054'; }
 
 .bootcards-calendar .fc-header .fc-button.fc-state-disabled {
   color: #AAA;
