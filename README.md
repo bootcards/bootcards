@@ -1,3 +1,11 @@
+## No longer maintained ##
+
+**As you can probably tell from the last modified date, this project is no longer maintained. Main reason is that the designer that did most of the work on creating Bootcards is no longer involved. Although I know my way around CSS files, that's not my main area of experience. I'm a web developer. In this project I wrote the demo app and code samples.**
+
+**I still think this project is relevant and useful. So if you're interested in picking this project up, please let me know. If you do, I still like to help on the technical side.**
+
+Mark
+
 Bootcards: A cards-based UI framework with dual-pane capability for mobile and desktop, built on top of Bootstrap
 =========
 
